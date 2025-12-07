@@ -1,0 +1,31 @@
+===============================================================================
+String
+===============================================================================
+
+"Hello Red"
+"你好，世界!"
+"Emoji 😀🆒"
+"^(1F3F4)^(200D)^(2620)xx"
+"xx^(1F3F4)^(200D)^(2620)xx"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (string
+    (string_content))
+  (string
+    (string_content))
+  (string
+    (string_content))
+  (string
+    (escaped_char)
+    (escaped_char)
+    (escaped_char)
+    (string_content))
+  (string
+    (string_content)
+    (escaped_char)
+    (escaped_char)
+    (escaped_char)
+    (string_content))
+)

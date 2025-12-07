@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "red",
+      "camelcase": "Red",
+      "title": "Red",
+      "scope": "source.red",
+      "file-types": [
+        "red"
+      ],
+      "injection-regex": "^red$",
+      "class-name": "TreeSitterRed"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "Apache-2.0",
+    "description": "A tree-sitter grammar for the Red programming language",
+    "authors": [
+      {
+        "name": "qtxie",
+        "email": "xqtxyz@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/qtxie/tree-sitter-red"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}

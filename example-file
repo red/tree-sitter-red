@@ -1,0 +1,28 @@
+#include %abc.red
+"Hello Red"
+"你好，世界!"
+"Emoji 😀🆒"
+"^(1F3F4)^(200D)^(2620)xx"
+"xx^(1F3F4)^(200D)^(2620)xx"
+while [ true ][99.3 32 + 2 / 4 100]
+1.#nan
+1.#inf
+"fjdklsfjkl"
+#"a"
+#"^""
+#"^/"
+1x2
+-3x4
+-3x-4
++3
+-2
+1.2.3.4
+1.2.3.4.5.5.222
+a!
+a~
+-abc
+'abc :abc abc:
+a/b/c
+'a/b/c
+:a/b/c
+a/b/c:
