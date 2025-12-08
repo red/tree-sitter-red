@@ -1,140 +1,17 @@
 [
   {
-    "type": "binary_expression",
+    "type": "binary",
     "named": true,
-    "fields": {
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "get_path",
-            "named": true
-          },
-          {
-            "type": "get_word",
-            "named": true
-          },
-          {
-            "type": "lit_path",
-            "named": true
-          },
-          {
-            "type": "lit_word",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "pair",
-            "named": true
-          },
-          {
-            "type": "path",
-            "named": true
-          },
-          {
-            "type": "set_path",
-            "named": true
-          },
-          {
-            "type": "set_word",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple",
-            "named": true
-          },
-          {
-            "type": "word",
-            "named": true
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "get_path",
-            "named": true
-          },
-          {
-            "type": "get_word",
-            "named": true
-          },
-          {
-            "type": "lit_path",
-            "named": true
-          },
-          {
-            "type": "lit_word",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "pair",
-            "named": true
-          },
-          {
-            "type": "path",
-            "named": true
-          },
-          {
-            "type": "set_path",
-            "named": true
-          },
-          {
-            "type": "set_word",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "tuple",
-            "named": true
-          },
-          {
-            "type": "word",
-            "named": true
-          }
-        ]
-      }
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -146,7 +23,7 @@
       "required": false,
       "types": [
         {
-          "type": "binary_expression",
+          "type": "binary",
           "named": true
         },
         {
@@ -163,6 +40,10 @@
         },
         {
           "type": "get_word",
+          "named": true
+        },
+        {
+          "type": "infix",
           "named": true
         },
         {
@@ -333,6 +214,152 @@
     }
   },
   {
+    "type": "infix",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "get_path",
+            "named": true
+          },
+          {
+            "type": "get_word",
+            "named": true
+          },
+          {
+            "type": "infix",
+            "named": true
+          },
+          {
+            "type": "lit_path",
+            "named": true
+          },
+          {
+            "type": "lit_word",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "pair",
+            "named": true
+          },
+          {
+            "type": "path",
+            "named": true
+          },
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "get_path",
+            "named": true
+          },
+          {
+            "type": "get_word",
+            "named": true
+          },
+          {
+            "type": "infix",
+            "named": true
+          },
+          {
+            "type": "lit_path",
+            "named": true
+          },
+          {
+            "type": "lit_word",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "pair",
+            "named": true
+          },
+          {
+            "type": "path",
+            "named": true
+          },
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "lit_path",
     "named": true,
     "fields": {},
@@ -403,7 +430,7 @@
       "required": true,
       "types": [
         {
-          "type": "binary_expression",
+          "type": "binary",
           "named": true
         },
         {
@@ -424,6 +451,10 @@
         },
         {
           "type": "get_word",
+          "named": true
+        },
+        {
+          "type": "infix",
           "named": true
         },
         {
@@ -588,7 +619,7 @@
       "required": false,
       "types": [
         {
-          "type": "binary_expression",
+          "type": "binary",
           "named": true
         },
         {
@@ -609,6 +640,10 @@
         },
         {
           "type": "include",
+          "named": true
+        },
+        {
+          "type": "infix",
           "named": true
         },
         {
@@ -709,6 +744,10 @@
     "named": false
   },
   {
+    "type": "#{",
+    "named": false
+  },
+  {
     "type": "%",
     "named": false
   },
@@ -721,7 +760,23 @@
     "named": false
   },
   {
+    "type": "16",
+    "named": false
+  },
+  {
+    "type": "2#{",
+    "named": false
+  },
+  {
+    "type": "64#{",
+    "named": false
+  },
+  {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": "=",
     "named": false
   },
   {
@@ -780,5 +835,9 @@
   {
     "type": "word",
     "named": true
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]

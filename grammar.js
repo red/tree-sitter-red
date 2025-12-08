@@ -77,11 +77,12 @@ module.exports = grammar({
         $.lit_path,
         $.get_path,
         $.set_path,
-        $.binary_expression,
+        $.binary,
+        $.infix,
       ),
     _path_element: ($) => choice($._literal, $.word, $.lit_word, $.get_word),
 
-    binary_expression: ($) =>
+    infix: ($) =>
       prec.left(
         1,
         seq(
@@ -169,6 +170,26 @@ module.exports = grammar({
     get_path: ($) => seq(":", $.word, repeat1(seq("/", $._path_element))),
     set_path: ($) =>
       prec(2, seq($.word, repeat1(seq("/", $._path_element)), ":")),
+
+    _binary_base_2: ($) =>
+      seq("2#{", repeat(choice(/(?:[01]\s*){8}/, $.comment)), "}"),
+    _binary_base_16: ($) =>
+      seq(
+        optional("16"),
+        "#{",
+        repeat(choice(/[0-9a-fA-F]{2}/, $.comment)),
+        "}",
+      ),
+    _binary_base_64: ($) =>
+      seq(
+        "64#{",
+        repeat(choice(/[A-Za-z0-9\+\/]/, $.comment)),
+        optional("="),
+        optional("="),
+        "}",
+      ),
+    binary: ($) =>
+      choice($._binary_base_2, $._binary_base_16, $._binary_base_64),
 
     _complex_expression: ($) => choice($.while, $.loop),
 
