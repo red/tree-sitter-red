@@ -20,51 +20,12 @@ module.exports = grammar({
     /* General rules */
     source_file: ($) => repeat($._statement_seq),
     _statement_seq: ($) => choice($.include, $._expression),
+    include: ($) => seq("#include", $.file),
+
     /* Comments */
     comment: (_) => /;.*/,
-    /* Include */
-    include: ($) => seq("#include", $.file),
-    file: ($) => seq("%", choice($.string, $.file_content)),
-    file_content: ($) => token.immediate(prec(1, /[^\[\]\(\){}@:;"\n]+/)),
-    string: ($) =>
-      seq(
-        '"',
-        repeat(
-          choice(
-            alias(token.immediate(prec(1, /[^\^\\"\n]+/)), $.string_content),
-            $.escaped_char,
-          ),
-        ),
-        '"',
-      ),
-    escaped_char: (_) =>
-      token(
-        prec(
-          1,
-          seq(
-            "^",
-            choice(
-              "/",
-              "-",
-              "~",
-              "^",
-              "{",
-              "}",
-              '"',
-              /[a-fA-F]/,
-              "(null)",
-              "(back)",
-              "(tab)",
-              "(line)",
-              "(page)",
-              "(esc)",
-              "(del)",
-              /\([0-9a-fA-F]{1,6}\)/,
-            ),
-          ),
-        ),
-      ),
 
+    /* expressions */
     _expression: ($) => choice($._complex_expression, $._simple_expression),
     _simple_expression: ($) =>
       choice(
@@ -93,7 +54,16 @@ module.exports = grammar({
       ),
 
     _literal: ($) =>
-      choice($.boolean, $.number, $.pair, $.tuple, $.char, $.string),
+      choice(
+        $.boolean,
+        $.number,
+        $.pair,
+        $.tuple,
+        $.char,
+        $.file,
+        $.string,
+        $.issue,
+      ),
 
     boolean: (_) => choice("true", "false"),
 
@@ -158,6 +128,50 @@ module.exports = grammar({
 
     char: ($) =>
       seq('#"', choice($.escaped_char, token.immediate(/[^"\^]/)), '"'),
+
+    issue: ($) => /#[^\s\[\]\(\){}@;"<>]+/,
+
+    file: ($) => seq("%", choice($.string, $.file_content)),
+    file_content: ($) => token.immediate(prec(1, /[^\[\]\(\){}@:;"\n]+/)),
+
+    string: ($) =>
+      seq(
+        '"',
+        repeat(
+          choice(
+            alias(token.immediate(prec(1, /[^\^\\"\n]+/)), $.string_content),
+            $.escaped_char,
+          ),
+        ),
+        '"',
+      ),
+    escaped_char: (_) =>
+      token(
+        prec(
+          1,
+          seq(
+            "^",
+            choice(
+              "/",
+              "-",
+              "~",
+              "^",
+              "{",
+              "}",
+              '"',
+              /[a-fA-F]/,
+              "(null)",
+              "(back)",
+              "(tab)",
+              "(line)",
+              "(page)",
+              "(esc)",
+              "(del)",
+              /\([0-9a-fA-F]{1,6}\)/,
+            ),
+          ),
+        ),
+      ),
 
     word: ($) =>
       /[^\p{White_Space}\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\p{White_Space}\/\\,\[\]\(\)\{\}"#%\$@:;]*/u,

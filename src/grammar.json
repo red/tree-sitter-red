@@ -23,10 +23,6 @@
         }
       ]
     },
-    "comment": {
-      "type": "PATTERN",
-      "value": ";.*"
-    },
     "include": {
       "type": "SEQ",
       "members": [
@@ -40,164 +36,9 @@
         }
       ]
     },
-    "file": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "%"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "string"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "file_content"
-            }
-          ]
-        }
-      ]
-    },
-    "file_content": {
-      "type": "IMMEDIATE_TOKEN",
-      "content": {
-        "type": "PREC",
-        "value": 1,
-        "content": {
-          "type": "PATTERN",
-          "value": "[^\\[\\]\\(\\){}@:;\"\\n]+"
-        }
-      }
-    },
-    "string": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\""
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "ALIAS",
-                "content": {
-                  "type": "IMMEDIATE_TOKEN",
-                  "content": {
-                    "type": "PREC",
-                    "value": 1,
-                    "content": {
-                      "type": "PATTERN",
-                      "value": "[^\\^\\\\\"\\n]+"
-                    }
-                  }
-                },
-                "named": true,
-                "value": "string_content"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "escaped_char"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "\""
-        }
-      ]
-    },
-    "escaped_char": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PREC",
-        "value": 1,
-        "content": {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "^"
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "/"
-                },
-                {
-                  "type": "STRING",
-                  "value": "-"
-                },
-                {
-                  "type": "STRING",
-                  "value": "~"
-                },
-                {
-                  "type": "STRING",
-                  "value": "^"
-                },
-                {
-                  "type": "STRING",
-                  "value": "{"
-                },
-                {
-                  "type": "STRING",
-                  "value": "}"
-                },
-                {
-                  "type": "STRING",
-                  "value": "\""
-                },
-                {
-                  "type": "PATTERN",
-                  "value": "[a-fA-F]"
-                },
-                {
-                  "type": "STRING",
-                  "value": "(null)"
-                },
-                {
-                  "type": "STRING",
-                  "value": "(back)"
-                },
-                {
-                  "type": "STRING",
-                  "value": "(tab)"
-                },
-                {
-                  "type": "STRING",
-                  "value": "(line)"
-                },
-                {
-                  "type": "STRING",
-                  "value": "(page)"
-                },
-                {
-                  "type": "STRING",
-                  "value": "(esc)"
-                },
-                {
-                  "type": "STRING",
-                  "value": "(del)"
-                },
-                {
-                  "type": "PATTERN",
-                  "value": "\\([0-9a-fA-F]{1,6}\\)"
-                }
-              ]
-            }
-          ]
-        }
-      }
+    "comment": {
+      "type": "PATTERN",
+      "value": ";.*"
     },
     "_expression": {
       "type": "CHOICE",
@@ -340,7 +181,15 @@
         },
         {
           "type": "SYMBOL",
+          "name": "file"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "issue"
         }
       ]
     },
@@ -2164,6 +2013,169 @@
           "value": "\""
         }
       ]
+    },
+    "issue": {
+      "type": "PATTERN",
+      "value": "#[^\\s\\[\\]\\(\\){}@;\"<>]+"
+    },
+    "file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "%"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "string"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "file_content"
+            }
+          ]
+        }
+      ]
+    },
+    "file_content": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^\\[\\]\\(\\){}@:;\"\\n]+"
+        }
+      }
+    },
+    "string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "IMMEDIATE_TOKEN",
+                  "content": {
+                    "type": "PREC",
+                    "value": 1,
+                    "content": {
+                      "type": "PATTERN",
+                      "value": "[^\\^\\\\\"\\n]+"
+                    }
+                  }
+                },
+                "named": true,
+                "value": "string_content"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "escaped_char"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
+    },
+    "escaped_char": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "^"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "/"
+                },
+                {
+                  "type": "STRING",
+                  "value": "-"
+                },
+                {
+                  "type": "STRING",
+                  "value": "~"
+                },
+                {
+                  "type": "STRING",
+                  "value": "^"
+                },
+                {
+                  "type": "STRING",
+                  "value": "{"
+                },
+                {
+                  "type": "STRING",
+                  "value": "}"
+                },
+                {
+                  "type": "STRING",
+                  "value": "\""
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "[a-fA-F]"
+                },
+                {
+                  "type": "STRING",
+                  "value": "(null)"
+                },
+                {
+                  "type": "STRING",
+                  "value": "(back)"
+                },
+                {
+                  "type": "STRING",
+                  "value": "(tab)"
+                },
+                {
+                  "type": "STRING",
+                  "value": "(line)"
+                },
+                {
+                  "type": "STRING",
+                  "value": "(page)"
+                },
+                {
+                  "type": "STRING",
+                  "value": "(esc)"
+                },
+                {
+                  "type": "STRING",
+                  "value": "(del)"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "\\([0-9a-fA-F]{1,6}\\)"
+                }
+              ]
+            }
+          ]
+        }
+      }
     },
     "word": {
       "type": "PATTERN",
