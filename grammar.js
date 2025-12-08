@@ -27,21 +27,7 @@ module.exports = grammar({
 
     /* expressions */
     _expression: ($) => choice($._complex_expression, $._simple_expression),
-    _simple_expression: ($) =>
-      choice(
-        $._literal,
-        $.word,
-        $.lit_word,
-        $.get_word,
-        $.set_word,
-        $.path,
-        $.lit_path,
-        $.get_path,
-        $.set_path,
-        $.binary,
-        $.infix,
-      ),
-    _path_element: ($) => choice($._literal, $.word, $.lit_word, $.get_word),
+    _simple_expression: ($) => choice($._literal, $.infix),
 
     infix: ($) =>
       prec.left(
@@ -55,6 +41,14 @@ module.exports = grammar({
 
     _literal: ($) =>
       choice(
+        $.word,
+        $.lit_word,
+        $.get_word,
+        $.set_word,
+        $.path,
+        $.lit_path,
+        $.get_path,
+        $.set_path,
         $.boolean,
         $.number,
         $.pair,
@@ -63,6 +57,8 @@ module.exports = grammar({
         $.file,
         $.string,
         $.issue,
+        $.binary,
+        $.map,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -179,6 +175,22 @@ module.exports = grammar({
     get_word: ($) => seq(":", $.word),
     set_word: ($) => prec(1, seq($.word, ":")),
 
+    _path_element: ($) =>
+      choice(
+        $.boolean,
+        $.number,
+        $.pair,
+        $.tuple,
+        $.char,
+        $.file,
+        $.string,
+        $.issue,
+        $.binary,
+        $.map,
+        $.word,
+        $.lit_word,
+        $.get_word,
+      ),
     path: ($) => seq($.word, repeat1(seq("/", $._path_element))),
     lit_path: ($) => seq("'", $.word, repeat1(seq("/", $._path_element))),
     get_path: ($) => seq(":", $.word, repeat1(seq("/", $._path_element))),
@@ -204,6 +216,8 @@ module.exports = grammar({
       ),
     binary: ($) =>
       choice($._binary_base_2, $._binary_base_16, $._binary_base_64),
+
+    map: ($) => seq("#[", repeat(seq($._literal, $._literal)), "]"),
 
     _complex_expression: ($) => choice($.while, $.loop),
 
