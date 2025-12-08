@@ -35,6 +35,10 @@
           "named": true
         },
         {
+          "type": "escaped_value",
+          "named": true
+        },
+        {
           "type": "file",
           "named": true
         },
@@ -136,6 +140,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "escaped_value",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "file",
@@ -270,6 +279,10 @@
             "named": true
           },
           {
+            "type": "escaped_value",
+            "named": true
+          },
+          {
             "type": "file",
             "named": true
           },
@@ -357,6 +370,10 @@
           },
           {
             "type": "char",
+            "named": true
+          },
+          {
+            "type": "escaped_value",
             "named": true
           },
           {
@@ -535,6 +552,10 @@
         },
         {
           "type": "char",
+          "named": true
+        },
+        {
+          "type": "escaped_value",
           "named": true
         },
         {
@@ -862,6 +883,10 @@
           "named": true
         },
         {
+          "type": "escaped_value",
+          "named": true
+        },
+        {
           "type": "file",
           "named": true
         },
@@ -996,6 +1021,10 @@
     "named": false
   },
   {
+    "type": "#(",
+    "named": false
+  },
+  {
     "type": "#[",
     "named": false
   },
@@ -1013,6 +1042,10 @@
   },
   {
     "type": "'",
+    "named": false
+  },
+  {
+    "type": ")",
     "named": false
   },
   {

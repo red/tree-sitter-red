@@ -27,7 +27,8 @@ module.exports = grammar({
 
     /* expressions */
     _expression: ($) => choice($._complex_expression, $._simple_expression),
-    _simple_expression: ($) => choice($._literal, $.hexa, $.infix),
+    _simple_expression: ($) =>
+      choice($._literal, $.hexa, $.escaped_value, $.infix),
 
     infix: ($) =>
       prec.left(
@@ -126,11 +127,11 @@ module.exports = grammar({
     char: ($) =>
       seq('#"', choice($.escaped_char, token.immediate(/[^"\^]/)), '"'),
 
-    issue: (_) => /#[^\s\[\]\(\){}@;"<>:]+/,
-    refinement: ($) => /\/[^\s\[\]\(\){}@;"<>:]+/,
+    issue: (_) => /#[^\s\[\]\(\)\{\}@;"<>:]+/,
+    refinement: ($) => /\/[^\s\[\]\(\)\{\}@;"<>:]+/,
 
     file: ($) => seq("%", choice($.string, $.file_content)),
-    file_content: (_) => token.immediate(prec(1, /[^\[\]\(\){}@:;"\n]+/)),
+    file_content: (_) => token.immediate(prec(1, /[^\[\]\(\)\{\}@:;"\n]+/)),
 
     string: ($) =>
       seq(
@@ -170,6 +171,8 @@ module.exports = grammar({
           ),
         ),
       ),
+
+    escaped_value: (_) => seq("#(", /[A-Za-z\-!]{3,20}/, ")"),
 
     _word: (_) =>
       /[^\p{White_Space}\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\p{White_Space}\/\\,\[\]\(\)\{\}"#%\$@:;]*/u,

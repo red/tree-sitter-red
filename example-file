@@ -58,7 +58,6 @@ a/b/c:
 64#{////////////////}
 #abc
 ##
-#:
 #djkf
 #[]
 #[a b]
@@ -68,3 +67,6 @@ ABh
 abcdh
 /abc
 /==
+#(true)
+#(false)
+#(none)
