@@ -28,7 +28,7 @@
 #endif
 
 struct ScannerState {
-  bool multiline_string;
+  bool raw_string;
 };
 
 #if __STDC_VERSION__ >= 201112L
@@ -39,18 +39,20 @@ _Static_assert(sizeof(struct ScannerState) <=
 
 enum TokenType {
   INFIX_OP,
+  RED_HEXA,
   ERROR_SENTINEL,
 };
 
 #ifdef DEBUG
 static const char *const symbol_names[] = {
     [INFIX_OP] = "$._infix_op",
+    [RED_HEXA] = "$.hexa",
 };
 #endif
 
 void tree_sitter_external_scanner(reset)(void *payload) {
   struct ScannerState *context = payload;
-  context->multiline_string = false;
+  context->raw_string = false;
 }
 
 void *tree_sitter_external_scanner(create)(void) {
@@ -88,7 +90,7 @@ static void skip_spaces(TSLexer *lexer, const bool *valid_symbols) {
 
 #ifdef DEBUG
 static bool trace_valid_symbols(const bool *valid_symbols) {
-  for (int i = SCANNER_RESET; i < ERROR_SENTINEL; i++) {
+  for (int i = INFIX_OP; i < ERROR_SENTINEL; i++) {
     printf("valid_symbols[%s]: %s\n", symbol_names[i],
            valid_symbols[i] ? "true" : "false");
   }
@@ -154,7 +156,7 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
   struct ScannerState *context = (struct ScannerState *)payload;
 
   trace("==========\n");
-  tracef("lookahead: %c @ %d\n", lexer->lookahead, lexer->get_column(lexer));
+  tracef("lookahead: %d\n", lexer->lookahead);
   trace_valid_symbols(valid_symbols);
 
   if (lexer->eof(lexer)) {
@@ -163,6 +165,23 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
 
   if (valid_symbols[ERROR_SENTINEL]) {
     return false;
+  }
+
+  if (valid_symbols[RED_HEXA]) {
+    skip_spaces(lexer, valid_symbols);
+    int count = 0;
+    // 2 - 8 characters
+    while (iswxdigit(lexer->lookahead) && count < 8) {
+      advance(lexer);
+      count++;
+    }
+    if (count >= 2 && lexer->lookahead == 'h') {
+      advance(lexer);
+      lexer->mark_end(lexer);
+      lexer->result_symbol = RED_HEXA;
+      trace("find hexa !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      return true;
+    }
   }
 
   if (valid_symbols[INFIX_OP]) {

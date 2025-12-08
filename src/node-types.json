@@ -47,6 +47,10 @@
           "named": true
         },
         {
+          "type": "hexa",
+          "named": true
+        },
+        {
           "type": "infix",
           "named": true
         },
@@ -274,6 +278,10 @@
             "named": true
           },
           {
+            "type": "hexa",
+            "named": true
+          },
+          {
             "type": "infix",
             "named": true
           },
@@ -353,6 +361,10 @@
           },
           {
             "type": "get_word",
+            "named": true
+          },
+          {
+            "type": "hexa",
             "named": true
           },
           {
@@ -523,6 +535,10 @@
         },
         {
           "type": "get_word",
+          "named": true
+        },
+        {
+          "type": "hexa",
           "named": true
         },
         {
@@ -838,6 +854,10 @@
           "named": true
         },
         {
+          "type": "hexa",
+          "named": true
+        },
+        {
           "type": "include",
           "named": true
         },
@@ -939,6 +959,11 @@
     }
   },
   {
+    "type": "word",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -1016,6 +1041,10 @@
     "named": true
   },
   {
+    "type": "hexa",
+    "named": true
+  },
+  {
     "type": "issue",
     "named": true
   },
@@ -1046,10 +1075,6 @@
   {
     "type": "while",
     "named": false
-  },
-  {
-    "type": "word",
-    "named": true
   },
   {
     "type": "}",

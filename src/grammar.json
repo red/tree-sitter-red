@@ -1,7 +1,7 @@
 {
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "red",
-  "word": "word",
+  "word": "_word",
   "rules": {
     "source_file": {
       "type": "REPEAT",
@@ -59,6 +59,10 @@
         {
           "type": "SYMBOL",
           "name": "_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "hexa"
         },
         {
           "type": "SYMBOL",
@@ -2160,10 +2164,23 @@
         }
       }
     },
-    "word": {
+    "_word": {
       "type": "PATTERN",
       "value": "[^\\p{White_Space}\\d'\\/\\\\,\\[\\]\\(\\)\\{\\}\"#%\\$@:;][^\\p{White_Space}\\/\\\\,\\[\\]\\(\\)\\{\\}\"#%\\$@:;]*",
       "flags": "u"
+    },
+    "word": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_word"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\/+"
+        }
+      ]
     },
     "lit_word": {
       "type": "SEQ",
@@ -2634,6 +2651,10 @@
     {
       "type": "SYMBOL",
       "name": "_infix_op"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "hexa"
     },
     {
       "type": "SYMBOL",
