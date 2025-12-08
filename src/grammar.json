@@ -177,6 +177,10 @@
         {
           "type": "SYMBOL",
           "name": "map"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "refinement"
         }
       ]
     },
@@ -2003,7 +2007,11 @@
     },
     "issue": {
       "type": "PATTERN",
-      "value": "#[^\\s\\[\\]\\(\\){}@;\"<>]+"
+      "value": "#[^\\s\\[\\]\\(\\){}@;\"<>:]+"
+    },
+    "refinement": {
+      "type": "PATTERN",
+      "value": "\\/[^\\s\\[\\]\\(\\){}@;\"<>:]+"
     },
     "file": {
       "type": "SEQ",

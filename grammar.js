@@ -59,6 +59,7 @@ module.exports = grammar({
         $.issue,
         $.binary,
         $.map,
+        $.refinement,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -125,10 +126,11 @@ module.exports = grammar({
     char: ($) =>
       seq('#"', choice($.escaped_char, token.immediate(/[^"\^]/)), '"'),
 
-    issue: ($) => /#[^\s\[\]\(\){}@;"<>]+/,
+    issue: (_) => /#[^\s\[\]\(\){}@;"<>:]+/,
+    refinement: ($) => /\/[^\s\[\]\(\){}@;"<>:]+/,
 
     file: ($) => seq("%", choice($.string, $.file_content)),
-    file_content: ($) => token.immediate(prec(1, /[^\[\]\(\){}@:;"\n]+/)),
+    file_content: (_) => token.immediate(prec(1, /[^\[\]\(\){}@:;"\n]+/)),
 
     string: ($) =>
       seq(

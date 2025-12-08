@@ -87,6 +87,10 @@
           "named": true
         },
         {
+          "type": "refinement",
+          "named": true
+        },
+        {
           "type": "set_path",
           "named": true
         },
@@ -314,6 +318,10 @@
             "named": true
           },
           {
+            "type": "refinement",
+            "named": true
+          },
+          {
             "type": "set_path",
             "named": true
           },
@@ -397,6 +405,10 @@
           },
           {
             "type": "path",
+            "named": true
+          },
+          {
+            "type": "refinement",
             "named": true
           },
           {
@@ -574,6 +586,10 @@
           "named": true
         },
         {
+          "type": "refinement",
+          "named": true
+        },
+        {
           "type": "set_path",
           "named": true
         },
@@ -654,6 +670,10 @@
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "refinement",
           "named": true
         },
         {
@@ -898,6 +918,10 @@
           "named": true
         },
         {
+          "type": "refinement",
+          "named": true
+        },
+        {
           "type": "set_path",
           "named": true
         },
@@ -1058,6 +1082,10 @@
   },
   {
     "type": "pair",
+    "named": true
+  },
+  {
+    "type": "refinement",
     "named": true
   },
   {
