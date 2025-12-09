@@ -35,6 +35,10 @@
           "named": true
         },
         {
+          "type": "email",
+          "named": true
+        },
+        {
           "type": "escaped_value",
           "named": true
         },
@@ -303,6 +307,10 @@
             "named": true
           },
           {
+            "type": "email",
+            "named": true
+          },
+          {
             "type": "escaped_value",
             "named": true
           },
@@ -410,6 +418,10 @@
           },
           {
             "type": "char",
+            "named": true
+          },
+          {
+            "type": "email",
             "named": true
           },
           {
@@ -619,6 +631,10 @@
           "named": true
         },
         {
+          "type": "email",
+          "named": true
+        },
+        {
           "type": "escaped_value",
           "named": true
         },
@@ -731,6 +747,10 @@
         },
         {
           "type": "char",
+          "named": true
+        },
+        {
+          "type": "email",
           "named": true
         },
         {
@@ -1003,6 +1023,10 @@
           "named": true
         },
         {
+          "type": "email",
+          "named": true
+        },
+        {
           "type": "escaped_value",
           "named": true
         },
@@ -1220,6 +1244,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "email",
+    "named": true
   },
   {
     "type": "escaped_char",

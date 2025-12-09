@@ -201,6 +201,10 @@
         {
           "type": "SYMBOL",
           "name": "ref"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "email"
         }
       ]
     },
@@ -2036,6 +2040,10 @@
     "refinement": {
       "type": "PATTERN",
       "value": "\\/[^\\s\\[\\]\\(\\)\\{\\}@;\"<>:]+"
+    },
+    "email": {
+      "type": "PATTERN",
+      "value": "[^\\s\\[\\]\\(\\)\\{\\}@;:<\"]+@[^\\s\\[\\]\\(\\)\\{\\}@;:<\"]*"
     },
     "file": {
       "type": "SEQ",

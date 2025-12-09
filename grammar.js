@@ -72,6 +72,7 @@ module.exports = grammar({
         $.refinement,
         $.tag,
         $.ref,
+        $.email,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -140,7 +141,8 @@ module.exports = grammar({
 
     ref: (_) => /@[^\s\[\]\(\)\{\}@#$;,'"=<>^]*/,
     issue: (_) => /#[^\s\[\]\(\)\{\}@;"<>:]+/,
-    refinement: ($) => /\/[^\s\[\]\(\)\{\}@;"<>:]+/,
+    refinement: (_) => /\/[^\s\[\]\(\)\{\}@;"<>:]+/,
+    email: (_) => /[^\s\[\]\(\)\{\}@;:<"]+@[^\s\[\]\(\)\{\}@;:<"]*/,
 
     file: ($) => seq("%", choice($.string, $.file_content)),
     file_content: (_) => token.immediate(prec(1, /[^\[\]\(\)\{\}@:;"\n]+/)),
