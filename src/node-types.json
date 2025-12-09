@@ -115,6 +115,10 @@
           "named": true
         },
         {
+          "type": "tag",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -223,6 +227,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         },
         {
@@ -363,6 +371,10 @@
             "named": true
           },
           {
+            "type": "tag",
+            "named": true
+          },
+          {
             "type": "tuple",
             "named": true
           },
@@ -465,6 +477,10 @@
             "named": true
           },
           {
+            "type": "tag",
+            "named": true
+          },
+          {
             "type": "tuple",
             "named": true
           },
@@ -526,6 +542,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         },
         {
@@ -655,6 +675,10 @@
           "named": true
         },
         {
+          "type": "tag",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -686,6 +710,10 @@
           "named": true
         },
         {
+          "type": "escaped_value",
+          "named": true
+        },
+        {
           "type": "file",
           "named": true
         },
@@ -695,6 +723,10 @@
         },
         {
           "type": "get_word",
+          "named": true
+        },
+        {
+          "type": "hexa",
           "named": true
         },
         {
@@ -714,6 +746,10 @@
           "named": true
         },
         {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -723,6 +759,10 @@
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "raw_string",
           "named": true
         },
         {
@@ -739,6 +779,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         },
         {
@@ -805,6 +849,10 @@
           "named": true
         },
         {
+          "type": "tag",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -865,6 +913,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         },
         {
@@ -996,6 +1048,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         },
         {
@@ -1171,6 +1227,10 @@
   },
   {
     "type": "string_content",
+    "named": true
+  },
+  {
+    "type": "tag",
     "named": true
   },
   {

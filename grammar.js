@@ -33,15 +33,7 @@ module.exports = grammar({
 
     /* expressions */
     _expression: ($) => choice($._complex_expression, $._simple_expression),
-    _simple_expression: ($) =>
-      choice(
-        $._literal,
-        $.hexa,
-        $.escaped_value,
-        $.raw_string,
-        $.multiline_string,
-        $.infix,
-      ),
+    _simple_expression: ($) => choice($._literal, $.infix),
 
     infix: ($) =>
       prec.left(
@@ -55,6 +47,10 @@ module.exports = grammar({
 
     _literal: ($) =>
       choice(
+        $.hexa,
+        $.escaped_value,
+        $.raw_string,
+        $.multiline_string,
         $.word,
         $.lit_word,
         $.get_word,
@@ -74,6 +70,7 @@ module.exports = grammar({
         $.binary,
         $.map,
         $.refinement,
+        $.tag,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -209,6 +206,7 @@ module.exports = grammar({
         $.word,
         $.lit_word,
         $.get_word,
+        $.tag,
       ),
     path: ($) => seq($.word, repeat1(seq("/", $._path_element))),
     lit_path: ($) => seq("'", $.word, repeat1(seq("/", $._path_element))),
@@ -237,6 +235,17 @@ module.exports = grammar({
       choice($._binary_base_2, $._binary_base_16, $._binary_base_64),
 
     map: ($) => seq("#[", repeat(seq($._literal, $._literal)), "]"),
+    tag: (_) =>
+      token(
+        prec(
+          2,
+          seq(
+            /<[^\s\[\]\(\)\{\};"<>=]/,
+            repeat(choice(/".*"/, /'.*'/, /[^>]/)),
+            ">",
+          ),
+        ),
+      ),
 
     _complex_expression: ($) => choice($.while, $.loop),
 

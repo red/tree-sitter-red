@@ -62,22 +62,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "hexa"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "escaped_value"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "raw_string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "multiline_string"
-        },
-        {
-          "type": "SYMBOL",
           "name": "infix"
         }
       ]
@@ -118,6 +102,22 @@
     "_literal": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "hexa"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "escaped_value"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "raw_string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "multiline_string"
+        },
         {
           "type": "SYMBOL",
           "name": "word"
@@ -193,6 +193,10 @@
         {
           "type": "SYMBOL",
           "name": "refinement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tag"
         }
       ]
     },
@@ -2316,6 +2320,10 @@
         {
           "type": "SYMBOL",
           "name": "get_word"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tag"
         }
       ]
     },
@@ -2603,6 +2611,46 @@
           "value": "]"
         }
       ]
+    },
+    "tag": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 2,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "<[^\\s\\[\\]\\(\\)\\{\\};\"<>=]"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "PATTERN",
+                    "value": "\".*\""
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "'.*'"
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "[^>]"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "STRING",
+              "value": ">"
+            }
+          ]
+        }
+      }
     },
     "_complex_expression": {
       "type": "CHOICE",
