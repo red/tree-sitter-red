@@ -73,6 +73,7 @@ module.exports = grammar({
         $.tag,
         $.ref,
         $.email,
+        $.point,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -107,6 +108,9 @@ module.exports = grammar({
       );
       return token(seq(integer, /[xX]/, integer));
     },
+
+    point: ($) =>
+      seq("(", $.number, ",", $.number, optional(seq(",", $.number)), ")"),
 
     tuple: (_) => {
       const byte = choice(

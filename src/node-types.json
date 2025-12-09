@@ -99,6 +99,10 @@
           "named": true
         },
         {
+          "type": "point",
+          "named": true
+        },
+        {
           "type": "raw_string",
           "named": true
         },
@@ -367,6 +371,10 @@
             "named": true
           },
           {
+            "type": "point",
+            "named": true
+          },
+          {
             "type": "raw_string",
             "named": true
           },
@@ -478,6 +486,10 @@
           },
           {
             "type": "path",
+            "named": true
+          },
+          {
+            "type": "point",
             "named": true
           },
           {
@@ -691,6 +703,10 @@
           "named": true
         },
         {
+          "type": "point",
+          "named": true
+        },
+        {
           "type": "raw_string",
           "named": true
         },
@@ -806,6 +822,10 @@
           "named": true
         },
         {
+          "type": "point",
+          "named": true
+        },
+        {
           "type": "raw_string",
           "named": true
         },
@@ -910,6 +930,21 @@
         },
         {
           "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "point",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -1091,6 +1126,10 @@
           "named": true
         },
         {
+          "type": "point",
+          "named": true
+        },
+        {
           "type": "raw_string",
           "named": true
         },
@@ -1205,7 +1244,15 @@
     "named": false
   },
   {
+    "type": "(",
+    "named": false
+  },
+  {
     "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
     "named": false
   },
   {
