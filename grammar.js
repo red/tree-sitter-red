@@ -71,6 +71,7 @@ module.exports = grammar({
         $.map,
         $.refinement,
         $.tag,
+        $.ref,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -137,6 +138,7 @@ module.exports = grammar({
     char: ($) =>
       seq('#"', choice($.escaped_char, token.immediate(/[^"\^]/)), '"'),
 
+    ref: (_) => /@[^\s\[\]\(\)\{\}@#$;,'"=<>^]*/,
     issue: (_) => /#[^\s\[\]\(\)\{\}@;"<>:]+/,
     refinement: ($) => /\/[^\s\[\]\(\)\{\}@;"<>:]+/,
 
@@ -207,6 +209,7 @@ module.exports = grammar({
         $.lit_word,
         $.get_word,
         $.tag,
+        $.ref,
       ),
     path: ($) => seq($.word, repeat1(seq("/", $._path_element))),
     lit_path: ($) => seq("'", $.word, repeat1(seq("/", $._path_element))),

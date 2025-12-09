@@ -197,6 +197,10 @@
         {
           "type": "SYMBOL",
           "name": "tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ref"
         }
       ]
     },
@@ -2021,6 +2025,10 @@
         }
       ]
     },
+    "ref": {
+      "type": "PATTERN",
+      "value": "@[^\\s\\[\\]\\(\\)\\{\\}@#$;,'\"=<>^]*"
+    },
     "issue": {
       "type": "PATTERN",
       "value": "#[^\\s\\[\\]\\(\\)\\{\\}@;\"<>:]+"
@@ -2324,6 +2332,10 @@
         {
           "type": "SYMBOL",
           "name": "tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ref"
         }
       ]
     },

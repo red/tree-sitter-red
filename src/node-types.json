@@ -99,6 +99,10 @@
           "named": true
         },
         {
+          "type": "ref",
+          "named": true
+        },
+        {
           "type": "refinement",
           "named": true
         },
@@ -223,6 +227,10 @@
         },
         {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "ref",
           "named": true
         },
         {
@@ -355,6 +363,10 @@
             "named": true
           },
           {
+            "type": "ref",
+            "named": true
+          },
+          {
             "type": "refinement",
             "named": true
           },
@@ -461,6 +473,10 @@
             "named": true
           },
           {
+            "type": "ref",
+            "named": true
+          },
+          {
             "type": "refinement",
             "named": true
           },
@@ -538,6 +554,10 @@
         },
         {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "ref",
           "named": true
         },
         {
@@ -659,6 +679,10 @@
           "named": true
         },
         {
+          "type": "ref",
+          "named": true
+        },
+        {
           "type": "refinement",
           "named": true
         },
@@ -766,6 +790,10 @@
           "named": true
         },
         {
+          "type": "ref",
+          "named": true
+        },
+        {
           "type": "refinement",
           "named": true
         },
@@ -845,6 +873,10 @@
           "named": true
         },
         {
+          "type": "ref",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -909,6 +941,10 @@
         },
         {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "ref",
           "named": true
         },
         {
@@ -1032,6 +1068,10 @@
         },
         {
           "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "ref",
           "named": true
         },
         {
@@ -1219,6 +1259,10 @@
   },
   {
     "type": "raw_string",
+    "named": true
+  },
+  {
+    "type": "ref",
     "named": true
   },
   {
