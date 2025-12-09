@@ -83,6 +83,10 @@
           "named": true
         },
         {
+          "type": "money",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -355,6 +359,10 @@
             "named": true
           },
           {
+            "type": "money",
+            "named": true
+          },
+          {
             "type": "multiline_string",
             "named": true
           },
@@ -470,6 +478,10 @@
           },
           {
             "type": "map",
+            "named": true
+          },
+          {
+            "type": "money",
             "named": true
           },
           {
@@ -687,6 +699,10 @@
           "named": true
         },
         {
+          "type": "money",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -803,6 +819,10 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "money",
           "named": true
         },
         {
@@ -1110,6 +1130,10 @@
           "named": true
         },
         {
+          "type": "money",
+          "named": true
+        },
+        {
           "type": "multiline_string",
           "named": true
         },
@@ -1319,6 +1343,10 @@
   {
     "type": "loop",
     "named": false
+  },
+  {
+    "type": "money",
+    "named": true
   },
   {
     "type": "multiline_string",

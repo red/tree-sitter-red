@@ -74,6 +74,7 @@ module.exports = grammar({
         $.ref,
         $.email,
         $.point,
+        $.money,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -111,6 +112,18 @@ module.exports = grammar({
 
     point: ($) =>
       seq("(", $.number, ",", $.number, optional(seq(",", $.number)), ")"),
+
+    money: (_) =>
+      token(
+        seq(
+          optional(/[-\+]/),
+          optional(/[A-Za-z]{3}/),
+          "$",
+          repeat1(/\d/),
+          repeat(seq("'", repeat1(/\d/))),
+          optional(seq(".", repeat1(/\d/))),
+        ),
+      ),
 
     tuple: (_) => {
       const byte = choice(
