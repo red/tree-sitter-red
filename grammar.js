@@ -142,7 +142,10 @@ module.exports = grammar({
     ref: (_) => /@[^\s\[\]\(\)\{\}@#$;,'"=<>^]*/,
     issue: (_) => /#[^\s\[\]\(\)\{\}@;"<>:]+/,
     refinement: (_) => /\/[^\s\[\]\(\)\{\}@;"<>:]+/,
-    email: (_) => /[^\s\[\]\(\)\{\}@;:<"]+@[^\s\[\]\(\)\{\}@;:<"]*/,
+    email: (_) => {
+      const char = /[^\s\[\]\(\)\{\}@;:<"]/;
+      return token(seq(repeat1(char), "@", repeat(char)));
+    },
 
     file: ($) => seq("%", choice($.string, $.file_content)),
     file_content: (_) => token.immediate(prec(1, /[^\[\]\(\)\{\}@:;"\n]+/)),

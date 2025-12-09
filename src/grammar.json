@@ -2042,8 +2042,30 @@
       "value": "\\/[^\\s\\[\\]\\(\\)\\{\\}@;\"<>:]+"
     },
     "email": {
-      "type": "PATTERN",
-      "value": "[^\\s\\[\\]\\(\\)\\{\\}@;:<\"]+@[^\\s\\[\\]\\(\\)\\{\\}@;:<\"]*"
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^\\s\\[\\]\\(\\)\\{\\}@;:<\"]"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "@"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^\\s\\[\\]\\(\\)\\{\\}@;:<\"]"
+            }
+          }
+        ]
+      }
     },
     "file": {
       "type": "SEQ",
