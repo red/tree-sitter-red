@@ -27,19 +27,19 @@
 #define tracef(format, ...)
 #endif
 
-struct ScannerState {
-  bool raw_string;
+struct Scanner {
+  uint32_t delimiter_length;
 };
 
 #if __STDC_VERSION__ >= 201112L
-_Static_assert(sizeof(struct ScannerState) <=
-                   TREE_SITTER_SERIALIZATION_BUFFER_SIZE,
-               "Context too large");
+_Static_assert(sizeof(struct Scanner) <= TREE_SITTER_SERIALIZATION_BUFFER_SIZE,
+               "Scanner too large");
 #endif
 
 enum TokenType {
   INFIX_OP,
   RED_HEXA,
+  RAW_STRING,
   ERROR_SENTINEL,
 };
 
@@ -47,42 +47,43 @@ enum TokenType {
 static const char *const symbol_names[] = {
     [INFIX_OP] = "$._infix_op",
     [RED_HEXA] = "$.hexa",
+    [RAW_STRING] = "$.raw_string",
 };
 #endif
 
 void tree_sitter_external_scanner(reset)(void *payload) {
-  struct ScannerState *context = payload;
-  context->raw_string = false;
+  struct Scanner *scanner = payload;
+  scanner->delimiter_length = 0;
 }
 
 void *tree_sitter_external_scanner(create)(void) {
-  struct ScannerState *context = malloc(sizeof(struct ScannerState));
-  tree_sitter_external_scanner(reset)(context);
-  return context;
+  struct Scanner *scanner = malloc(sizeof(struct Scanner));
+  tree_sitter_external_scanner(reset)(scanner);
+  return scanner;
 }
 
 void tree_sitter_external_scanner(destroy)(void *payload) { free(payload); }
 
 unsigned tree_sitter_external_scanner(serialize)(void *payload, char *buffer) {
   trace("serializing\n");
-  *(struct ScannerState *)buffer = *(struct ScannerState *)payload;
-  return sizeof(struct ScannerState);
+  *(struct Scanner *)buffer = *(struct Scanner *)payload;
+  return sizeof(struct Scanner);
 }
 
 void tree_sitter_external_scanner(deserialize)(void *payload,
                                                const char *buffer,
                                                unsigned length) {
   tree_sitter_external_scanner(reset)(payload);
-  if (length != sizeof(struct ScannerState)) {
+  if (length != sizeof(struct Scanner)) {
     return;
   }
-  *(struct ScannerState *)payload = *(struct ScannerState *)buffer;
+  *(struct Scanner *)payload = *(struct Scanner *)buffer;
 }
 
 static void advance(TSLexer *lexer) { lexer->advance(lexer, false); }
 static void skip(TSLexer *lexer) { lexer->advance(lexer, true); }
 
-static void skip_spaces(TSLexer *lexer, const bool *valid_symbols) {
+static void skip_spaces(TSLexer *lexer) {
   while (iswspace(lexer->lookahead) && !lexer->eof(lexer)) {
     skip(lexer);
   }
@@ -101,11 +102,59 @@ static bool trace_valid_symbols(const bool *valid_symbols) {
 #define trace_valid_symbols(...)
 #endif
 
-static bool scan_infix_op(TSLexer *lexer, const bool *valid_symbols) {
+/// Scan the raw string: /(%+)\{.*?\}\1/
+static bool scan_raw_string(struct Scanner *scanner, TSLexer *lexer) {
+  skip_spaces(lexer);
+
+  // Step 1: count leading %
+  int left = 0;
+  while (lexer->lookahead == '%') {
+    advance(lexer);
+    left++;
+  }
+  if (left == 0)
+    return false;
+
+  // Step 2: require opening brace
+  if (lexer->lookahead != '{')
+    return false;
+  advance(lexer);
+
+  for (int delimiter_index = -1;;) {
+    // If we hit EOF, consider the content to terminate there.
+    // This forms an incomplete raw_string, and models the code well.
+    if (lexer->eof(lexer)) {
+      lexer->mark_end(lexer);
+      lexer->result_symbol = RAW_STRING;
+      return true;
+    }
+
+    if (delimiter_index >= 0) {
+      if (delimiter_index == left) {
+        lexer->mark_end(lexer);
+        lexer->result_symbol = RAW_STRING;
+        return true;
+      } else {
+        if (lexer->lookahead == '%') {
+          delimiter_index += 1;
+        } else {
+          delimiter_index = -1;
+        }
+      }
+    }
+    if (delimiter_index == -1 && lexer->lookahead == '}') {
+      delimiter_index = 0;
+    }
+    advance(lexer);
+  }
+  return false;
+}
+
+static bool scan_infix_op(TSLexer *lexer) {
   if (!iswspace(lexer->lookahead))
     return false;
 
-  skip_spaces(lexer, valid_symbols);
+  skip_spaces(lexer);
 
   bool find = true;
   int32_t c = lexer->lookahead;
@@ -153,7 +202,7 @@ static bool scan_infix_op(TSLexer *lexer, const bool *valid_symbols) {
 
 bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
                                         const bool *valid_symbols) {
-  struct ScannerState *context = (struct ScannerState *)payload;
+  struct Scanner *scanner = (struct Scanner *)payload;
 
   trace("==========\n");
   tracef("lookahead: %d\n", lexer->lookahead);
@@ -168,7 +217,7 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
   }
 
   if (valid_symbols[RED_HEXA]) {
-    skip_spaces(lexer, valid_symbols);
+    skip_spaces(lexer);
     int count = 0;
     // 2 - 8 characters
     while (iswxdigit(lexer->lookahead) && count < 8) {
@@ -184,8 +233,11 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
     }
   }
 
-  if (valid_symbols[INFIX_OP]) {
-    return scan_infix_op(lexer, valid_symbols);
+  if (valid_symbols[INFIX_OP] && scan_infix_op(lexer))
+    return true;
+
+  if (valid_symbols[RAW_STRING]) {
+    return scan_raw_string(scanner, lexer);
   }
 
   return false;

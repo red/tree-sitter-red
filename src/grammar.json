@@ -70,6 +70,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "raw_string"
+        },
+        {
+          "type": "SYMBOL",
           "name": "infix"
         }
       ]
@@ -2684,6 +2688,10 @@
     {
       "type": "SYMBOL",
       "name": "hexa"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "raw_string"
     },
     {
       "type": "SYMBOL",

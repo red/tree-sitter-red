@@ -70,3 +70,7 @@ abcdh
 #(true)
 #(false)
 #(none)
+%%{abc
+fsd
+123{}
+}%%

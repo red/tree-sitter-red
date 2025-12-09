@@ -11,7 +11,7 @@ module.exports = grammar({
   name: "red",
 
   extras: ($) => [$.comment, /\s/],
-  externals: ($) => [$._infix_op, $.hexa, $.error_sentinel],
+  externals: ($) => [$._infix_op, $.hexa, $.raw_string, $.error_sentinel],
   word: ($) => $._word,
 
   //conflicts: ($) => [[$.path, $.set_path]],
@@ -28,7 +28,7 @@ module.exports = grammar({
     /* expressions */
     _expression: ($) => choice($._complex_expression, $._simple_expression),
     _simple_expression: ($) =>
-      choice($._literal, $.hexa, $.escaped_value, $.infix),
+      choice($._literal, $.hexa, $.escaped_value, $.raw_string, $.infix),
 
     infix: ($) =>
       prec.left(

@@ -91,6 +91,10 @@
           "named": true
         },
         {
+          "type": "raw_string",
+          "named": true
+        },
+        {
           "type": "refinement",
           "named": true
         },
@@ -331,6 +335,10 @@
             "named": true
           },
           {
+            "type": "raw_string",
+            "named": true
+          },
+          {
             "type": "refinement",
             "named": true
           },
@@ -422,6 +430,10 @@
           },
           {
             "type": "path",
+            "named": true
+          },
+          {
+            "type": "raw_string",
             "named": true
           },
           {
@@ -604,6 +616,10 @@
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "raw_string",
           "named": true
         },
         {
@@ -943,6 +959,10 @@
           "named": true
         },
         {
+          "type": "raw_string",
+          "named": true
+        },
+        {
           "type": "refinement",
           "named": true
         },
@@ -1115,6 +1135,10 @@
   },
   {
     "type": "pair",
+    "named": true
+  },
+  {
+    "type": "raw_string",
     "named": true
   },
   {
