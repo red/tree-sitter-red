@@ -40,6 +40,7 @@ enum TokenType {
   INFIX_OP,
   RED_HEXA,
   RAW_STRING,
+  MULTILINE_STRING,
   ERROR_SENTINEL,
 };
 
@@ -48,6 +49,7 @@ static const char *const symbol_names[] = {
     [INFIX_OP] = "$._infix_op",
     [RED_HEXA] = "$.hexa",
     [RAW_STRING] = "$.raw_string",
+    [MULTILINE_STRING] = "$.multiline_string",
 };
 #endif
 
@@ -150,6 +152,54 @@ static bool scan_raw_string(struct Scanner *scanner, TSLexer *lexer) {
   return false;
 }
 
+static bool scan_multiline_string(struct Scanner *scanner, TSLexer *lexer) {
+  skip_spaces(lexer);
+
+  if (lexer->lookahead != '{')
+    return false;
+  advance(lexer);
+
+  for (int cnt = 1;;) {
+    // If we hit EOF, consider the content to terminate there.
+    // This forms an incomplete raw_string, and models the code well.
+    if (lexer->eof(lexer)) {
+      lexer->mark_end(lexer);
+      lexer->result_symbol = MULTILINE_STRING;
+      return true;
+    }
+
+    switch (lexer->lookahead) {
+    case '{':
+      cnt++;
+      break;
+    case '}':
+      cnt--;
+      if (cnt == 0) {
+        advance(lexer);
+        lexer->mark_end(lexer);
+        lexer->result_symbol = MULTILINE_STRING;
+        return true;
+      }
+      break;
+    case '^':
+      advance(lexer);
+      switch (lexer->lookahead) {
+      case '^':
+      case '{':
+      case '}':
+        advance(lexer);
+        break;
+      default:
+        continue;
+      }
+    default:
+      break;
+    }
+    advance(lexer);
+  }
+  return false;
+}
+
 static bool scan_infix_op(TSLexer *lexer) {
   if (!iswspace(lexer->lookahead))
     return false;
@@ -236,9 +286,10 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
   if (valid_symbols[INFIX_OP] && scan_infix_op(lexer))
     return true;
 
-  if (valid_symbols[RAW_STRING]) {
-    return scan_raw_string(scanner, lexer);
-  }
+  if (valid_symbols[RAW_STRING] && scan_raw_string(scanner, lexer))
+    return true;
+  if (valid_symbols[RAW_STRING] && scan_multiline_string(scanner, lexer))
+    return true;
 
   return false;
 }

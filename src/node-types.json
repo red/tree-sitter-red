@@ -79,6 +79,10 @@
           "named": true
         },
         {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -323,6 +327,10 @@
             "named": true
           },
           {
+            "type": "multiline_string",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           },
@@ -418,6 +426,10 @@
           },
           {
             "type": "map",
+            "named": true
+          },
+          {
+            "type": "multiline_string",
             "named": true
           },
           {
@@ -604,6 +616,10 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "multiline_string",
           "named": true
         },
         {
@@ -947,6 +963,10 @@
           "named": true
         },
         {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -1128,6 +1148,10 @@
   {
     "type": "loop",
     "named": false
+  },
+  {
+    "type": "multiline_string",
+    "named": true
   },
   {
     "type": "number",

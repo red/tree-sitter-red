@@ -11,7 +11,13 @@ module.exports = grammar({
   name: "red",
 
   extras: ($) => [$.comment, /\s/],
-  externals: ($) => [$._infix_op, $.hexa, $.raw_string, $.error_sentinel],
+  externals: ($) => [
+    $._infix_op,
+    $.hexa,
+    $.raw_string,
+    $.multiline_string,
+    $.error_sentinel,
+  ],
   word: ($) => $._word,
 
   //conflicts: ($) => [[$.path, $.set_path]],
@@ -28,7 +34,14 @@ module.exports = grammar({
     /* expressions */
     _expression: ($) => choice($._complex_expression, $._simple_expression),
     _simple_expression: ($) =>
-      choice($._literal, $.hexa, $.escaped_value, $.raw_string, $.infix),
+      choice(
+        $._literal,
+        $.hexa,
+        $.escaped_value,
+        $.raw_string,
+        $.multiline_string,
+        $.infix,
+      ),
 
     infix: ($) =>
       prec.left(
@@ -228,6 +241,7 @@ module.exports = grammar({
     _complex_expression: ($) => choice($.while, $.loop),
 
     block: ($) => seq("[", repeat($._expression), "]"),
+    paren: ($) => seq("(", repeat($._simple_expression), ")"),
 
     while: ($) => seq("while", $.block, $.block),
 
