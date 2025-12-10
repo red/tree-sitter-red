@@ -75,6 +75,8 @@ module.exports = grammar({
         $.email,
         $.point,
         $.money,
+        $.time,
+        $.date,
       ),
 
     boolean: (_) => choice("true", "false"),
@@ -153,12 +155,113 @@ module.exports = grammar({
       );
     },
 
+    time: (_) => {
+      const decimal_number = seq(".", /\d{1,9}/);
+      return prec(
+        1,
+        token(
+          seq(
+            /\d+:\d+/,
+            optional(
+              choice(decimal_number, seq(":", /\d+/, optional(decimal_number))),
+            ),
+          ),
+        ),
+      );
+    },
+
+    date: (_) => {
+      // Basic components
+      const year = /\d{3,4}/;
+      const month_num = /\d{1,2}/;
+      const day = /\d{1,2}/;
+      const decimal_number = seq(".", /\d{1,9}/);
+
+      const month_name = token(
+        choice(
+          /Jan(uary)?/i,
+          /Feb(ruary)?/i,
+          /Mar(ch)?/i,
+          /Apr(il)?/i,
+          /May/i,
+          /Jun(e)?/i,
+          /Jul(y)?/i,
+          /Aug(ust)?/i,
+          /Sep(t(ember)?)?/i,
+          /Oct(ober)?/i,
+          /Nov(ember)?/i,
+          /Dec(ember)?/i,
+        ),
+      );
+      const month = choice(month_num, month_name);
+
+      const timezone = seq(
+        token(
+          choice(
+            "Z",
+            seq(
+              choice("+", "-"),
+              choice(/\d{4}/, seq(/\d{1,2}/, optional(seq(":", /\d{2}/)))),
+            ),
+          ),
+        ),
+      );
+
+      const _time = prec(
+        1,
+        token(
+          seq(
+            /[T\/]\d+:\d+/,
+            optional(
+              choice(decimal_number, seq(/:\d+/, optional(decimal_number))),
+            ),
+          ),
+        ),
+      );
+      const time_z = prec(2, seq(_time, optional(timezone)));
+
+      // date
+      const ymd_dash = seq(year, "-", month, "-", day);
+      const ymd_slash = seq(year, "/", month, "/", day);
+      const dmy_dash = seq(day, "-", month, "-", choice(year, day));
+      const dmy_slash = seq(day, "/", month, "/", choice(year, day));
+      const yyyymmdd = token(
+        seq(
+          /\d{8}T/,
+          choice(
+            seq(/\d{6}/, optional(decimal_number), optional(timezone)),
+            /\d{4}Z/,
+          ),
+        ),
+      );
+      const yyyywww = token(
+        seq(
+          year,
+          "-",
+          choice(seq("W", /\d{2}/, optional(seq("-", /[1-9]/))), /\d{3}/),
+        ),
+      );
+
+      return choice(
+        prec(
+          2,
+          token(
+            seq(
+              choice(ymd_dash, ymd_slash, dmy_dash, dmy_slash, yyyywww),
+              optional(time_z),
+            ),
+          ),
+        ),
+        yyyymmdd,
+      );
+    },
+
     char: ($) =>
       seq('#"', choice($.escaped_char, token.immediate(/[^"\^]/)), '"'),
 
     ref: (_) => /@[^\s\[\]\(\)\{\}@#$;,'"=<>^]*/,
     issue: (_) => /#[^\s\[\]\(\)\{\}@;"<>:]+/,
-    refinement: (_) => /\/[^\s\[\]\(\)\{\}@;"<>:]+/,
+    refinement: (_) => seq("/", /[^\s\/\\,\[\]\(\)\{\}"#%\$@:;<>]+/),
     email: (_) => {
       const char = /[^\s\[\]\(\)\{\}@;:<"]/;
       return token(seq(repeat1(char), "@", repeat(char)));
@@ -217,6 +320,7 @@ module.exports = grammar({
 
     _path_element: ($) =>
       choice(
+        $.path,
         $.boolean,
         $.number,
         $.pair,
@@ -233,11 +337,11 @@ module.exports = grammar({
         $.tag,
         $.ref,
       ),
-    path: ($) => seq($.word, repeat1(seq("/", $._path_element))),
-    lit_path: ($) => seq("'", $.word, repeat1(seq("/", $._path_element))),
-    get_path: ($) => seq(":", $.word, repeat1(seq("/", $._path_element))),
-    set_path: ($) =>
-      prec(2, seq($.word, repeat1(seq("/", $._path_element)), ":")),
+    _path_part: ($) => seq("/", $._path_element),
+    path: ($) => prec(1, seq($.word, $._path_part)),
+    lit_path: ($) => prec(1, seq("'", $.word, $._path_part)),
+    get_path: ($) => prec(1, seq(":", $.word, $._path_part)),
+    set_path: ($) => prec(2, seq($.word, $._path_part, ":")),
 
     _binary_base_2: ($) =>
       seq("2#{", repeat(choice(/(?:[01]\s*){8}/, $.comment)), "}"),

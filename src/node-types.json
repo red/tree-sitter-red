@@ -35,6 +35,10 @@
           "named": true
         },
         {
+          "type": "date",
+          "named": true
+        },
+        {
           "type": "email",
           "named": true
         },
@@ -135,6 +139,10 @@
           "named": true
         },
         {
+          "type": "time",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -168,6 +176,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "date",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "escaped_value",
@@ -239,6 +252,10 @@
         },
         {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "path",
           "named": true
         },
         {
@@ -315,6 +332,10 @@
             "named": true
           },
           {
+            "type": "date",
+            "named": true
+          },
+          {
             "type": "email",
             "named": true
           },
@@ -408,6 +429,10 @@
           },
           {
             "type": "tag",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -437,6 +462,10 @@
             "named": true
           },
           {
+            "type": "date",
+            "named": true
+          },
+          {
             "type": "email",
             "named": true
           },
@@ -530,6 +559,10 @@
           },
           {
             "type": "tag",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -593,6 +626,10 @@
           "named": true
         },
         {
+          "type": "path",
+          "named": true
+        },
+        {
           "type": "ref",
           "named": true
         },
@@ -652,6 +689,10 @@
         },
         {
           "type": "char",
+          "named": true
+        },
+        {
+          "type": "date",
           "named": true
         },
         {
@@ -751,6 +792,10 @@
           "named": true
         },
         {
+          "type": "time",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -779,6 +824,10 @@
         },
         {
           "type": "char",
+          "named": true
+        },
+        {
+          "type": "date",
           "named": true
         },
         {
@@ -874,6 +923,10 @@
           "named": true
         },
         {
+          "type": "time",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -933,6 +986,10 @@
           "named": true
         },
         {
+          "type": "path",
+          "named": true
+        },
+        {
           "type": "ref",
           "named": true
         },
@@ -969,6 +1026,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "refinement",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "set_path",
@@ -1016,6 +1078,10 @@
         },
         {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "path",
           "named": true
         },
         {
@@ -1075,6 +1141,10 @@
         },
         {
           "type": "char",
+          "named": true
+        },
+        {
+          "type": "date",
           "named": true
         },
         {
@@ -1182,6 +1252,10 @@
           "named": true
         },
         {
+          "type": "time",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -1214,6 +1288,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "time",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "while",
@@ -1366,10 +1445,6 @@
   },
   {
     "type": "ref",
-    "named": true
-  },
-  {
-    "type": "refinement",
     "named": true
   },
   {

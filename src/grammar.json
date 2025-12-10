@@ -213,6 +213,14 @@
         {
           "type": "SYMBOL",
           "name": "money"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "time"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "date"
         }
       ]
     },
@@ -2140,6 +2148,877 @@
         ]
       }
     },
+    "time": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "TOKEN",
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\d+:\\d+"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "."
+                        },
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d{1,9}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": ":"
+                        },
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d+"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SEQ",
+                              "members": [
+                                {
+                                  "type": "STRING",
+                                  "value": "."
+                                },
+                                {
+                                  "type": "PATTERN",
+                                  "value": "\\d{1,9}"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BLANK"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "date": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 2,
+          "content": {
+            "type": "TOKEN",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d{3,4}"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "-"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{1,2}"
+                            },
+                            {
+                              "type": "TOKEN",
+                              "content": {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jan(uary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Feb(ruary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Mar(ch)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Apr(il)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "May",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jun(e)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jul(y)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Aug(ust)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Sep(t(ember)?)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Oct(ober)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Nov(ember)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Dec(ember)?",
+                                    "flags": "i"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "-"
+                        },
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d{1,2}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d{3,4}"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "/"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{1,2}"
+                            },
+                            {
+                              "type": "TOKEN",
+                              "content": {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jan(uary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Feb(ruary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Mar(ch)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Apr(il)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "May",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jun(e)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jul(y)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Aug(ust)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Sep(t(ember)?)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Oct(ober)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Nov(ember)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Dec(ember)?",
+                                    "flags": "i"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "/"
+                        },
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d{1,2}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d{1,2}"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "-"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{1,2}"
+                            },
+                            {
+                              "type": "TOKEN",
+                              "content": {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jan(uary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Feb(ruary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Mar(ch)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Apr(il)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "May",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jun(e)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jul(y)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Aug(ust)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Sep(t(ember)?)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Oct(ober)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Nov(ember)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Dec(ember)?",
+                                    "flags": "i"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "-"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{3,4}"
+                            },
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{1,2}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "PATTERN",
+                          "value": "\\d{1,2}"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "/"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{1,2}"
+                            },
+                            {
+                              "type": "TOKEN",
+                              "content": {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jan(uary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Feb(ruary)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Mar(ch)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Apr(il)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "May",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jun(e)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Jul(y)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Aug(ust)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Sep(t(ember)?)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Oct(ober)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Nov(ember)?",
+                                    "flags": "i"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "Dec(ember)?",
+                                    "flags": "i"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "/"
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{3,4}"
+                            },
+                            {
+                              "type": "PATTERN",
+                              "value": "\\d{1,2}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TOKEN",
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "PATTERN",
+                            "value": "\\d{3,4}"
+                          },
+                          {
+                            "type": "STRING",
+                            "value": "-"
+                          },
+                          {
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "SEQ",
+                                "members": [
+                                  {
+                                    "type": "STRING",
+                                    "value": "W"
+                                  },
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "\\d{2}"
+                                  },
+                                  {
+                                    "type": "CHOICE",
+                                    "members": [
+                                      {
+                                        "type": "SEQ",
+                                        "members": [
+                                          {
+                                            "type": "STRING",
+                                            "value": "-"
+                                          },
+                                          {
+                                            "type": "PATTERN",
+                                            "value": "[1-9]"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "BLANK"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "PATTERN",
+                                "value": "\\d{3}"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "PREC",
+                      "value": 2,
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "PREC",
+                            "value": 1,
+                            "content": {
+                              "type": "TOKEN",
+                              "content": {
+                                "type": "SEQ",
+                                "members": [
+                                  {
+                                    "type": "PATTERN",
+                                    "value": "[T\\/]\\d+:\\d+"
+                                  },
+                                  {
+                                    "type": "CHOICE",
+                                    "members": [
+                                      {
+                                        "type": "CHOICE",
+                                        "members": [
+                                          {
+                                            "type": "SEQ",
+                                            "members": [
+                                              {
+                                                "type": "STRING",
+                                                "value": "."
+                                              },
+                                              {
+                                                "type": "PATTERN",
+                                                "value": "\\d{1,9}"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "SEQ",
+                                            "members": [
+                                              {
+                                                "type": "PATTERN",
+                                                "value": ":\\d+"
+                                              },
+                                              {
+                                                "type": "CHOICE",
+                                                "members": [
+                                                  {
+                                                    "type": "SEQ",
+                                                    "members": [
+                                                      {
+                                                        "type": "STRING",
+                                                        "value": "."
+                                                      },
+                                                      {
+                                                        "type": "PATTERN",
+                                                        "value": "\\d{1,9}"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "BLANK"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "BLANK"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "SEQ",
+                                "members": [
+                                  {
+                                    "type": "TOKEN",
+                                    "content": {
+                                      "type": "CHOICE",
+                                      "members": [
+                                        {
+                                          "type": "STRING",
+                                          "value": "Z"
+                                        },
+                                        {
+                                          "type": "SEQ",
+                                          "members": [
+                                            {
+                                              "type": "CHOICE",
+                                              "members": [
+                                                {
+                                                  "type": "STRING",
+                                                  "value": "+"
+                                                },
+                                                {
+                                                  "type": "STRING",
+                                                  "value": "-"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "CHOICE",
+                                              "members": [
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "\\d{4}"
+                                                },
+                                                {
+                                                  "type": "SEQ",
+                                                  "members": [
+                                                    {
+                                                      "type": "PATTERN",
+                                                      "value": "\\d{1,2}"
+                                                    },
+                                                    {
+                                                      "type": "CHOICE",
+                                                      "members": [
+                                                        {
+                                                          "type": "SEQ",
+                                                          "members": [
+                                                            {
+                                                              "type": "STRING",
+                                                              "value": ":"
+                                                            },
+                                                            {
+                                                              "type": "PATTERN",
+                                                              "value": "\\d{2}"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "BLANK"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "BLANK"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "\\d{8}T"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "PATTERN",
+                        "value": "\\d{6}"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "."
+                              },
+                              {
+                                "type": "PATTERN",
+                                "value": "\\d{1,9}"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "TOKEN",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": "Z"
+                                    },
+                                    {
+                                      "type": "SEQ",
+                                      "members": [
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "STRING",
+                                              "value": "+"
+                                            },
+                                            {
+                                              "type": "STRING",
+                                              "value": "-"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "PATTERN",
+                                              "value": "\\d{4}"
+                                            },
+                                            {
+                                              "type": "SEQ",
+                                              "members": [
+                                                {
+                                                  "type": "PATTERN",
+                                                  "value": "\\d{1,2}"
+                                                },
+                                                {
+                                                  "type": "CHOICE",
+                                                  "members": [
+                                                    {
+                                                      "type": "SEQ",
+                                                      "members": [
+                                                        {
+                                                          "type": "STRING",
+                                                          "value": ":"
+                                                        },
+                                                        {
+                                                          "type": "PATTERN",
+                                                          "value": "\\d{2}"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "BLANK"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "\\d{4}Z"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
     "char": {
       "type": "SEQ",
       "members": [
@@ -2178,8 +3057,17 @@
       "value": "#[^\\s\\[\\]\\(\\)\\{\\}@;\"<>:]+"
     },
     "refinement": {
-      "type": "PATTERN",
-      "value": "\\/[^\\s\\[\\]\\(\\)\\{\\}@;\"<>:]+"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\s\\/\\\\,\\[\\]\\(\\)\\{\\}\"#%\\$@:;<>]+"
+        }
+      ]
     },
     "email": {
       "type": "TOKEN",
@@ -2449,6 +3337,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "path"
+        },
+        {
+          "type": "SYMBOL",
           "name": "boolean"
         },
         {
@@ -2509,88 +3401,77 @@
         }
       ]
     },
-    "path": {
+    "_path_part": {
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "word"
+          "type": "STRING",
+          "value": "/"
         },
         {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "/"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_path_element"
-              }
-            ]
-          }
+          "type": "SYMBOL",
+          "name": "_path_element"
         }
       ]
+    },
+    "path": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "word"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_path_part"
+          }
+        ]
+      }
     },
     "lit_path": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "'"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "word"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "/"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_path_element"
-              }
-            ]
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "'"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "word"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_path_part"
           }
-        }
-      ]
+        ]
+      }
     },
     "get_path": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "word"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "/"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_path_element"
-              }
-            ]
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": ":"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "word"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_path_part"
           }
-        }
-      ]
+        ]
+      }
     },
     "set_path": {
       "type": "PREC",
@@ -2603,20 +3484,8 @@
             "name": "word"
           },
           {
-            "type": "REPEAT1",
-            "content": {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "/"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_path_element"
-                }
-              ]
-            }
+            "type": "SYMBOL",
+            "name": "_path_part"
           },
           {
             "type": "STRING",
