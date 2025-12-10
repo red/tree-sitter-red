@@ -27,6 +27,10 @@
           "named": true
         },
         {
+          "type": "block",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -48,6 +52,10 @@
         },
         {
           "type": "file",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -100,6 +108,10 @@
         },
         {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "paren",
           "named": true
         },
         {
@@ -201,6 +213,21 @@
         },
         {
           "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
           "named": true
         }
       ]
@@ -938,6 +965,141 @@
     }
   },
   {
+    "type": "paren",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "char",
+          "named": true
+        },
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "email",
+          "named": true
+        },
+        {
+          "type": "escaped_value",
+          "named": true
+        },
+        {
+          "type": "file",
+          "named": true
+        },
+        {
+          "type": "get_path",
+          "named": true
+        },
+        {
+          "type": "get_word",
+          "named": true
+        },
+        {
+          "type": "hexa",
+          "named": true
+        },
+        {
+          "type": "infix",
+          "named": true
+        },
+        {
+          "type": "issue",
+          "named": true
+        },
+        {
+          "type": "lit_path",
+          "named": true
+        },
+        {
+          "type": "lit_word",
+          "named": true
+        },
+        {
+          "type": "map",
+          "named": true
+        },
+        {
+          "type": "money",
+          "named": true
+        },
+        {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "pair",
+          "named": true
+        },
+        {
+          "type": "path",
+          "named": true
+        },
+        {
+          "type": "point",
+          "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "refinement",
+          "named": true
+        },
+        {
+          "type": "set_path",
+          "named": true
+        },
+        {
+          "type": "set_word",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        },
+        {
+          "type": "time",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "path",
     "named": true,
     "fields": {},
@@ -1136,6 +1298,10 @@
           "named": true
         },
         {
+          "type": "block",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1157,6 +1323,10 @@
         },
         {
           "type": "file",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1213,6 +1383,10 @@
         },
         {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "paren",
           "named": true
         },
         {
@@ -1383,6 +1557,38 @@
     "named": false
   },
   {
+    "type": "FUNC",
+    "named": false
+  },
+  {
+    "type": "FUNCTION",
+    "named": false
+  },
+  {
+    "type": "Func",
+    "named": false
+  },
+  {
+    "type": "Function",
+    "named": false
+  },
+  {
+    "type": "LOOP",
+    "named": false
+  },
+  {
+    "type": "Loop",
+    "named": false
+  },
+  {
+    "type": "WHILE",
+    "named": false
+  },
+  {
+    "type": "While",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -1410,6 +1616,14 @@
   {
     "type": "file_content",
     "named": true
+  },
+  {
+    "type": "func",
+    "named": false
+  },
+  {
+    "type": "function",
+    "named": false
   },
   {
     "type": "hexa",

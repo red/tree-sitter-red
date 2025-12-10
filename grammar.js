@@ -156,14 +156,14 @@ module.exports = grammar({
     },
 
     time: (_) => {
-      const decimal_number = seq(".", /\d{1,9}/);
+      const decimal_number = token(seq(".", /\d{1,9}/));
       return prec(
         1,
         token(
           seq(
             /\d+:\d+/,
             optional(
-              choice(decimal_number, seq(":", /\d+/, optional(decimal_number))),
+              choice(decimal_number, seq(/:\d+/, optional(decimal_number))),
             ),
           ),
         ),
@@ -175,7 +175,7 @@ module.exports = grammar({
       const year = /\d{3,4}/;
       const month_num = /\d{1,2}/;
       const day = /\d{1,2}/;
-      const decimal_number = seq(".", /\d{1,9}/);
+      const decimal_number = token(seq(".", /\d{1,9}/));
 
       const month_name = token(
         choice(
@@ -201,7 +201,7 @@ module.exports = grammar({
             "Z",
             seq(
               choice("+", "-"),
-              choice(/\d{4}/, seq(/\d{1,2}/, optional(seq(":", /\d{2}/)))),
+              choice(/\d{4}/, seq(/\d{1,2}/, optional(/:\d{2}/))),
             ),
           ),
         ),
@@ -221,10 +221,10 @@ module.exports = grammar({
       const time_z = prec(2, seq(_time, optional(timezone)));
 
       // date
-      const ymd_dash = seq(year, "-", month, "-", day);
-      const ymd_slash = seq(year, "/", month, "/", day);
-      const dmy_dash = seq(day, "-", month, "-", choice(year, day));
-      const dmy_slash = seq(day, "/", month, "/", choice(year, day));
+      const ymd_dash = token(seq(year, "-", month, "-", day));
+      const ymd_slash = token(seq(year, "/", month, "/", day));
+      const dmy_dash = token(seq(day, "-", month, "-", choice(year, day)));
+      const dmy_slash = token(seq(day, "/", month, "/", choice(year, day)));
       const yyyymmdd = token(
         seq(
           /\d{8}T/,
@@ -376,13 +376,22 @@ module.exports = grammar({
         ),
       ),
 
-    _complex_expression: ($) => choice($.while, $.loop),
+    _complex_expression: ($) =>
+      choice($.paren, $.block, $.while, $.loop, $.function),
 
     block: ($) => seq("[", repeat($._expression), "]"),
     paren: ($) => seq("(", repeat($._simple_expression), ")"),
 
-    while: ($) => seq("while", $.block, $.block),
+    while: ($) => seq(choice("while", "While", "WHILE"), $.block, $.block),
 
-    loop: ($) => seq("loop", $._simple_expression, $.block),
+    loop: ($) =>
+      seq(choice("loop", "LOOP", "Loop"), $._simple_expression, $.block),
+
+    function: ($) =>
+      seq(
+        choice("func", "Func", "FUNC", "function", "Function", "FUNCTION"),
+        $.block,
+        $.block,
+      ),
   },
 });

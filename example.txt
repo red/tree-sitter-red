@@ -155,3 +155,22 @@ $123.456
 0:0:3.12346
 0:45.0
 2:22
+udp-port/awake: func [event /local port] [
+    ;debug ["=== Client event:" event/type]
+    port: event/port
+    switch event/type [
+        read [
+	        probe "client read done"
+	        probe to-string port/data
+	        insert port rejoin [msg count]
+	        count: count + 1
+        ]
+        wrote [
+	        probe "client write done"
+	        copy port
+		]
+    ]
+    false
+]
+
+test: func [][]
