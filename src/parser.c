@@ -1247,97 +1247,97 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 0:
       if (eof) ADVANCE(325);
       ADVANCE_MAP(
-        '"', 574,
+        '"', 579,
         '#', 12,
-        '%', 601,
-        '\'', 659,
-        '(', 400,
-        ')', 403,
-        ',', 401,
-        '/', 591,
-        '2', 671,
-        ':', 661,
+        '%', 606,
+        '\'', 664,
+        '(', 405,
+        ')', 408,
+        ',', 406,
+        '/', 596,
+        '2', 676,
+        ':', 666,
         ';', 328,
-        '<', 651,
-        '=', 673,
-        '@', 575,
-        '[', 681,
-        ']', 675,
-        '^', 640,
-        '}', 664,
+        '<', 656,
+        '=', 678,
+        '@', 580,
+        '[', 686,
+        ']', 680,
+        '^', 645,
+        '}', 669,
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(0);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(670);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(675);
       if (lookahead == '+' ||
           ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(656);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(661);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 1:
       if (lookahead == '\n') ADVANCE(14);
       if (lookahead == '"') ADVANCE(1);
       if (lookahead == '\'') ADVANCE(3);
-      if (lookahead == '>') ADVANCE(677);
+      if (lookahead == '>') ADVANCE(682);
       if (lookahead != 0) ADVANCE(1);
       END_STATE();
     case 2:
       if (lookahead == '\n') ADVANCE(14);
       if (lookahead == '"') ADVANCE(3);
       if (lookahead == '\'') ADVANCE(2);
-      if (lookahead == '>') ADVANCE(679);
+      if (lookahead == '>') ADVANCE(684);
       if (lookahead != 0) ADVANCE(2);
       END_STATE();
     case 3:
       if (lookahead == '\n') ADVANCE(14);
       if (lookahead == '"') ADVANCE(3);
       if (lookahead == '\'') ADVANCE(3);
-      if (lookahead == '>') ADVANCE(680);
+      if (lookahead == '>') ADVANCE(685);
       if (lookahead != 0) ADVANCE(3);
       END_STATE();
     case 4:
       if (lookahead == '\n') SKIP(8);
-      if (lookahead == '"') ADVANCE(574);
-      if (lookahead == ';') ADVANCE(606);
+      if (lookahead == '"') ADVANCE(579);
+      if (lookahead == ';') ADVANCE(611);
       if (lookahead == '^') ADVANCE(30);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(605);
+          lookahead == ' ') ADVANCE(610);
       if (lookahead != 0 &&
-          lookahead != '\\') ADVANCE(606);
+          lookahead != '\\') ADVANCE(611);
       END_STATE();
     case 5:
       if (lookahead == '\n') SKIP(9);
-      if (lookahead == '"') ADVANCE(574);
+      if (lookahead == '"') ADVANCE(579);
       if (lookahead == ';') ADVANCE(328);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(603);
-      if ((!eof && set_contains(sym_file_content_character_set_1, 10, lookahead))) ADVANCE(604);
+          lookahead == ' ') ADVANCE(608);
+      if ((!eof && set_contains(sym_file_content_character_set_1, 10, lookahead))) ADVANCE(609);
       END_STATE();
     case 6:
       ADVANCE_MAP(
-        '"', 574,
+        '"', 579,
         '#', 11,
         '$', 257,
-        '%', 602,
-        '\'', 660,
-        '(', 400,
-        ')', 403,
-        ',', 402,
-        '/', 592,
-        '0', 348,
-        '1', 343,
+        '%', 607,
+        '\'', 665,
+        '(', 405,
+        ')', 408,
+        ',', 407,
+        '/', 597,
+        '0', 346,
+        '1', 373,
         '2', 331,
-        '6', 349,
-        ':', 661,
+        '6', 347,
+        ':', 666,
         ';', 328,
-        '<', 651,
-        '@', 575,
-        '[', 681,
-        ']', 675,
-        '+', 637,
-        '-', 637,
+        '<', 656,
+        '@', 580,
+        '[', 686,
+        ']', 680,
+        '+', 642,
+        '-', 642,
       );
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(353);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(351);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(6);
       if (lookahead == '\\' ||
@@ -1351,55 +1351,55 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
       if (('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(648);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(653);
       if (lookahead != 0 &&
           (lookahead < 'a' || '{' < lookahead) &&
-          lookahead != '}') ADVANCE(649);
+          lookahead != '}') ADVANCE(654);
       END_STATE();
     case 7:
       ADVANCE_MAP(
-        '"', 574,
+        '"', 579,
         '#', 13,
-        '%', 601,
-        '\'', 659,
-        '/', 657,
-        '0', 374,
-        '1', 363,
+        '%', 606,
+        '\'', 664,
+        '/', 662,
+        '0', 378,
+        '1', 397,
         '2', 330,
-        '6', 375,
-        ':', 661,
+        '6', 379,
+        ':', 666,
         ';', 328,
-        '<', 651,
-        '@', 575,
-        '+', 641,
-        '-', 641,
+        '<', 656,
+        '@', 580,
+        '+', 646,
+        '-', 646,
       );
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(378);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(382);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(7);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 8:
-      if (lookahead == '"') ADVANCE(574);
+      if (lookahead == '"') ADVANCE(579);
       if (lookahead == ';') ADVANCE(328);
       if (lookahead == '^') ADVANCE(30);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(8);
       END_STATE();
     case 9:
-      if (lookahead == '"') ADVANCE(574);
+      if (lookahead == '"') ADVANCE(579);
       if (lookahead == ';') ADVANCE(328);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(9);
       END_STATE();
     case 10:
-      if (lookahead == '"') ADVANCE(570);
-      if (lookahead == '(') ADVANCE(608);
+      if (lookahead == '"') ADVANCE(575);
+      if (lookahead == '(') ADVANCE(613);
       if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '[') ADVANCE(674);
-      if (lookahead == 'i') ADVANCE(580);
-      if (lookahead == '{') ADVANCE(667);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '[') ADVANCE(679);
+      if (lookahead == 'i') ADVANCE(585);
+      if (lookahead == '{') ADVANCE(672);
       if (lookahead != 0 &&
           (lookahead < '\t' || '\r' < lookahead) &&
           lookahead != ' ' &&
@@ -1407,15 +1407,15 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ')' &&
           (lookahead < ':' || '<' < lookahead) &&
           lookahead != ']' &&
-          lookahead != '}') ADVANCE(582);
+          lookahead != '}') ADVANCE(587);
       END_STATE();
     case 11:
-      if (lookahead == '"') ADVANCE(570);
-      if (lookahead == '(') ADVANCE(608);
+      if (lookahead == '"') ADVANCE(575);
+      if (lookahead == '(') ADVANCE(613);
       if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '[') ADVANCE(674);
-      if (lookahead == '{') ADVANCE(667);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '[') ADVANCE(679);
+      if (lookahead == '{') ADVANCE(672);
       if (lookahead != 0 &&
           (lookahead < '\t' || '\r' < lookahead) &&
           lookahead != ' ' &&
@@ -1423,26 +1423,26 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != ')' &&
           (lookahead < ':' || '<' < lookahead) &&
           lookahead != ']' &&
-          lookahead != '}') ADVANCE(582);
+          lookahead != '}') ADVANCE(587);
       END_STATE();
     case 12:
-      if (lookahead == '"') ADVANCE(570);
-      if (lookahead == '(') ADVANCE(608);
-      if (lookahead == '[') ADVANCE(674);
-      if (lookahead == 'i') ADVANCE(587);
-      if (lookahead == '{') ADVANCE(667);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == '"') ADVANCE(575);
+      if (lookahead == '(') ADVANCE(613);
+      if (lookahead == '[') ADVANCE(679);
+      if (lookahead == 'i') ADVANCE(592);
+      if (lookahead == '{') ADVANCE(672);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 13:
-      if (lookahead == '"') ADVANCE(570);
-      if (lookahead == '[') ADVANCE(674);
-      if (lookahead == '{') ADVANCE(667);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == '"') ADVANCE(575);
+      if (lookahead == '[') ADVANCE(679);
+      if (lookahead == '{') ADVANCE(672);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 14:
       if (lookahead == '"') ADVANCE(1);
       if (lookahead == '\'') ADVANCE(2);
-      if (lookahead == '>') ADVANCE(676);
+      if (lookahead == '>') ADVANCE(681);
       if (lookahead != 0) ADVANCE(14);
       END_STATE();
     case 15:
@@ -1452,25 +1452,25 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 16:
       if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '0') ADVANCE(367);
-      if (lookahead == '1') ADVANCE(372);
-      if (lookahead == '2') ADVANCE(368);
-      if (lookahead == '@') ADVANCE(600);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(371);
+      if (lookahead == '0') ADVANCE(362);
+      if (lookahead == '1') ADVANCE(367);
+      if (lookahead == '2') ADVANCE(363);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(366);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 17:
       if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(260);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(398);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(403);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 18:
       ADVANCE_MAP(
         '#', 185,
-        '@', 600,
+        '@', 605,
         'A', 208,
         'a', 208,
         'D', 162,
@@ -1494,7 +1494,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 19:
       ADVANCE_MAP(
         '#', 185,
-        '@', 600,
+        '@', 605,
         'A', 211,
         'a', 211,
         'D', 165,
@@ -1517,13 +1517,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 20:
       if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(362);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(360);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 21:
       if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 22:
@@ -1531,32 +1531,32 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 23:
       if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '0') ADVANCE(380);
-      if (lookahead == '1') ADVANCE(385);
-      if (lookahead == '2') ADVANCE(381);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(384);
+      if (lookahead == '0') ADVANCE(384);
+      if (lookahead == '1') ADVANCE(389);
+      if (lookahead == '2') ADVANCE(385);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(388);
       END_STATE();
     case 24:
       if (lookahead == '#') ADVANCE(295);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(315);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(399);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(404);
       END_STATE();
     case 25:
       if (lookahead == '#') ADVANCE(295);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(527);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(532);
       END_STATE();
     case 26:
       if (lookahead == '#') ADVANCE(295);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(386);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(390);
       END_STATE();
     case 27:
       if (lookahead == '#') ADVANCE(295);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(379);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(383);
       END_STATE();
     case 28:
       if (lookahead == '#') ADVANCE(295);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
       END_STATE();
     case 29:
       if (lookahead == '\'') ADVANCE(2);
@@ -1565,79 +1565,79 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 30:
       if (lookahead == '(') ADVANCE(279);
-      if (set_contains(sym_escaped_char_character_set_1, 9, lookahead)) ADVANCE(607);
+      if (set_contains(sym_escaped_char_character_set_1, 9, lookahead)) ADVANCE(612);
       END_STATE();
     case 31:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       END_STATE();
     case 32:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (lookahead == 'a') ADVANCE(33);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('b' <= lookahead && lookahead <= 'f')) ADVANCE(41);
       END_STATE();
     case 33:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (lookahead == 'c') ADVANCE(35);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(40);
       END_STATE();
     case 34:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (lookahead == 'e') ADVANCE(36);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(41);
       END_STATE();
     case 35:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (lookahead == 'k') ADVANCE(31);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(39);
       END_STATE();
     case 36:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (lookahead == 'l') ADVANCE(31);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(40);
       END_STATE();
     case 37:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (lookahead == 's') ADVANCE(281);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(41);
       END_STATE();
     case 38:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(31);
       END_STATE();
     case 39:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(38);
       END_STATE();
     case 40:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(39);
       END_STATE();
     case 41:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(40);
       END_STATE();
     case 42:
-      if (lookahead == ')') ADVANCE(607);
+      if (lookahead == ')') ADVANCE(612);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(41);
@@ -1645,200 +1645,200 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 43:
       if (lookahead == '+') ADVANCE(117);
       if (lookahead == '-') ADVANCE(118);
-      if (lookahead == '1') ADVANCE(366);
+      if (lookahead == '1') ADVANCE(398);
       if (lookahead == ';') ADVANCE(328);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(43);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
       if (lookahead == '!' ||
           ('A' <= lookahead && lookahead <= 'Z') ||
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(323);
       END_STATE();
     case 44:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(181);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 45:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 46:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(194);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 47:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'I' ||
           lookahead == 'i') ADVANCE(186);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 48:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(146);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 49:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(244);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 50:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(46);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 51:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(232);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 52:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(133);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 53:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 54:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 55:
       if (lookahead == '-') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 56:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(183);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 57:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(68);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 58:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(197);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 59:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'I' ||
           lookahead == 'i') ADVANCE(190);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 60:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(150);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 61:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(247);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 62:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(58);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 63:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(234);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 64:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(138);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 65:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(68);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 66:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(546);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(551);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 67:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(66);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 68:
       if (lookahead == '-') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 69:
-      if (lookahead == '/') ADVANCE(657);
+      if (lookahead == '/') ADVANCE(662);
       if (lookahead == ';') ADVANCE(328);
-      if (lookahead == '}') ADVANCE(664);
+      if (lookahead == '}') ADVANCE(669);
       if (lookahead == '0' ||
           lookahead == '1') ADVANCE(304);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(69);
-      if ((!eof && set_contains(sym__word_character_set_1, 19, lookahead))) ADVANCE(656);
+      if ((!eof && set_contains(sym__word_character_set_1, 19, lookahead))) ADVANCE(661);
       END_STATE();
     case 70:
-      if (lookahead == '/') ADVANCE(590);
-      if (lookahead == ':') ADVANCE(661);
+      if (lookahead == '/') ADVANCE(595);
+      if (lookahead == ':') ADVANCE(666);
       if (lookahead == ';') ADVANCE(328);
-      if (lookahead == '=') ADVANCE(672);
-      if (lookahead == '[') ADVANCE(681);
-      if (lookahead == '}') ADVANCE(664);
+      if (lookahead == '=') ADVANCE(677);
+      if (lookahead == '[') ADVANCE(686);
+      if (lookahead == '}') ADVANCE(669);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(70);
       if (('0' <= lookahead && lookahead <= '9') ||
@@ -1847,327 +1847,327 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 71:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(182);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 72:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 73:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(195);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 74:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'I' ||
           lookahead == 'i') ADVANCE(187);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 75:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(147);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 76:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(245);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 77:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(73);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 78:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(233);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 79:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(134);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 80:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 81:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 82:
       if (lookahead == '/') ADVANCE(263);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 83:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(184);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 84:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 85:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(196);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 86:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'I' ||
           lookahead == 'i') ADVANCE(191);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 87:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(151);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 88:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(246);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 89:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(85);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 90:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(235);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 91:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(139);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 92:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 93:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 94:
       if (lookahead == '/') ADVANCE(271);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 95:
-      if (lookahead == '0') ADVANCE(367);
-      if (lookahead == '1') ADVANCE(372);
-      if (lookahead == '2') ADVANCE(368);
-      if (lookahead == '@') ADVANCE(600);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(371);
+      if (lookahead == '0') ADVANCE(362);
+      if (lookahead == '1') ADVANCE(367);
+      if (lookahead == '2') ADVANCE(363);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(366);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 96:
-      if (lookahead == '0') ADVANCE(503);
-      if (lookahead == '1') ADVANCE(507);
-      if (lookahead == '2') ADVANCE(504);
-      if (lookahead == '@') ADVANCE(600);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(506);
+      if (lookahead == '0') ADVANCE(508);
+      if (lookahead == '1') ADVANCE(512);
+      if (lookahead == '2') ADVANCE(509);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(511);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 97:
-      if (lookahead == '0') ADVANCE(515);
-      if (lookahead == '1') ADVANCE(521);
-      if (lookahead == '2') ADVANCE(517);
-      if (lookahead == '@') ADVANCE(600);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(520);
+      if (lookahead == '0') ADVANCE(520);
+      if (lookahead == '1') ADVANCE(526);
+      if (lookahead == '2') ADVANCE(522);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(525);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 98:
-      if (lookahead == '0') ADVANCE(380);
-      if (lookahead == '1') ADVANCE(385);
-      if (lookahead == '2') ADVANCE(381);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(384);
+      if (lookahead == '0') ADVANCE(384);
+      if (lookahead == '1') ADVANCE(389);
+      if (lookahead == '2') ADVANCE(385);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(388);
       END_STATE();
     case 99:
-      if (lookahead == '0') ADVANCE(510);
-      if (lookahead == '1') ADVANCE(514);
-      if (lookahead == '2') ADVANCE(511);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(513);
+      if (lookahead == '0') ADVANCE(515);
+      if (lookahead == '1') ADVANCE(519);
+      if (lookahead == '2') ADVANCE(516);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(518);
       END_STATE();
     case 100:
-      if (lookahead == '0') ADVANCE(516);
-      if (lookahead == '1') ADVANCE(525);
-      if (lookahead == '2') ADVANCE(518);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(524);
+      if (lookahead == '0') ADVANCE(521);
+      if (lookahead == '1') ADVANCE(530);
+      if (lookahead == '2') ADVANCE(523);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(529);
       END_STATE();
     case 101:
-      if (lookahead == '0') ADVANCE(407);
-      if (lookahead == '1') ADVANCE(410);
-      if (lookahead == '2') ADVANCE(408);
-      if (lookahead == '@') ADVANCE(600);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(411);
+      if (lookahead == '0') ADVANCE(412);
+      if (lookahead == '1') ADVANCE(415);
+      if (lookahead == '2') ADVANCE(413);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(416);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 102:
-      if (lookahead == '0') ADVANCE(414);
-      if (lookahead == '1') ADVANCE(417);
-      if (lookahead == '2') ADVANCE(415);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(418);
-      END_STATE();
-    case 103:
       if (lookahead == '0') ADVANCE(419);
       if (lookahead == '1') ADVANCE(422);
       if (lookahead == '2') ADVANCE(420);
-      if (lookahead == '@') ADVANCE(600);
       if (('3' <= lookahead && lookahead <= '9')) ADVANCE(423);
+      END_STATE();
+    case 103:
+      if (lookahead == '0') ADVANCE(424);
+      if (lookahead == '1') ADVANCE(427);
+      if (lookahead == '2') ADVANCE(425);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(428);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 104:
-      if (lookahead == '0') ADVANCE(426);
-      if (lookahead == '1') ADVANCE(429);
-      if (lookahead == '2') ADVANCE(427);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(430);
-      END_STATE();
-    case 105:
       if (lookahead == '0') ADVANCE(431);
       if (lookahead == '1') ADVANCE(434);
       if (lookahead == '2') ADVANCE(432);
-      if (lookahead == '@') ADVANCE(600);
       if (('3' <= lookahead && lookahead <= '9')) ADVANCE(435);
+      END_STATE();
+    case 105:
+      if (lookahead == '0') ADVANCE(436);
+      if (lookahead == '1') ADVANCE(439);
+      if (lookahead == '2') ADVANCE(437);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(440);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 106:
-      if (lookahead == '0') ADVANCE(438);
-      if (lookahead == '1') ADVANCE(441);
-      if (lookahead == '2') ADVANCE(439);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(442);
-      END_STATE();
-    case 107:
       if (lookahead == '0') ADVANCE(443);
       if (lookahead == '1') ADVANCE(446);
       if (lookahead == '2') ADVANCE(444);
-      if (lookahead == '@') ADVANCE(600);
       if (('3' <= lookahead && lookahead <= '9')) ADVANCE(447);
+      END_STATE();
+    case 107:
+      if (lookahead == '0') ADVANCE(448);
+      if (lookahead == '1') ADVANCE(451);
+      if (lookahead == '2') ADVANCE(449);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(452);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 108:
-      if (lookahead == '0') ADVANCE(450);
-      if (lookahead == '1') ADVANCE(453);
-      if (lookahead == '2') ADVANCE(451);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(454);
-      END_STATE();
-    case 109:
       if (lookahead == '0') ADVANCE(455);
       if (lookahead == '1') ADVANCE(458);
       if (lookahead == '2') ADVANCE(456);
-      if (lookahead == '@') ADVANCE(600);
       if (('3' <= lookahead && lookahead <= '9')) ADVANCE(459);
+      END_STATE();
+    case 109:
+      if (lookahead == '0') ADVANCE(460);
+      if (lookahead == '1') ADVANCE(463);
+      if (lookahead == '2') ADVANCE(461);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(464);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 110:
-      if (lookahead == '0') ADVANCE(462);
-      if (lookahead == '1') ADVANCE(465);
-      if (lookahead == '2') ADVANCE(463);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(466);
-      END_STATE();
-    case 111:
       if (lookahead == '0') ADVANCE(467);
       if (lookahead == '1') ADVANCE(470);
       if (lookahead == '2') ADVANCE(468);
-      if (lookahead == '@') ADVANCE(600);
       if (('3' <= lookahead && lookahead <= '9')) ADVANCE(471);
+      END_STATE();
+    case 111:
+      if (lookahead == '0') ADVANCE(472);
+      if (lookahead == '1') ADVANCE(475);
+      if (lookahead == '2') ADVANCE(473);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(476);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 112:
-      if (lookahead == '0') ADVANCE(474);
-      if (lookahead == '1') ADVANCE(477);
-      if (lookahead == '2') ADVANCE(475);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(478);
-      END_STATE();
-    case 113:
       if (lookahead == '0') ADVANCE(479);
       if (lookahead == '1') ADVANCE(482);
       if (lookahead == '2') ADVANCE(480);
-      if (lookahead == '@') ADVANCE(600);
       if (('3' <= lookahead && lookahead <= '9')) ADVANCE(483);
+      END_STATE();
+    case 113:
+      if (lookahead == '0') ADVANCE(484);
+      if (lookahead == '1') ADVANCE(487);
+      if (lookahead == '2') ADVANCE(485);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(488);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 114:
-      if (lookahead == '0') ADVANCE(486);
-      if (lookahead == '1') ADVANCE(489);
-      if (lookahead == '2') ADVANCE(487);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(490);
-      END_STATE();
-    case 115:
       if (lookahead == '0') ADVANCE(491);
       if (lookahead == '1') ADVANCE(494);
       if (lookahead == '2') ADVANCE(492);
-      if (lookahead == '@') ADVANCE(600);
       if (('3' <= lookahead && lookahead <= '9')) ADVANCE(495);
+      END_STATE();
+    case 115:
+      if (lookahead == '0') ADVANCE(496);
+      if (lookahead == '1') ADVANCE(499);
+      if (lookahead == '2') ADVANCE(497);
+      if (lookahead == '@') ADVANCE(605);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(500);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 116:
-      if (lookahead == '0') ADVANCE(498);
-      if (lookahead == '1') ADVANCE(501);
-      if (lookahead == '2') ADVANCE(499);
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(502);
+      if (lookahead == '0') ADVANCE(503);
+      if (lookahead == '1') ADVANCE(506);
+      if (lookahead == '2') ADVANCE(504);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(507);
       END_STATE();
     case 117:
-      if (lookahead == '1') ADVANCE(366);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
+      if (lookahead == '1') ADVANCE(398);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
       END_STATE();
     case 118:
-      if (lookahead == '1') ADVANCE(366);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
+      if (lookahead == '1') ADVANCE(398);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
       if (lookahead == '!' ||
           lookahead == '-' ||
           ('A' <= lookahead && lookahead <= 'Z') ||
@@ -2175,38 +2175,38 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 119:
       if (lookahead == ':') ADVANCE(309);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(119);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 120:
       if (lookahead == ';') ADVANCE(328);
-      if (lookahead == '=') ADVANCE(672);
-      if (lookahead == '}') ADVANCE(664);
+      if (lookahead == '=') ADVANCE(677);
+      if (lookahead == '}') ADVANCE(669);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(120);
       if (lookahead == '+' ||
           ('/' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(670);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(675);
       END_STATE();
     case 121:
       if (lookahead == ';') ADVANCE(328);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(121);
-      if ((!eof && set_contains(aux_sym_refinement_token1_character_set_1, 13, lookahead))) ADVANCE(593);
+      if ((!eof && set_contains(aux_sym_refinement_token1_character_set_1, 13, lookahead))) ADVANCE(598);
       END_STATE();
     case 122:
-      if (lookahead == ';') ADVANCE(573);
+      if (lookahead == ';') ADVANCE(578);
       if (lookahead == '^') ADVANCE(30);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(572);
+          lookahead == ' ') ADVANCE(577);
       if (lookahead != 0 &&
-          lookahead != '"') ADVANCE(571);
+          lookahead != '"') ADVANCE(576);
       END_STATE();
     case 123:
       ADVANCE_MAP(
-        '@', 600,
+        '@', 605,
         'W', 272,
         'A', 215,
         'a', 215,
@@ -2229,31 +2229,31 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 124:
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(268);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 125:
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '{') ADVANCE(662);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '{') ADVANCE(667);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 126:
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '{') ADVANCE(669);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '{') ADVANCE(674);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 127:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(260);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(398);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(403);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 128:
       ADVANCE_MAP(
-        '@', 600,
+        '@', 605,
         'A', 208,
         'a', 208,
         'D', 162,
@@ -2275,7 +2275,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 129:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(200);
       if (lookahead == 'U' ||
@@ -2283,13 +2283,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 130:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(219);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 131:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(201);
       if (lookahead == 'U' ||
@@ -2297,32 +2297,32 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 132:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(221);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 133:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(222);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 134:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(223);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 135:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(198);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 136:
       ADVANCE_MAP(
-        '@', 600,
+        '@', 605,
         'A', 211,
         'a', 211,
         'D', 165,
@@ -2344,26 +2344,26 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 137:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(229);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 138:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(230);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 139:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(231);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 140:
       ADVANCE_MAP(
-        '@', 600,
+        '@', 605,
         'A', 214,
         'a', 214,
         'D', 171,
@@ -2385,7 +2385,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 141:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(202);
       if (lookahead == 'U' ||
@@ -2393,13 +2393,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 142:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(227);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 143:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'A' ||
           lookahead == 'a') ADVANCE(203);
       if (lookahead == 'U' ||
@@ -2407,253 +2407,253 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 144:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(49);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 145:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(76);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 146:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(166);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 147:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(167);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 148:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(61);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 149:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(88);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 150:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(172);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 151:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'B' ||
           lookahead == 'b') ADVANCE(173);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 152:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(238);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 153:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(46);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 154:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(73);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 155:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(239);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 156:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(58);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 157:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(85);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 158:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(243);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 159:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'C' ||
           lookahead == 'c') ADVANCE(242);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 160:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(144);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 161:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(209);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 162:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(153);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 163:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(145);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 164:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(210);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 165:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(154);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 166:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(216);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 167:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(217);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 168:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(156);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 169:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(149);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 170:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(213);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 171:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(157);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 172:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(224);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 173:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(225);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 174:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(148);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 175:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'E' ||
           lookahead == 'e') ADVANCE(212);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 176:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'F' ||
-          lookahead == 'f') ADVANCE(391);
+          lookahead == 'f') ADVANCE(372);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 177:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'G' ||
           lookahead == 'g') ADVANCE(51);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 178:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'G' ||
           lookahead == 'g') ADVANCE(78);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 179:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'G' ||
           lookahead == 'g') ADVANCE(63);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 180:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'G' ||
           lookahead == 'g') ADVANCE(90);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 181:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'H' ||
           lookahead == 'h') ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 182:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'H' ||
           lookahead == 'h') ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 183:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'H' ||
           lookahead == 'h') ADVANCE(68);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 184:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'H' ||
           lookahead == 'h') ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 185:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'I' ||
           lookahead == 'i') ADVANCE(199);
       if (lookahead == 'N' ||
@@ -2661,19 +2661,19 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 186:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 187:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 188:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(53);
       if (lookahead == 'N' ||
@@ -2681,7 +2681,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 189:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(80);
       if (lookahead == 'N' ||
@@ -2689,19 +2689,19 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 190:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(68);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 191:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 192:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(65);
       if (lookahead == 'N' ||
@@ -2709,7 +2709,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 193:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'L' ||
           lookahead == 'l') ADVANCE(92);
       if (lookahead == 'N' ||
@@ -2717,91 +2717,91 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 194:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'M' ||
           lookahead == 'm') ADVANCE(146);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 195:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'M' ||
           lookahead == 'm') ADVANCE(147);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 196:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'M' ||
           lookahead == 'm') ADVANCE(151);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 197:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'M' ||
           lookahead == 'm') ADVANCE(150);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 198:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'N' ||
-          lookahead == 'n') ADVANCE(391);
+          lookahead == 'n') ADVANCE(372);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 199:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'N' ||
           lookahead == 'n') ADVANCE(176);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 200:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'N' ||
           lookahead == 'n') ADVANCE(52);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 201:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'N' ||
           lookahead == 'n') ADVANCE(79);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 202:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'N' ||
           lookahead == 'n') ADVANCE(64);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 203:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'N' ||
           lookahead == 'n') ADVANCE(91);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 204:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(248);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 205:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(249);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 206:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(251);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 207:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'O' ||
           lookahead == 'o') ADVANCE(250);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 208:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(218);
       if (lookahead == 'U' ||
@@ -2809,19 +2809,19 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 209:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(50);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 210:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(77);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 211:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(220);
       if (lookahead == 'U' ||
@@ -2829,19 +2829,19 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 212:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(62);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 213:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(89);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 214:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(228);
       if (lookahead == 'U' ||
@@ -2849,7 +2849,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 215:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'P' ||
           lookahead == 'p') ADVANCE(226);
       if (lookahead == 'U' ||
@@ -2857,25 +2857,25 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 216:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 217:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 218:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(47);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 219:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(44);
       if (lookahead == 'Y' ||
@@ -2883,13 +2883,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 220:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(74);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 221:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(71);
       if (lookahead == 'Y' ||
@@ -2897,37 +2897,37 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 222:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(252);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 223:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(253);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 224:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(68);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 225:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 226:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(59);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 227:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(56);
       if (lookahead == 'Y' ||
@@ -2935,13 +2935,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 228:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(86);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 229:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(83);
       if (lookahead == 'Y' ||
@@ -2949,263 +2949,263 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 230:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(254);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 231:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'R' ||
           lookahead == 'r') ADVANCE(255);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 232:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'S' ||
           lookahead == 's') ADVANCE(236);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 233:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'S' ||
           lookahead == 's') ADVANCE(237);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 234:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'S' ||
           lookahead == 's') ADVANCE(240);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 235:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'S' ||
           lookahead == 's') ADVANCE(241);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 236:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 237:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 238:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(48);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 239:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(75);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 240:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(68);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 241:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 242:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(60);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 243:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'T' ||
           lookahead == 't') ADVANCE(87);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 244:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(133);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 245:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(134);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 246:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(139);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 247:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'U' ||
           lookahead == 'u') ADVANCE(138);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 248:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'V' ||
           lookahead == 'v') ADVANCE(46);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 249:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'V' ||
           lookahead == 'v') ADVANCE(73);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 250:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'V' ||
           lookahead == 'v') ADVANCE(58);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 251:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'V' ||
           lookahead == 'v') ADVANCE(85);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 252:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(55);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 253:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(82);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 254:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(68);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 255:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == 'Y' ||
           lookahead == 'y') ADVANCE(94);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 256:
-      if (lookahead == '@') ADVANCE(600);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(546);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(551);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 257:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(404);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(409);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 258:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(362);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(360);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 259:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(372);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 260:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(398);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(403);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 261:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(405);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(410);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 262:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(373);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(368);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 263:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(545);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(550);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 264:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(119);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 265:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(538);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(543);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 266:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(124);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 267:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(569);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(574);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 268:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(557);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(562);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 269:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(567);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(572);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 270:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(558);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(563);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 271:
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(543);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(548);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 272:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(265);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 273:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(266);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 274:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(273);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 275:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(274);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 276:
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 277:
@@ -3254,10 +3254,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == 'u') ADVANCE(286);
       END_STATE();
     case 289:
-      if (lookahead == '{') ADVANCE(662);
+      if (lookahead == '{') ADVANCE(667);
       END_STATE();
     case 290:
-      if (lookahead == '{') ADVANCE(669);
+      if (lookahead == '{') ADVANCE(674);
       END_STATE();
     case 291:
       if (lookahead == '"' ||
@@ -3268,7 +3268,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 292:
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(315);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(399);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(404);
       END_STATE();
     case 293:
       if (lookahead == 'A' ||
@@ -3276,7 +3276,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 294:
       if (lookahead == 'F' ||
-          lookahead == 'f') ADVANCE(329);
+          lookahead == 'f') ADVANCE(375);
       END_STATE();
     case 295:
       if (lookahead == 'I' ||
@@ -3290,11 +3290,11 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 297:
       if (lookahead == 'N' ||
-          lookahead == 'n') ADVANCE(329);
+          lookahead == 'n') ADVANCE(375);
       END_STATE();
     case 298:
       if (lookahead == '0' ||
-          lookahead == '1') ADVANCE(663);
+          lookahead == '1') ADVANCE(668);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') ADVANCE(298);
       END_STATE();
@@ -3335,46 +3335,46 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == ' ') ADVANCE(304);
       END_STATE();
     case 305:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(527);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(532);
       END_STATE();
     case 306:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(536);
-      END_STATE();
-    case 307:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(528);
-      END_STATE();
-    case 308:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(329);
-      END_STATE();
-    case 309:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(539);
-      END_STATE();
-    case 310:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(537);
-      END_STATE();
-    case 311:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(555);
-      END_STATE();
-    case 312:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(540);
-      END_STATE();
-    case 313:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(541);
       END_STATE();
+    case 307:
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(533);
+      END_STATE();
+    case 308:
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(375);
+      END_STATE();
+    case 309:
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(544);
+      END_STATE();
+    case 310:
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(542);
+      END_STATE();
+    case 311:
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(560);
+      END_STATE();
+    case 312:
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(545);
+      END_STATE();
+    case 313:
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(546);
+      END_STATE();
     case 314:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(556);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(561);
       END_STATE();
     case 315:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(399);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(404);
       END_STATE();
     case 316:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(386);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(390);
       END_STATE();
     case 317:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(379);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(383);
       END_STATE();
     case 318:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
       END_STATE();
     case 319:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(310);
@@ -3385,13 +3385,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 321:
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
-          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(668);
+          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(673);
       END_STATE();
     case 322:
       if (lookahead == '!' ||
           lookahead == '-' ||
           ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(626);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(631);
       END_STATE();
     case 323:
       if (lookahead == '!' ||
@@ -3402,26 +3402,26 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 324:
       if (eof) ADVANCE(325);
       ADVANCE_MAP(
-        '"', 574,
+        '"', 579,
         '#', 10,
         '$', 257,
-        '%', 602,
-        '\'', 660,
-        '(', 400,
-        '/', 592,
-        '0', 348,
-        '1', 343,
+        '%', 607,
+        '\'', 665,
+        '(', 405,
+        '/', 597,
+        '0', 346,
+        '1', 373,
         '2', 331,
-        '6', 349,
-        ':', 661,
+        '6', 347,
+        ':', 666,
         ';', 328,
-        '<', 651,
-        '@', 575,
-        '[', 681,
-        '+', 637,
-        '-', 637,
+        '<', 656,
+        '@', 580,
+        '[', 686,
+        '+', 642,
+        '-', 642,
       );
-      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(353);
+      if (('3' <= lookahead && lookahead <= '9')) ADVANCE(351);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(324);
       if (lookahead == ',' ||
@@ -3436,12 +3436,12 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
       if (('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(648);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(653);
       if (lookahead != 0 &&
           (lookahead < '\'' || ')' < lookahead) &&
           (lookahead < '@' || ']' < lookahead) &&
           (lookahead < 'a' || '{' < lookahead) &&
-          lookahead != '}') ADVANCE(649);
+          lookahead != '}') ADVANCE(654);
       END_STATE();
     case 325:
       ACCEPT_TOKEN(ts_builtin_sym_end);
@@ -3449,12 +3449,12 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 326:
       ACCEPT_TOKEN(anon_sym_POUNDinclude);
       if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 327:
       ACCEPT_TOKEN(anon_sym_POUNDinclude);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 328:
       ACCEPT_TOKEN(sym_comment);
@@ -3468,53 +3468,55 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
         '#', 289,
+        '%', 329,
         '\'', 317,
         '.', 98,
-        '5', 376,
+        '5', 380,
         'E', 393,
         'e', 393,
         'X', 292,
         'x', 292,
       );
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(377);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(378);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(381);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(382);
       END_STATE();
     case 331:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
         '#', 125,
+        '%', 399,
         '\'', 258,
         '-', 128,
         '.', 95,
         '/', 136,
-        '5', 350,
+        '5', 348,
         ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
+        '@', 605,
+        'E', 371,
+        'e', 371,
         'X', 127,
         'x', 127,
       );
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(352);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(351);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(350);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(349);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 332:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
         '#', 185,
-        '\'', 643,
-        '.', 644,
-        '<', 656,
-        '@', 600,
-        'E', 388,
-        'e', 388,
-        'X', 642,
-        'x', 642,
+        '%', 399,
+        '\'', 648,
+        '.', 649,
+        '<', 661,
+        '@', 605,
+        'E', 369,
+        'e', 369,
+        'X', 647,
+        'x', 647,
       );
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(345);
       if (lookahead == '$' ||
-          lookahead == '%' ||
           lookahead == ',' ||
           lookahead == '/' ||
           lookahead == '\\' ||
@@ -3527,36 +3529,176 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
     case 333:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
         '#', 185,
+        '%', 399,
         '\'', 258,
         '-', 128,
         '.', 95,
         '/', 136,
         ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(352);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 334:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '#') ADVANCE(185);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(650);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(370);
+      if (lookahead == '$' ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 335:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '#') ADVANCE(185);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(259);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(372);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 336:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '#') ADVANCE(185);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 337:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '#') ADVANCE(295);
+      END_STATE();
+    case 338:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '#', 295,
+        '%', 329,
+        '\'', 657,
+        '.', 658,
+        'E', 392,
+        'e', 392,
+        'X', 655,
+        'x', 655,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(376);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 339:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '#', 295,
+        '%', 329,
+        '\'', 317,
+        '.', 98,
+        'E', 393,
+        'e', 393,
+        'X', 292,
+        'x', 292,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(381);
+      END_STATE();
+    case 340:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '#') ADVANCE(295);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(318);
+      if (lookahead == '.') ADVANCE(316);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
+      END_STATE();
+    case 341:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '#') ADVANCE(295);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(659);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(394);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 342:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '#') ADVANCE(295);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(308);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(375);
+      END_STATE();
+    case 343:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '#', 290,
+        '%', 329,
+        '\'', 317,
+        '.', 98,
+        'E', 393,
+        'e', 393,
+        'X', 292,
+        'x', 292,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(383);
+      END_STATE();
+    case 344:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '#', 126,
+        '%', 399,
+        '\'', 258,
+        '-', 128,
+        '.', 95,
+        '/', 136,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
         'X', 127,
         'x', 127,
       );
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(354);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
-    case 334:
+    case 345:
       ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(645);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(389);
-      if (lookahead == '$' ||
-          lookahead == '%' ||
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 648,
+        '.', 649,
+        '<', 661,
+        '@', 605,
+        'E', 369,
+        'e', 369,
+        'X', 647,
+        'x', 647,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(345);
+      if (lookahead == '#' ||
+          lookahead == '$' ||
           lookahead == ',' ||
           lookahead == '/' ||
           lookahead == '\\' ||
@@ -3569,103 +3711,445 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
-    case 335:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(259);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 336:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '\'') ADVANCE(652);
-      if (lookahead == '.') ADVANCE(653);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(392);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(650);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(347);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 337:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(377);
-      END_STATE();
-    case 338:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '\'') ADVANCE(318);
-      if (lookahead == '.') ADVANCE(316);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
-      END_STATE();
-    case 339:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(654);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(394);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 340:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(308);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(329);
-      END_STATE();
-    case 341:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '#') ADVANCE(290);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(379);
-      END_STATE();
-    case 342:
+    case 346:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
-        '#', 126,
+        '%', 399,
+        '\'', 258,
+        '-', 128,
+        '.', 95,
+        '/', 136,
+        '0', 349,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(349);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 347:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '-', 128,
+        '.', 95,
+        '/', 136,
+        '4', 344,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(350);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 348:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
         '\'', 258,
         '-', 128,
         '.', 95,
         '/', 136,
         ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(354);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(352);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 349:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '-', 128,
+        '.', 95,
+        '/', 136,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(352);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 350:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '-', 128,
+        '.', 95,
+        '/', 136,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(354);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 351:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '-', 128,
+        '.', 95,
+        '/', 136,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(350);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 352:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '-', 123,
+        '.', 95,
+        '/', 140,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(353);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 353:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '-', 123,
+        '.', 262,
+        '/', 140,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(358);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 354:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '-', 123,
+        '.', 262,
+        '/', 140,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(353);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 355:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '.', 262,
+        ':', 305,
+        '@', 605,
+        'T', 275,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(359);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 356:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '.', 262,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(355);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 357:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '.', 262,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
         'X', 127,
         'x', 127,
       );
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(356);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
-    case 343:
+    case 358:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '.', 262,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(357);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 359:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '.', 262,
+        ':', 305,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(359);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 360:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 399,
+        '\'', 258,
+        '.', 262,
+        '@', 605,
+        'E', 371,
+        'e', 371,
+        'X', 127,
+        'x', 127,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(360);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 361:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(649);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(369);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(361);
+      if (lookahead == '#' ||
+          lookahead == '$' ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 362:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(262);
+      if (lookahead == '.') ADVANCE(96);
+      if (lookahead == '0') ADVANCE(366);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(371);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(366);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 363:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(262);
+      if (lookahead == '.') ADVANCE(96);
+      if (lookahead == '5') ADVANCE(364);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(371);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(365);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(366);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 364:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(262);
+      if (lookahead == '.') ADVANCE(96);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(371);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(368);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(365);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 365:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(262);
+      if (lookahead == '.') ADVANCE(96);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(371);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(368);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 366:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(262);
+      if (lookahead == '.') ADVANCE(96);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(371);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(365);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 367:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(262);
+      if (lookahead == '.') ADVANCE(96);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(371);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(366);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 368:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '\'') ADVANCE(262);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(371);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(368);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 369:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(650);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(370);
+      if (lookahead == '#' ||
+          lookahead == '$' ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 370:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '#' ||
+          lookahead == '$' ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 371:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(259);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(372);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 372:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(399);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 373:
+      ACCEPT_TOKEN(sym_number);
+      ADVANCE_MAP(
+        '%', 336,
         '\'', 20,
         '-', 18,
         '.', 16,
         '/', 19,
-        '6', 665,
+        '6', 670,
         ':', 25,
-        '@', 594,
+        '@', 599,
         'E', 335,
         'e', 335,
         'X', 17,
@@ -3687,17 +4171,18 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead != 0 &&
           (lookahead < '\t' || '\r' < lookahead)) ADVANCE(21);
       END_STATE();
-    case 344:
+    case 374:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
-        '\'', 630,
-        '.', 631,
-        '<', 636,
-        '@', 594,
+        '%', 336,
+        '\'', 635,
+        '.', 636,
+        '<', 641,
+        '@', 599,
         'E', 334,
         'e', 334,
-        'X', 629,
-        'x', 629,
+        'X', 634,
+        'x', 634,
       );
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(332);
       if (lookahead == '\t' ||
@@ -3712,7 +4197,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == ']' ||
           lookahead == '{' ||
           lookahead == '}') ADVANCE(22);
-      if (('#' <= lookahead && lookahead <= '%') ||
+      if (lookahead == '#' ||
+          lookahead == '$' ||
           lookahead == ',' ||
           lookahead == '/' ||
           lookahead == '\\' ||
@@ -3726,49 +4212,220 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(21);
       if (lookahead != 0 &&
-          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(632);
+          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(637);
       END_STATE();
-    case 345:
+    case 375:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      END_STATE();
+    case 376:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(657);
+      if (lookahead == '.') ADVANCE(658);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(392);
+      if (lookahead == 'X' ||
+          lookahead == 'x') ADVANCE(655);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(376);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 377:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(658);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(392);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(377);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 378:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
-        '\'', 643,
-        '.', 644,
-        '<', 656,
-        '@', 600,
-        'E', 388,
-        'e', 388,
-        'X', 642,
-        'x', 642,
+        '%', 329,
+        '\'', 317,
+        '.', 98,
+        '0', 382,
+        'E', 393,
+        'e', 393,
+        'X', 292,
+        'x', 292,
       );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(345);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(382);
       END_STATE();
-    case 346:
+    case 379:
       ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(634);
-      if (lookahead == '.') ADVANCE(635);
+      ADVANCE_MAP(
+        '%', 329,
+        '\'', 317,
+        '.', 98,
+        '4', 343,
+        'E', 393,
+        'e', 393,
+        'X', 292,
+        'x', 292,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(381);
+      END_STATE();
+    case 380:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(317);
+      if (lookahead == '.') ADVANCE(98);
       if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(339);
+          lookahead == 'e') ADVANCE(393);
       if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(633);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(336);
+          lookahead == 'x') ADVANCE(292);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(383);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(381);
+      END_STATE();
+    case 381:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(317);
+      if (lookahead == '.') ADVANCE(98);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (lookahead == 'X' ||
+          lookahead == 'x') ADVANCE(292);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(383);
+      END_STATE();
+    case 382:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(317);
+      if (lookahead == '.') ADVANCE(98);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (lookahead == 'X' ||
+          lookahead == 'x') ADVANCE(292);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(381);
+      END_STATE();
+    case 383:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(317);
+      if (lookahead == '.') ADVANCE(316);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (lookahead == 'X' ||
+          lookahead == 'x') ADVANCE(292);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(383);
+      END_STATE();
+    case 384:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(316);
+      if (lookahead == '.') ADVANCE(99);
+      if (lookahead == '0') ADVANCE(388);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(388);
+      END_STATE();
+    case 385:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(316);
+      if (lookahead == '.') ADVANCE(99);
+      if (lookahead == '5') ADVANCE(386);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(387);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(388);
+      END_STATE();
+    case 386:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(316);
+      if (lookahead == '.') ADVANCE(99);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(390);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(387);
+      END_STATE();
+    case 387:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(316);
+      if (lookahead == '.') ADVANCE(99);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(390);
+      END_STATE();
+    case 388:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(316);
+      if (lookahead == '.') ADVANCE(99);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
+      END_STATE();
+    case 389:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(316);
+      if (lookahead == '.') ADVANCE(99);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(388);
+      END_STATE();
+    case 390:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(316);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(390);
+      END_STATE();
+    case 391:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '\'') ADVANCE(318);
+      if (lookahead == '.') ADVANCE(316);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(393);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
+      END_STATE();
+    case 392:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(659);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(394);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 393:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(308);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(375);
+      END_STATE();
+    case 394:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(329);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 395:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(400);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
+      END_STATE();
+    case 396:
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(337);
+      if (lookahead == '\'') ADVANCE(639);
+      if (lookahead == '.') ADVANCE(640);
+      if (lookahead == 'E' ||
+          lookahead == 'e') ADVANCE(341);
+      if (lookahead == 'X' ||
+          lookahead == 'x') ADVANCE(638);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(338);
       if (lookahead == '\t' ||
           (0x0b <= lookahead && lookahead <= '\r') ||
           lookahead == ' ' ||
-          ('"' <= lookahead && lookahead <= '%') ||
+          ('"' <= lookahead && lookahead <= '$') ||
           lookahead == '(' ||
           lookahead == ')' ||
           lookahead == ',' ||
@@ -3787,1447 +4444,876 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(22);
       if (lookahead != 0 &&
-          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(636);
+          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(641);
       END_STATE();
-    case 347:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(652);
-      if (lookahead == '.') ADVANCE(653);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(392);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(650);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(347);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 348:
+    case 397:
       ACCEPT_TOKEN(sym_number);
       ADVANCE_MAP(
-        '\'', 258,
-        '-', 128,
-        '.', 95,
-        '/', 136,
-        '0', 351,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
+        '%', 337,
+        '\'', 27,
+        '.', 23,
+        '6', 671,
+        'E', 342,
+        'e', 342,
+        'X', 24,
+        'x', 24,
       );
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(351);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 349:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 128,
-        '.', 95,
-        '/', 136,
-        '4', 342,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(352);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 350:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 128,
-        '.', 95,
-        '/', 136,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(356);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(354);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 351:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 128,
-        '.', 95,
-        '/', 136,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(354);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 352:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 128,
-        '.', 95,
-        '/', 136,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(356);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 353:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 128,
-        '.', 95,
-        '/', 136,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(352);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 354:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 123,
-        '.', 95,
-        '/', 140,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(355);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 355:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 123,
-        '.', 262,
-        '/', 140,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(360);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 356:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '-', 123,
-        '.', 262,
-        '/', 140,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(355);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 357:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '.', 262,
-        ':', 305,
-        '@', 600,
-        'T', 275,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(361);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 358:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '.', 262,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(357);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 359:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '.', 262,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(358);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 360:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '.', 262,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(359);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 361:
-      ACCEPT_TOKEN(sym_number);
-      ADVANCE_MAP(
-        '\'', 258,
-        '.', 262,
-        ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
-        'X', 127,
-        'x', 127,
-      );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(361);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 362:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(258);
-      if (lookahead == '.') ADVANCE(262);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(127);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(362);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 363:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(27);
-      if (lookahead == '.') ADVANCE(23);
-      if (lookahead == '6') ADVANCE(666);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(340);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(24);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(337);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(339);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(22);
       END_STATE();
-    case 364:
+    case 398:
       ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(644);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(388);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(364);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 365:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(653);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(392);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(365);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 366:
-      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '%') ADVANCE(337);
       if (lookahead == '\'') ADVANCE(28);
       if (lookahead == '.') ADVANCE(26);
       if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(340);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(338);
+          lookahead == 'e') ADVANCE(342);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(340);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(22);
       END_STATE();
-    case 367:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(262);
-      if (lookahead == '.') ADVANCE(96);
-      if (lookahead == '0') ADVANCE(371);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(371);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 368:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(262);
-      if (lookahead == '.') ADVANCE(96);
-      if (lookahead == '5') ADVANCE(369);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(370);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(371);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 369:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(262);
-      if (lookahead == '.') ADVANCE(96);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(373);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(370);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 370:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(262);
-      if (lookahead == '.') ADVANCE(96);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(373);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 371:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(262);
-      if (lookahead == '.') ADVANCE(96);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(370);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 372:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(262);
-      if (lookahead == '.') ADVANCE(96);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(371);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 373:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(262);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(390);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(373);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 374:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == '0') ADVANCE(378);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(378);
-      END_STATE();
-    case 375:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == '4') ADVANCE(341);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(377);
-      END_STATE();
-    case 376:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(379);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(377);
-      END_STATE();
-    case 377:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(379);
-      END_STATE();
-    case 378:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(377);
-      END_STATE();
-    case 379:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(316);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(379);
-      END_STATE();
-    case 380:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(316);
-      if (lookahead == '.') ADVANCE(99);
-      if (lookahead == '0') ADVANCE(384);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(384);
-      END_STATE();
-    case 381:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(316);
-      if (lookahead == '.') ADVANCE(99);
-      if (lookahead == '5') ADVANCE(382);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(383);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(384);
-      END_STATE();
-    case 382:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(316);
-      if (lookahead == '.') ADVANCE(99);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(386);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(383);
-      END_STATE();
-    case 383:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(316);
-      if (lookahead == '.') ADVANCE(99);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(386);
-      END_STATE();
-    case 384:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(316);
-      if (lookahead == '.') ADVANCE(99);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(383);
-      END_STATE();
-    case 385:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(316);
-      if (lookahead == '.') ADVANCE(99);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(384);
-      END_STATE();
-    case 386:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(316);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(386);
-      END_STATE();
-    case 387:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '\'') ADVANCE(318);
-      if (lookahead == '.') ADVANCE(316);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(387);
-      END_STATE();
-    case 388:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(645);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(389);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 389:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 390:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(259);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(391);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 391:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
-    case 392:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(654);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(394);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 393:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(308);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(329);
-      END_STATE();
-    case 394:
-      ACCEPT_TOKEN(sym_number);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 395:
-      ACCEPT_TOKEN(sym_number);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
-      END_STATE();
-    case 396:
-      ACCEPT_TOKEN(sym_pair);
-      if (lookahead == '\'') ADVANCE(646);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(396);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 397:
-      ACCEPT_TOKEN(sym_pair);
-      if (lookahead == '\'') ADVANCE(655);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(397);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 398:
-      ACCEPT_TOKEN(sym_pair);
-      if (lookahead == '\'') ADVANCE(260);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(398);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
-      END_STATE();
     case 399:
-      ACCEPT_TOKEN(sym_pair);
-      if (lookahead == '\'') ADVANCE(315);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(399);
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 400:
-      ACCEPT_TOKEN(anon_sym_LPAREN);
+      ACCEPT_TOKEN(sym_number);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
       END_STATE();
     case 401:
-      ACCEPT_TOKEN(anon_sym_COMMA);
+      ACCEPT_TOKEN(sym_pair);
+      if (lookahead == '\'') ADVANCE(651);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(401);
+      if (('#' <= lookahead && lookahead <= '%') ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
     case 402:
-      ACCEPT_TOKEN(anon_sym_COMMA);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(sym_pair);
+      if (lookahead == '\'') ADVANCE(660);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(402);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 403:
-      ACCEPT_TOKEN(anon_sym_RPAREN);
+      ACCEPT_TOKEN(sym_pair);
+      if (lookahead == '\'') ADVANCE(260);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(403);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 404:
-      ACCEPT_TOKEN(sym_money);
-      if (lookahead == '\'') ADVANCE(257);
-      if (lookahead == '.') ADVANCE(261);
-      if (lookahead == '@') ADVANCE(600);
+      ACCEPT_TOKEN(sym_pair);
+      if (lookahead == '\'') ADVANCE(315);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(404);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 405:
-      ACCEPT_TOKEN(sym_money);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(405);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(anon_sym_LPAREN);
       END_STATE();
     case 406:
-      ACCEPT_TOKEN(sym_tuple);
+      ACCEPT_TOKEN(anon_sym_COMMA);
       END_STATE();
     case 407:
-      ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(97);
-      if (lookahead == '0') ADVANCE(411);
-      if (lookahead == '@') ADVANCE(600);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(411);
+      ACCEPT_TOKEN(anon_sym_COMMA);
+      if (lookahead == '@') ADVANCE(605);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 408:
-      ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(97);
-      if (lookahead == '5') ADVANCE(409);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(412);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(411);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(anon_sym_RPAREN);
       END_STATE();
     case 409:
-      ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(97);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(412);
+      ACCEPT_TOKEN(sym_money);
+      if (lookahead == '\'') ADVANCE(257);
+      if (lookahead == '.') ADVANCE(261);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(409);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 410:
-      ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(97);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(411);
+      ACCEPT_TOKEN(sym_money);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(410);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 411:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(97);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(412);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 412:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(97);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(416);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(416);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 413:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(100);
+      if (lookahead == '.') ADVANCE(97);
+      if (lookahead == '5') ADVANCE(414);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(417);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(416);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 414:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(100);
-      if (lookahead == '0') ADVANCE(418);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(418);
+      if (lookahead == '.') ADVANCE(97);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(417);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 415:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(100);
-      if (lookahead == '5') ADVANCE(416);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(413);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(418);
+      if (lookahead == '.') ADVANCE(97);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(416);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 416:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(100);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(413);
+      if (lookahead == '.') ADVANCE(97);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(417);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 417:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(100);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(418);
+      if (lookahead == '.') ADVANCE(97);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 418:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(100);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(413);
       END_STATE();
     case 419:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(101);
+      if (lookahead == '.') ADVANCE(100);
       if (lookahead == '0') ADVANCE(423);
-      if (lookahead == '@') ADVANCE(600);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(423);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 420:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(101);
+      if (lookahead == '.') ADVANCE(100);
       if (lookahead == '5') ADVANCE(421);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(424);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(418);
       if (('0' <= lookahead && lookahead <= '4')) ADVANCE(423);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 421:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(101);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(424);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(100);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(418);
       END_STATE();
     case 422:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(101);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '.') ADVANCE(100);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(423);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 423:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(101);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(424);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(100);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(418);
       END_STATE();
     case 424:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(101);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(428);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(428);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 425:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(102);
+      if (lookahead == '.') ADVANCE(101);
+      if (lookahead == '5') ADVANCE(426);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(429);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(428);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 426:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(102);
-      if (lookahead == '0') ADVANCE(430);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(430);
+      if (lookahead == '.') ADVANCE(101);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(429);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 427:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(102);
-      if (lookahead == '5') ADVANCE(428);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(425);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(430);
+      if (lookahead == '.') ADVANCE(101);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(428);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 428:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(102);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(425);
+      if (lookahead == '.') ADVANCE(101);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(429);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 429:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(102);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(430);
+      if (lookahead == '.') ADVANCE(101);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 430:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(102);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(425);
       END_STATE();
     case 431:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(103);
+      if (lookahead == '.') ADVANCE(102);
       if (lookahead == '0') ADVANCE(435);
-      if (lookahead == '@') ADVANCE(600);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(435);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 432:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(103);
+      if (lookahead == '.') ADVANCE(102);
       if (lookahead == '5') ADVANCE(433);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(436);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(430);
       if (('0' <= lookahead && lookahead <= '4')) ADVANCE(435);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 433:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(103);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(436);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(102);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(430);
       END_STATE();
     case 434:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(103);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '.') ADVANCE(102);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(435);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 435:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(103);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(436);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(102);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(430);
       END_STATE();
     case 436:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(103);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(440);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(440);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 437:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(104);
+      if (lookahead == '.') ADVANCE(103);
+      if (lookahead == '5') ADVANCE(438);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(441);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(440);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 438:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(104);
-      if (lookahead == '0') ADVANCE(442);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(442);
+      if (lookahead == '.') ADVANCE(103);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(441);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 439:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(104);
-      if (lookahead == '5') ADVANCE(440);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(437);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(442);
+      if (lookahead == '.') ADVANCE(103);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(440);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 440:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(104);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(437);
+      if (lookahead == '.') ADVANCE(103);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(441);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 441:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(104);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(442);
+      if (lookahead == '.') ADVANCE(103);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 442:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(104);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(437);
       END_STATE();
     case 443:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(105);
+      if (lookahead == '.') ADVANCE(104);
       if (lookahead == '0') ADVANCE(447);
-      if (lookahead == '@') ADVANCE(600);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(447);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 444:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(105);
+      if (lookahead == '.') ADVANCE(104);
       if (lookahead == '5') ADVANCE(445);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(448);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(442);
       if (('0' <= lookahead && lookahead <= '4')) ADVANCE(447);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 445:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(105);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(448);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(104);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(442);
       END_STATE();
     case 446:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(105);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '.') ADVANCE(104);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(447);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 447:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(105);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(448);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(104);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(442);
       END_STATE();
     case 448:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(105);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(452);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(452);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 449:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(106);
+      if (lookahead == '.') ADVANCE(105);
+      if (lookahead == '5') ADVANCE(450);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(453);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(452);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 450:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(106);
-      if (lookahead == '0') ADVANCE(454);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(454);
+      if (lookahead == '.') ADVANCE(105);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(453);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 451:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(106);
-      if (lookahead == '5') ADVANCE(452);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(449);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(454);
+      if (lookahead == '.') ADVANCE(105);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(452);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 452:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(106);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(449);
+      if (lookahead == '.') ADVANCE(105);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(453);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 453:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(106);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(454);
+      if (lookahead == '.') ADVANCE(105);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 454:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(106);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(449);
       END_STATE();
     case 455:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(107);
+      if (lookahead == '.') ADVANCE(106);
       if (lookahead == '0') ADVANCE(459);
-      if (lookahead == '@') ADVANCE(600);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(459);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 456:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(107);
+      if (lookahead == '.') ADVANCE(106);
       if (lookahead == '5') ADVANCE(457);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(460);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(454);
       if (('0' <= lookahead && lookahead <= '4')) ADVANCE(459);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 457:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(107);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(460);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(106);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(454);
       END_STATE();
     case 458:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(107);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '.') ADVANCE(106);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(459);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 459:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(107);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(460);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(106);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(454);
       END_STATE();
     case 460:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(107);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(464);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(464);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 461:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(108);
+      if (lookahead == '.') ADVANCE(107);
+      if (lookahead == '5') ADVANCE(462);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(465);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(464);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 462:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(108);
-      if (lookahead == '0') ADVANCE(466);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(466);
+      if (lookahead == '.') ADVANCE(107);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(465);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 463:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(108);
-      if (lookahead == '5') ADVANCE(464);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(461);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(466);
+      if (lookahead == '.') ADVANCE(107);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(464);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 464:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(108);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(461);
+      if (lookahead == '.') ADVANCE(107);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(465);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 465:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(108);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(466);
+      if (lookahead == '.') ADVANCE(107);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 466:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(108);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(461);
       END_STATE();
     case 467:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(109);
+      if (lookahead == '.') ADVANCE(108);
       if (lookahead == '0') ADVANCE(471);
-      if (lookahead == '@') ADVANCE(600);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(471);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 468:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(109);
+      if (lookahead == '.') ADVANCE(108);
       if (lookahead == '5') ADVANCE(469);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(472);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(466);
       if (('0' <= lookahead && lookahead <= '4')) ADVANCE(471);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 469:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(109);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(472);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(108);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(466);
       END_STATE();
     case 470:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(109);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '.') ADVANCE(108);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(471);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 471:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(109);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(472);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(108);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(466);
       END_STATE();
     case 472:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(109);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(476);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(476);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 473:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(110);
+      if (lookahead == '.') ADVANCE(109);
+      if (lookahead == '5') ADVANCE(474);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(477);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(476);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 474:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(110);
-      if (lookahead == '0') ADVANCE(478);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(478);
+      if (lookahead == '.') ADVANCE(109);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(477);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 475:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(110);
-      if (lookahead == '5') ADVANCE(476);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(473);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(478);
+      if (lookahead == '.') ADVANCE(109);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(476);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 476:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(110);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(473);
+      if (lookahead == '.') ADVANCE(109);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(477);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 477:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(110);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(478);
+      if (lookahead == '.') ADVANCE(109);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 478:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(110);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(473);
       END_STATE();
     case 479:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(111);
+      if (lookahead == '.') ADVANCE(110);
       if (lookahead == '0') ADVANCE(483);
-      if (lookahead == '@') ADVANCE(600);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(483);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 480:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(111);
+      if (lookahead == '.') ADVANCE(110);
       if (lookahead == '5') ADVANCE(481);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(484);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(478);
       if (('0' <= lookahead && lookahead <= '4')) ADVANCE(483);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 481:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(111);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(484);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(110);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(478);
       END_STATE();
     case 482:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(111);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '.') ADVANCE(110);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(483);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 483:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(111);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(484);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(110);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(478);
       END_STATE();
     case 484:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(111);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(488);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(488);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 485:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(112);
+      if (lookahead == '.') ADVANCE(111);
+      if (lookahead == '5') ADVANCE(486);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(489);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(488);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 486:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(112);
-      if (lookahead == '0') ADVANCE(490);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(490);
+      if (lookahead == '.') ADVANCE(111);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(489);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 487:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(112);
-      if (lookahead == '5') ADVANCE(488);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(485);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(490);
+      if (lookahead == '.') ADVANCE(111);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(488);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 488:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(112);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(485);
+      if (lookahead == '.') ADVANCE(111);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(489);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 489:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(112);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(490);
+      if (lookahead == '.') ADVANCE(111);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 490:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(112);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(485);
       END_STATE();
     case 491:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(113);
+      if (lookahead == '.') ADVANCE(112);
       if (lookahead == '0') ADVANCE(495);
-      if (lookahead == '@') ADVANCE(600);
       if (('1' <= lookahead && lookahead <= '9')) ADVANCE(495);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 492:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(113);
+      if (lookahead == '.') ADVANCE(112);
       if (lookahead == '5') ADVANCE(493);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(496);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(490);
       if (('0' <= lookahead && lookahead <= '4')) ADVANCE(495);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 493:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(113);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(496);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(112);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(490);
       END_STATE();
     case 494:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(113);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '.') ADVANCE(112);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(495);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 495:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(113);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(496);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(112);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(490);
       END_STATE();
     case 496:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(113);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(500);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(500);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 497:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(114);
+      if (lookahead == '.') ADVANCE(113);
+      if (lookahead == '5') ADVANCE(498);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(501);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(500);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 498:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(114);
-      if (lookahead == '0') ADVANCE(502);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(502);
+      if (lookahead == '.') ADVANCE(113);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(501);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 499:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(114);
-      if (lookahead == '5') ADVANCE(500);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(497);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(502);
+      if (lookahead == '.') ADVANCE(113);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(500);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 500:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(114);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(497);
+      if (lookahead == '.') ADVANCE(113);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(501);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 501:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(114);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(502);
+      if (lookahead == '.') ADVANCE(113);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 502:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(114);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(497);
       END_STATE();
     case 503:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(115);
-      if (lookahead == '0') ADVANCE(506);
-      if (lookahead == '@') ADVANCE(600);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(506);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(114);
+      if (lookahead == '0') ADVANCE(507);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(507);
       END_STATE();
     case 504:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(115);
+      if (lookahead == '.') ADVANCE(114);
       if (lookahead == '5') ADVANCE(505);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(508);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(506);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(502);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(507);
       END_STATE();
     case 505:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(115);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(508);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(114);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(502);
       END_STATE();
     case 506:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(115);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(508);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(114);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(507);
       END_STATE();
     case 507:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(115);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(506);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(114);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(502);
       END_STATE();
     case 508:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(115);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '0') ADVANCE(511);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(511);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 509:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(116);
+      if (lookahead == '.') ADVANCE(115);
+      if (lookahead == '5') ADVANCE(510);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(513);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(511);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 510:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(116);
-      if (lookahead == '0') ADVANCE(513);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(513);
+      if (lookahead == '.') ADVANCE(115);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(513);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 511:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(116);
-      if (lookahead == '5') ADVANCE(512);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(509);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(513);
+      if (lookahead == '.') ADVANCE(115);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(513);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 512:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(116);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(509);
+      if (lookahead == '.') ADVANCE(115);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(511);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 513:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '.') ADVANCE(116);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(509);
+      if (lookahead == '.') ADVANCE(115);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 514:
       ACCEPT_TOKEN(sym_tuple);
       if (lookahead == '.') ADVANCE(116);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(513);
       END_STATE();
     case 515:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '0') ADVANCE(520);
-      if (lookahead == '@') ADVANCE(600);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(520);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(116);
+      if (lookahead == '0') ADVANCE(518);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(518);
       END_STATE();
     case 516:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '0') ADVANCE(524);
-      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(524);
+      if (lookahead == '.') ADVANCE(116);
+      if (lookahead == '5') ADVANCE(517);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(514);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(518);
       END_STATE();
     case 517:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '5') ADVANCE(519);
-      if (lookahead == '@') ADVANCE(600);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(522);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(520);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(116);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(514);
       END_STATE();
     case 518:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '5') ADVANCE(523);
-      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(406);
-      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(524);
+      if (lookahead == '.') ADVANCE(116);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(514);
       END_STATE();
     case 519:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(522);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(116);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(518);
       END_STATE();
     case 520:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(522);
+      if (lookahead == '0') ADVANCE(525);
+      if (lookahead == '@') ADVANCE(605);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(525);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 521:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(520);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '0') ADVANCE(529);
+      if (('1' <= lookahead && lookahead <= '9')) ADVANCE(529);
       END_STATE();
     case 522:
       ACCEPT_TOKEN(sym_tuple);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '5') ADVANCE(524);
+      if (lookahead == '@') ADVANCE(605);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(527);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(525);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 523:
       ACCEPT_TOKEN(sym_tuple);
-      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(406);
+      if (lookahead == '5') ADVANCE(528);
+      if (('6' <= lookahead && lookahead <= '9')) ADVANCE(411);
+      if (('0' <= lookahead && lookahead <= '4')) ADVANCE(529);
       END_STATE();
     case 524:
       ACCEPT_TOKEN(sym_tuple);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(406);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(527);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 525:
       ACCEPT_TOKEN(sym_tuple);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(524);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(527);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 526:
-      ACCEPT_TOKEN(aux_sym_time_token1);
+      ACCEPT_TOKEN(sym_tuple);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(525);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 527:
-      ACCEPT_TOKEN(aux_sym_time_token1);
-      if (lookahead == '.') ADVANCE(306);
-      if (lookahead == ':') ADVANCE(307);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(527);
+      ACCEPT_TOKEN(sym_tuple);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 528:
-      ACCEPT_TOKEN(aux_sym_time_token1);
-      if (lookahead == '.') ADVANCE(306);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(528);
+      ACCEPT_TOKEN(sym_tuple);
+      if (('0' <= lookahead && lookahead <= '5')) ADVANCE(411);
       END_STATE();
     case 529:
-      ACCEPT_TOKEN(aux_sym_time_token1);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(526);
+      ACCEPT_TOKEN(sym_tuple);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(411);
       END_STATE();
     case 530:
-      ACCEPT_TOKEN(aux_sym_time_token1);
+      ACCEPT_TOKEN(sym_tuple);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(529);
       END_STATE();
     case 531:
       ACCEPT_TOKEN(aux_sym_time_token1);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(530);
       END_STATE();
     case 532:
       ACCEPT_TOKEN(aux_sym_time_token1);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(531);
+      if (lookahead == '.') ADVANCE(306);
+      if (lookahead == ':') ADVANCE(307);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(532);
       END_STATE();
     case 533:
       ACCEPT_TOKEN(aux_sym_time_token1);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(532);
+      if (lookahead == '.') ADVANCE(306);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(533);
       END_STATE();
     case 534:
       ACCEPT_TOKEN(aux_sym_time_token1);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(533);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(531);
       END_STATE();
     case 535:
       ACCEPT_TOKEN(aux_sym_time_token1);
@@ -5238,220 +5324,195 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(535);
       END_STATE();
     case 537:
-      ACCEPT_TOKEN(aux_sym_date_token1);
+      ACCEPT_TOKEN(aux_sym_time_token1);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(536);
       END_STATE();
     case 538:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == '-') ADVANCE(256);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '/' ||
-          lookahead == 'T') ADVANCE(264);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(aux_sym_time_token1);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(537);
       END_STATE();
     case 539:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == '.') ADVANCE(311);
-      if (lookahead == ':') ADVANCE(312);
-      if (lookahead == 'Z') ADVANCE(537);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(313);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(539);
+      ACCEPT_TOKEN(aux_sym_time_token1);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(538);
       END_STATE();
     case 540:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == '.') ADVANCE(311);
-      if (lookahead == 'Z') ADVANCE(537);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(313);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(540);
+      ACCEPT_TOKEN(aux_sym_time_token1);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(539);
       END_STATE();
     case 541:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == ':') ADVANCE(319);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(542);
+      ACCEPT_TOKEN(aux_sym_time_token1);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(540);
       END_STATE();
     case 542:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == ':') ADVANCE(319);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(310);
       END_STATE();
     case 543:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '-') ADVANCE(256);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == '/' ||
           lookahead == 'T') ADVANCE(264);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(546);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 544:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '/' ||
-          lookahead == 'T') ADVANCE(264);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(543);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(311);
+      if (lookahead == ':') ADVANCE(312);
+      if (lookahead == 'Z') ADVANCE(542);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(544);
       END_STATE();
     case 545:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '/' ||
-          lookahead == 'T') ADVANCE(264);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(544);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      if (lookahead == '.') ADVANCE(311);
+      if (lookahead == 'Z') ADVANCE(542);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(545);
       END_STATE();
     case 546:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == ':') ADVANCE(319);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(547);
+      END_STATE();
+    case 547:
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == ':') ADVANCE(319);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(310);
+      END_STATE();
+    case 548:
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '/' ||
+          lookahead == 'T') ADVANCE(264);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(551);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 549:
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '/' ||
+          lookahead == 'T') ADVANCE(264);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(548);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 550:
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '/' ||
+          lookahead == 'T') ADVANCE(264);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(549);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 551:
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == '/' ||
           lookahead == 'T') ADVANCE(264);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
-    case 547:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(313);
-      END_STATE();
-    case 548:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(313);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(547);
-      END_STATE();
-    case 549:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(313);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(548);
-      END_STATE();
-    case 550:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(313);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(549);
-      END_STATE();
-    case 551:
-      ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(313);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(550);
-      END_STATE();
     case 552:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
+      if (lookahead == 'Z') ADVANCE(542);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(313);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(551);
       END_STATE();
     case 553:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
+      if (lookahead == 'Z') ADVANCE(542);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(313);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(552);
       END_STATE();
     case 554:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
+      if (lookahead == 'Z') ADVANCE(542);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(313);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(553);
       END_STATE();
     case 555:
       ACCEPT_TOKEN(aux_sym_date_token1);
-      if (lookahead == 'Z') ADVANCE(537);
+      if (lookahead == 'Z') ADVANCE(542);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(313);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(554);
       END_STATE();
     case 556:
-      ACCEPT_TOKEN(aux_sym_date_token2);
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == 'Z') ADVANCE(542);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(555);
       END_STATE();
     case 557:
-      ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '.') ADVANCE(269);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == 'Z') ADVANCE(542);
       if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(270);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+          lookahead == '-') ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(556);
       END_STATE();
     case 558:
-      ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == ':') ADVANCE(320);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(559);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == 'Z') ADVANCE(542);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(557);
       END_STATE();
     case 559:
-      ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == ':') ADVANCE(320);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(267);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == 'Z') ADVANCE(542);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(558);
       END_STATE();
     case 560:
-      ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      ACCEPT_TOKEN(aux_sym_date_token1);
+      if (lookahead == 'Z') ADVANCE(542);
       if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(270);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(568);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+          lookahead == '-') ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(559);
       END_STATE();
     case 561:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(270);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(560);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 562:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      if (lookahead == '.') ADVANCE(269);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(270);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(561);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 563:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(270);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(562);
+      if (lookahead == ':') ADVANCE(320);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(564);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 564:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(270);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(563);
+      if (lookahead == ':') ADVANCE(320);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(267);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 565:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(270);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(564);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(573);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 566:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(270);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(565);
@@ -5459,8 +5520,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 567:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(270);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(566);
@@ -5468,261 +5529,271 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 568:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'Z') ADVANCE(569);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
       if (lookahead == '+' ||
           lookahead == '-') ADVANCE(270);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(567);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 569:
       ACCEPT_TOKEN(aux_sym_date_token2);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(270);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(568);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 570:
-      ACCEPT_TOKEN(anon_sym_POUND_DQUOTE);
+      ACCEPT_TOKEN(aux_sym_date_token2);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(270);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(569);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 571:
-      ACCEPT_TOKEN(aux_sym_char_token1);
+      ACCEPT_TOKEN(aux_sym_date_token2);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(270);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(570);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 572:
+      ACCEPT_TOKEN(aux_sym_date_token2);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(270);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(571);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 573:
+      ACCEPT_TOKEN(aux_sym_date_token2);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'Z') ADVANCE(574);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(270);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 574:
+      ACCEPT_TOKEN(aux_sym_date_token2);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 575:
+      ACCEPT_TOKEN(anon_sym_POUND_DQUOTE);
+      END_STATE();
+    case 576:
+      ACCEPT_TOKEN(aux_sym_char_token1);
+      END_STATE();
+    case 577:
       ACCEPT_TOKEN(aux_sym_char_token1);
       if (lookahead == '^') ADVANCE(30);
       END_STATE();
-    case 573:
+    case 578:
       ACCEPT_TOKEN(aux_sym_char_token1);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(328);
       END_STATE();
-    case 574:
+    case 579:
       ACCEPT_TOKEN(anon_sym_DQUOTE);
       END_STATE();
-    case 575:
-      ACCEPT_TOKEN(sym_ref);
-      if ((!eof && set_contains(sym_ref_character_set_1, 12, lookahead))) ADVANCE(575);
-      END_STATE();
-    case 576:
-      ACCEPT_TOKEN(sym_issue);
-      if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'c') ADVANCE(579);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
-      END_STATE();
-    case 577:
-      ACCEPT_TOKEN(sym_issue);
-      if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'd') ADVANCE(578);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
-      END_STATE();
-    case 578:
-      ACCEPT_TOKEN(sym_issue);
-      if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'e') ADVANCE(326);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
-      END_STATE();
-    case 579:
-      ACCEPT_TOKEN(sym_issue);
-      if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'l') ADVANCE(581);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
-      END_STATE();
     case 580:
-      ACCEPT_TOKEN(sym_issue);
-      if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'n') ADVANCE(576);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
+      ACCEPT_TOKEN(sym_ref);
+      if ((!eof && set_contains(sym_ref_character_set_1, 12, lookahead))) ADVANCE(580);
       END_STATE();
     case 581:
       ACCEPT_TOKEN(sym_issue);
       if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == 'u') ADVANCE(577);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'c') ADVANCE(584);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 582:
       ACCEPT_TOKEN(sym_issue);
       if (lookahead == '>') ADVANCE(276);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(582);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'd') ADVANCE(583);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 583:
       ACCEPT_TOKEN(sym_issue);
-      if (lookahead == 'c') ADVANCE(586);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == '>') ADVANCE(276);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'e') ADVANCE(326);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 584:
       ACCEPT_TOKEN(sym_issue);
-      if (lookahead == 'd') ADVANCE(585);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == '>') ADVANCE(276);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'l') ADVANCE(586);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 585:
       ACCEPT_TOKEN(sym_issue);
-      if (lookahead == 'e') ADVANCE(327);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == '>') ADVANCE(276);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'n') ADVANCE(581);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 586:
       ACCEPT_TOKEN(sym_issue);
-      if (lookahead == 'l') ADVANCE(588);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == '>') ADVANCE(276);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == 'u') ADVANCE(582);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 587:
       ACCEPT_TOKEN(sym_issue);
-      if (lookahead == 'n') ADVANCE(583);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == '>') ADVANCE(276);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(587);
       END_STATE();
     case 588:
       ACCEPT_TOKEN(sym_issue);
-      if (lookahead == 'u') ADVANCE(584);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == 'c') ADVANCE(591);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 589:
       ACCEPT_TOKEN(sym_issue);
-      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(589);
+      if (lookahead == 'd') ADVANCE(590);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 590:
-      ACCEPT_TOKEN(anon_sym_SLASH);
+      ACCEPT_TOKEN(sym_issue);
+      if (lookahead == 'e') ADVANCE(327);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 591:
-      ACCEPT_TOKEN(anon_sym_SLASH);
-      if (lookahead == '/') ADVANCE(657);
+      ACCEPT_TOKEN(sym_issue);
+      if (lookahead == 'l') ADVANCE(593);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 592:
-      ACCEPT_TOKEN(anon_sym_SLASH);
-      if (lookahead == '/') ADVANCE(658);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(sym_issue);
+      if (lookahead == 'n') ADVANCE(588);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 593:
-      ACCEPT_TOKEN(aux_sym_refinement_token1);
-      if ((!eof && set_contains(aux_sym_refinement_token1_character_set_1, 13, lookahead))) ADVANCE(593);
+      ACCEPT_TOKEN(sym_issue);
+      if (lookahead == 'u') ADVANCE(589);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 594:
-      ACCEPT_TOKEN(sym_email);
-      if (lookahead == '#') ADVANCE(597);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
+      ACCEPT_TOKEN(sym_issue);
+      if ((!eof && set_contains(sym_issue_character_set_1, 12, lookahead))) ADVANCE(594);
       END_STATE();
     case 595:
-      ACCEPT_TOKEN(sym_email);
-      if (lookahead == 'A' ||
-          lookahead == 'a') ADVANCE(599);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
+      ACCEPT_TOKEN(anon_sym_SLASH);
       END_STATE();
     case 596:
-      ACCEPT_TOKEN(sym_email);
-      if (lookahead == 'F' ||
-          lookahead == 'f') ADVANCE(395);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
+      ACCEPT_TOKEN(anon_sym_SLASH);
+      if (lookahead == '/') ADVANCE(662);
       END_STATE();
     case 597:
-      ACCEPT_TOKEN(sym_email);
-      if (lookahead == 'I' ||
-          lookahead == 'i') ADVANCE(598);
-      if (lookahead == 'N' ||
-          lookahead == 'n') ADVANCE(595);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
+      ACCEPT_TOKEN(anon_sym_SLASH);
+      if (lookahead == '/') ADVANCE(663);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 598:
-      ACCEPT_TOKEN(sym_email);
-      if (lookahead == 'N' ||
-          lookahead == 'n') ADVANCE(596);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
+      ACCEPT_TOKEN(aux_sym_refinement_token1);
+      if ((!eof && set_contains(aux_sym_refinement_token1_character_set_1, 13, lookahead))) ADVANCE(598);
       END_STATE();
     case 599:
       ACCEPT_TOKEN(sym_email);
-      if (lookahead == 'N' ||
-          lookahead == 'n') ADVANCE(395);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
+      if (lookahead == '#') ADVANCE(602);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
       END_STATE();
     case 600:
       ACCEPT_TOKEN(sym_email);
-      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(600);
+      if (lookahead == 'A' ||
+          lookahead == 'a') ADVANCE(604);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
       END_STATE();
     case 601:
-      ACCEPT_TOKEN(anon_sym_PERCENT);
+      ACCEPT_TOKEN(sym_email);
+      if (lookahead == 'F' ||
+          lookahead == 'f') ADVANCE(395);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
       END_STATE();
     case 602:
-      ACCEPT_TOKEN(anon_sym_PERCENT);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(sym_email);
+      if (lookahead == 'I' ||
+          lookahead == 'i') ADVANCE(603);
+      if (lookahead == 'N' ||
+          lookahead == 'n') ADVANCE(600);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
       END_STATE();
     case 603:
-      ACCEPT_TOKEN(sym_file_content);
-      if (lookahead == '\t' ||
-          (0x0b <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(603);
-      if ((!eof && set_contains(sym_file_content_character_set_1, 10, lookahead))) ADVANCE(604);
+      ACCEPT_TOKEN(sym_email);
+      if (lookahead == 'N' ||
+          lookahead == 'n') ADVANCE(601);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
       END_STATE();
     case 604:
-      ACCEPT_TOKEN(sym_file_content);
-      if ((!eof && set_contains(sym_file_content_character_set_1, 10, lookahead))) ADVANCE(604);
+      ACCEPT_TOKEN(sym_email);
+      if (lookahead == 'N' ||
+          lookahead == 'n') ADVANCE(395);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
       END_STATE();
     case 605:
-      ACCEPT_TOKEN(aux_sym_string_token1);
-      if (lookahead == ';') ADVANCE(606);
+      ACCEPT_TOKEN(sym_email);
+      if ((!eof && set_contains(sym_email_character_set_1, 11, lookahead))) ADVANCE(605);
+      END_STATE();
+    case 606:
+      ACCEPT_TOKEN(anon_sym_PERCENT);
+      END_STATE();
+    case 607:
+      ACCEPT_TOKEN(anon_sym_PERCENT);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 608:
+      ACCEPT_TOKEN(sym_file_content);
       if (lookahead == '\t' ||
           (0x0b <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(605);
+          lookahead == ' ') ADVANCE(608);
+      if ((!eof && set_contains(sym_file_content_character_set_1, 10, lookahead))) ADVANCE(609);
+      END_STATE();
+    case 609:
+      ACCEPT_TOKEN(sym_file_content);
+      if ((!eof && set_contains(sym_file_content_character_set_1, 10, lookahead))) ADVANCE(609);
+      END_STATE();
+    case 610:
+      ACCEPT_TOKEN(aux_sym_string_token1);
+      if (lookahead == ';') ADVANCE(611);
+      if (lookahead == '\t' ||
+          (0x0b <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(610);
       if (lookahead != 0 &&
           (lookahead < '\t' || '\r' < lookahead) &&
           lookahead != '"' &&
           lookahead != '\\' &&
-          lookahead != '^') ADVANCE(606);
+          lookahead != '^') ADVANCE(611);
       END_STATE();
-    case 606:
+    case 611:
       ACCEPT_TOKEN(aux_sym_string_token1);
       if (lookahead != 0 &&
           lookahead != '\n' &&
           lookahead != '"' &&
           lookahead != '\\' &&
-          lookahead != '^') ADVANCE(606);
-      END_STATE();
-    case 607:
-      ACCEPT_TOKEN(sym_escaped_char);
-      END_STATE();
-    case 608:
-      ACCEPT_TOKEN(anon_sym_POUND_LPAREN);
-      END_STATE();
-    case 609:
-      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
-      END_STATE();
-    case 610:
-      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
-      if (lookahead == '!' ||
-          lookahead == '-' ||
-          ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(609);
-      END_STATE();
-    case 611:
-      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
-      if (lookahead == '!' ||
-          lookahead == '-' ||
-          ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(610);
+          lookahead != '^') ADVANCE(611);
       END_STATE();
     case 612:
-      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
-      if (lookahead == '!' ||
-          lookahead == '-' ||
-          ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(611);
+      ACCEPT_TOKEN(sym_escaped_char);
       END_STATE();
     case 613:
-      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
-      if (lookahead == '!' ||
-          lookahead == '-' ||
-          ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(612);
+      ACCEPT_TOKEN(anon_sym_POUND_LPAREN);
       END_STATE();
     case 614:
       ACCEPT_TOKEN(aux_sym_escaped_value_token1);
-      if (lookahead == '!' ||
-          lookahead == '-' ||
-          ('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(613);
       END_STATE();
     case 615:
       ACCEPT_TOKEN(aux_sym_escaped_value_token1);
@@ -5809,11 +5880,46 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(625);
       END_STATE();
     case 627:
+      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
+      if (lookahead == '!' ||
+          lookahead == '-' ||
+          ('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(626);
+      END_STATE();
+    case 628:
+      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
+      if (lookahead == '!' ||
+          lookahead == '-' ||
+          ('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(627);
+      END_STATE();
+    case 629:
+      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
+      if (lookahead == '!' ||
+          lookahead == '-' ||
+          ('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(628);
+      END_STATE();
+    case 630:
+      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
+      if (lookahead == '!' ||
+          lookahead == '-' ||
+          ('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(629);
+      END_STATE();
+    case 631:
+      ACCEPT_TOKEN(aux_sym_escaped_value_token1);
+      if (lookahead == '!' ||
+          lookahead == '-' ||
+          ('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(630);
+      END_STATE();
+    case 632:
       ACCEPT_TOKEN(sym__word);
       if (lookahead == '\n') ADVANCE(14);
       if (lookahead == '"') ADVANCE(3);
-      if (lookahead == '\'') ADVANCE(627);
-      if (lookahead == '>') ADVANCE(678);
+      if (lookahead == '\'') ADVANCE(632);
+      if (lookahead == '>') ADVANCE(683);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ' ||
           ('#' <= lookahead && lookahead <= '%') ||
@@ -5836,13 +5942,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(2);
-      if (lookahead != 0) ADVANCE(627);
+      if (lookahead != 0) ADVANCE(632);
       END_STATE();
-    case 628:
+    case 633:
       ACCEPT_TOKEN(sym__word);
       if (lookahead == '"') ADVANCE(1);
-      if (lookahead == '\'') ADVANCE(627);
-      if (lookahead == '>') ADVANCE(676);
+      if (lookahead == '\'') ADVANCE(632);
+      if (lookahead == '>') ADVANCE(681);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ' ||
           ('#' <= lookahead && lookahead <= '%') ||
@@ -5865,16 +5971,16 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(14);
-      if (lookahead != 0) ADVANCE(628);
+      if (lookahead != 0) ADVANCE(633);
       END_STATE();
-    case 629:
+    case 634:
       ACCEPT_TOKEN(sym__word);
       if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(646);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(396);
+          lookahead == '-') ADVANCE(651);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(401);
       if (lookahead == '$' ||
           lookahead == '%' ||
           lookahead == ',' ||
@@ -5889,13 +5995,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
-    case 630:
+    case 635:
       ACCEPT_TOKEN(sym__word);
       if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(345);
       if (lookahead == '$' ||
           lookahead == '%' ||
@@ -5911,82 +6017,82 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 631:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(364);
-      if (lookahead == '$' ||
-          lookahead == '%' ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 632:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '#') ADVANCE(185);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (lookahead == '$' ||
-          lookahead == '%' ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 633:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(655);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(397);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 634:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '#') ADVANCE(295);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(347);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 635:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '#') ADVANCE(295);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(365);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
     case 636:
       ACCEPT_TOKEN(sym__word);
-      if (lookahead == '#') ADVANCE(295);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+      if (lookahead == '#') ADVANCE(185);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(361);
+      if (lookahead == '$' ||
+          lookahead == '%' ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
     case 637:
       ACCEPT_TOKEN(sym__word);
+      if (lookahead == '#') ADVANCE(185);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (lookahead == '$' ||
+          lookahead == '%' ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 638:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '#') ADVANCE(295);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(660);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(402);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 639:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '#') ADVANCE(295);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(376);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 640:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '#') ADVANCE(295);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(377);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 641:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '#') ADVANCE(295);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 642:
+      ACCEPT_TOKEN(sym__word);
       if (lookahead == '$') ADVANCE(257);
-      if (lookahead == '1') ADVANCE(344);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '1') ADVANCE(374);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(345);
       if (('#' <= lookahead && lookahead <= '%') ||
           lookahead == ',' ||
@@ -6002,14 +6108,14 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
       if (('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(648);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(653);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
-    case 638:
+    case 643:
       ACCEPT_TOKEN(sym__word);
       if (lookahead == '$') ADVANCE(257);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
       if (('#' <= lookahead && lookahead <= '%') ||
           lookahead == ',' ||
           lookahead == '/' ||
@@ -6023,11 +6129,11 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
-    case 639:
+    case 644:
       ACCEPT_TOKEN(sym__word);
-      if (lookahead == '\'') ADVANCE(627);
+      if (lookahead == '\'') ADVANCE(632);
       if (lookahead == '\t' ||
           (0x0b <= lookahead && lookahead <= '\r') ||
           lookahead == ' ' ||
@@ -6052,35 +6158,35 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(29);
       if (lookahead != 0 &&
-          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(639);
+          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(644);
       END_STATE();
-    case 640:
+    case 645:
       ACCEPT_TOKEN(sym__word);
       if (lookahead == '(') ADVANCE(279);
       if (lookahead == '"' ||
           lookahead == '/' ||
           lookahead == '{' ||
-          lookahead == '}') ADVANCE(607);
+          lookahead == '}') ADVANCE(612);
       if (lookahead == '-' ||
           ('A' <= lookahead && lookahead <= 'F') ||
           lookahead == '^' ||
           ('a' <= lookahead && lookahead <= 'f') ||
-          lookahead == '~') ADVANCE(607);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+          lookahead == '~') ADVANCE(612);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
-    case 641:
+    case 646:
       ACCEPT_TOKEN(sym__word);
-      if (lookahead == '1') ADVANCE(346);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(347);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+      if (lookahead == '1') ADVANCE(396);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(376);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
-    case 642:
+    case 647:
       ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
       if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(646);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(396);
+          lookahead == '-') ADVANCE(651);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(401);
       if (('#' <= lookahead && lookahead <= '%') ||
           lookahead == ',' ||
           lookahead == '/' ||
@@ -6094,12 +6200,12 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
-    case 643:
+    case 648:
       ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(345);
       if (('#' <= lookahead && lookahead <= '%') ||
           lookahead == ',' ||
@@ -6114,114 +6220,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 644:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(364);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 645:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(389);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 646:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(396);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 647:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if (('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(638);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
-      END_STATE();
-    case 648:
-      ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
-      if (('#' <= lookahead && lookahead <= '%') ||
-          lookahead == ',' ||
-          lookahead == '/' ||
-          lookahead == '\\' ||
-          lookahead == 0x85 ||
-          lookahead == 0xa0 ||
-          lookahead == 0x1680 ||
-          (0x2000 <= lookahead && lookahead <= 0x200a) ||
-          lookahead == 0x2028 ||
-          lookahead == 0x2029 ||
-          lookahead == 0x202f ||
-          lookahead == 0x205f ||
-          lookahead == 0x3000) ADVANCE(276);
-      if (('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(647);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
     case 649:
       ACCEPT_TOKEN(sym__word);
-      if (lookahead == '<') ADVANCE(656);
-      if (lookahead == '@') ADVANCE(600);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(361);
       if (('#' <= lookahead && lookahead <= '%') ||
           lookahead == ',' ||
           lookahead == '/' ||
@@ -6235,18 +6240,119 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(276);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(649);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
     case 650:
       ACCEPT_TOKEN(sym__word);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(655);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(397);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(370);
+      if (('#' <= lookahead && lookahead <= '%') ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
       END_STATE();
     case 651:
       ACCEPT_TOKEN(sym__word);
-      if (('<' <= lookahead && lookahead <= '>')) ADVANCE(656);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(401);
+      if (('#' <= lookahead && lookahead <= '%') ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 652:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('#' <= lookahead && lookahead <= '%') ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if (('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(643);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 653:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('#' <= lookahead && lookahead <= '%') ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if (('A' <= lookahead && lookahead <= 'Z') ||
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(652);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 654:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '<') ADVANCE(661);
+      if (lookahead == '@') ADVANCE(605);
+      if (('#' <= lookahead && lookahead <= '%') ||
+          lookahead == ',' ||
+          lookahead == '/' ||
+          lookahead == '\\' ||
+          lookahead == 0x85 ||
+          lookahead == 0xa0 ||
+          lookahead == 0x1680 ||
+          (0x2000 <= lookahead && lookahead <= 0x200a) ||
+          lookahead == 0x2028 ||
+          lookahead == 0x2029 ||
+          lookahead == 0x202f ||
+          lookahead == 0x205f ||
+          lookahead == 0x3000) ADVANCE(276);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(654);
+      END_STATE();
+    case 655:
+      ACCEPT_TOKEN(sym__word);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(660);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(402);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
+      END_STATE();
+    case 656:
+      ACCEPT_TOKEN(sym__word);
+      if (('<' <= lookahead && lookahead <= '>')) ADVANCE(661);
       if (('#' <= lookahead && lookahead <= '%') ||
           lookahead == ',' ||
           lookahead == '/' ||
@@ -6262,134 +6368,138 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x202f ||
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(14);
-      if ((!eof && set_contains(sym_tag_character_set_1, 10, lookahead))) ADVANCE(628);
-      END_STATE();
-    case 652:
-      ACCEPT_TOKEN(sym__word);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(347);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 653:
-      ACCEPT_TOKEN(sym__word);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(365);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 654:
-      ACCEPT_TOKEN(sym__word);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(394);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 655:
-      ACCEPT_TOKEN(sym__word);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(397);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
-      END_STATE();
-    case 656:
-      ACCEPT_TOKEN(sym__word);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+      if ((!eof && set_contains(sym_tag_character_set_1, 10, lookahead))) ADVANCE(633);
       END_STATE();
     case 657:
-      ACCEPT_TOKEN(aux_sym_word_token1);
-      if (lookahead == '/') ADVANCE(657);
+      ACCEPT_TOKEN(sym__word);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(376);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 658:
-      ACCEPT_TOKEN(aux_sym_word_token1);
-      if (lookahead == '/') ADVANCE(658);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(sym__word);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(377);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 659:
-      ACCEPT_TOKEN(anon_sym_SQUOTE);
+      ACCEPT_TOKEN(sym__word);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(394);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 660:
-      ACCEPT_TOKEN(anon_sym_SQUOTE);
-      if (lookahead == '@') ADVANCE(600);
-      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      ACCEPT_TOKEN(sym__word);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(402);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 661:
-      ACCEPT_TOKEN(anon_sym_COLON);
+      ACCEPT_TOKEN(sym__word);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
     case 662:
-      ACCEPT_TOKEN(anon_sym_2_POUND_LBRACE);
+      ACCEPT_TOKEN(aux_sym_word_token1);
+      if (lookahead == '/') ADVANCE(662);
       END_STATE();
     case 663:
-      ACCEPT_TOKEN(aux_sym__binary_base_2_token1);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(663);
+      ACCEPT_TOKEN(aux_sym_word_token1);
+      if (lookahead == '/') ADVANCE(663);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
     case 664:
-      ACCEPT_TOKEN(anon_sym_RBRACE);
+      ACCEPT_TOKEN(anon_sym_SQUOTE);
       END_STATE();
     case 665:
+      ACCEPT_TOKEN(anon_sym_SQUOTE);
+      if (lookahead == '@') ADVANCE(605);
+      if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
+      END_STATE();
+    case 666:
+      ACCEPT_TOKEN(anon_sym_COLON);
+      END_STATE();
+    case 667:
+      ACCEPT_TOKEN(anon_sym_2_POUND_LBRACE);
+      END_STATE();
+    case 668:
+      ACCEPT_TOKEN(aux_sym__binary_base_2_token1);
+      if (('\t' <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(668);
+      END_STATE();
+    case 669:
+      ACCEPT_TOKEN(anon_sym_RBRACE);
+      END_STATE();
+    case 670:
       ACCEPT_TOKEN(anon_sym_16);
       ADVANCE_MAP(
         '#', 185,
+        '%', 399,
         '\'', 258,
         '-', 128,
         '.', 95,
         '/', 136,
         ':', 305,
-        '@', 600,
-        'E', 390,
-        'e', 390,
+        '@', 605,
+        'E', 371,
+        'e', 371,
         'X', 127,
         'x', 127,
       );
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(354);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(352);
       if ((!eof && set_contains(sym_email_character_set_2, 10, lookahead))) ADVANCE(276);
       END_STATE();
-    case 666:
+    case 671:
       ACCEPT_TOKEN(anon_sym_16);
-      if (lookahead == '#') ADVANCE(295);
-      if (lookahead == '\'') ADVANCE(317);
-      if (lookahead == '.') ADVANCE(98);
-      if (lookahead == 'E' ||
-          lookahead == 'e') ADVANCE(393);
-      if (lookahead == 'X' ||
-          lookahead == 'x') ADVANCE(292);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(377);
+      ADVANCE_MAP(
+        '#', 295,
+        '%', 329,
+        '\'', 317,
+        '.', 98,
+        'E', 393,
+        'e', 393,
+        'X', 292,
+        'x', 292,
+      );
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(381);
       END_STATE();
-    case 667:
+    case 672:
       ACCEPT_TOKEN(anon_sym_POUND_LBRACE);
       END_STATE();
-    case 668:
+    case 673:
       ACCEPT_TOKEN(aux_sym__binary_base_16_token1);
       END_STATE();
-    case 669:
+    case 674:
       ACCEPT_TOKEN(anon_sym_64_POUND_LBRACE);
       END_STATE();
-    case 670:
+    case 675:
       ACCEPT_TOKEN(aux_sym__binary_base_64_token1);
       END_STATE();
-    case 671:
+    case 676:
       ACCEPT_TOKEN(aux_sym__binary_base_64_token1);
       if (lookahead == '#') ADVANCE(289);
       END_STATE();
-    case 672:
+    case 677:
       ACCEPT_TOKEN(anon_sym_EQ);
       END_STATE();
-    case 673:
+    case 678:
       ACCEPT_TOKEN(anon_sym_EQ);
-      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(656);
+      if ((!eof && set_contains(sym__word_character_set_2, 20, lookahead))) ADVANCE(661);
       END_STATE();
-    case 674:
+    case 679:
       ACCEPT_TOKEN(anon_sym_POUND_LBRACK);
       END_STATE();
-    case 675:
+    case 680:
       ACCEPT_TOKEN(anon_sym_RBRACK);
       END_STATE();
-    case 676:
+    case 681:
       ACCEPT_TOKEN(sym_tag);
       END_STATE();
-    case 677:
+    case 682:
       ACCEPT_TOKEN(sym_tag);
       if (lookahead == '"') ADVANCE(1);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(15);
       END_STATE();
-    case 678:
+    case 683:
       ACCEPT_TOKEN(sym_tag);
-      if (lookahead == '\'') ADVANCE(627);
+      if (lookahead == '\'') ADVANCE(632);
       if (lookahead == '\t' ||
           (0x0b <= lookahead && lookahead <= '\r') ||
           lookahead == ' ' ||
@@ -6414,22 +6524,22 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 0x205f ||
           lookahead == 0x3000) ADVANCE(29);
       if (lookahead != 0 &&
-          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(639);
+          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(644);
       END_STATE();
-    case 679:
+    case 684:
       ACCEPT_TOKEN(sym_tag);
       if (lookahead == '\'') ADVANCE(2);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(29);
       END_STATE();
-    case 680:
+    case 685:
       ACCEPT_TOKEN(sym_tag);
       if (lookahead == '"' ||
           lookahead == '\'') ADVANCE(3);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(291);
       END_STATE();
-    case 681:
+    case 686:
       ACCEPT_TOKEN(anon_sym_LBRACK);
       END_STATE();
     default:

@@ -95,8 +95,9 @@ module.exports = grammar({
             decimalDigits,
             optional(seq(".", decimalDigits)),
             optional(seq(/[eE]/, optional(seq(optional(/[-\+]/), decimal)))),
+            optional("%"),
           ),
-          seq(optional(/[-\+]/), choice(/1.#inf/i, /1.#nan/i)),
+          seq(optional(/[-\+]/), choice(/1.#inf/i, /1.#nan/i), optional("%")),
         ),
       );
     },
