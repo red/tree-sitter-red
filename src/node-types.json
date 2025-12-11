@@ -39,6 +39,10 @@
           "named": true
         },
         {
+          "type": "context",
+          "named": true
+        },
+        {
           "type": "date",
           "named": true
         },
@@ -104,6 +108,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -190,6 +198,54 @@
     }
   },
   {
+    "type": "context",
+    "named": true,
+    "fields": {
+      "ctx": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "CONTEXT",
+            "named": false
+          },
+          {
+            "type": "Context",
+            "named": false
+          },
+          {
+            "type": "context",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "date",
     "named": true,
     "fields": {}
@@ -221,7 +277,52 @@
   {
     "type": "function",
     "named": true,
-    "fields": {},
+    "fields": {
+      "func": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "FUNC",
+            "named": false
+          },
+          {
+            "type": "FUNCTION",
+            "named": false
+          },
+          {
+            "type": "Func",
+            "named": false
+          },
+          {
+            "type": "Function",
+            "named": false
+          },
+          {
+            "type": "func",
+            "named": false
+          },
+          {
+            "type": "function",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -965,6 +1066,54 @@
     }
   },
   {
+    "type": "object",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          }
+        ]
+      },
+      "obj": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "OBJECT",
+            "named": false
+          },
+          {
+            "type": "Object",
+            "named": false
+          },
+          {
+            "type": "object",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "paren",
     "named": true,
     "fields": {},
@@ -1310,6 +1459,10 @@
           "named": true
         },
         {
+          "type": "context",
+          "named": true
+        },
+        {
           "type": "date",
           "named": true
         },
@@ -1379,6 +1532,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -1557,6 +1714,14 @@
     "named": false
   },
   {
+    "type": "CONTEXT",
+    "named": false
+  },
+  {
+    "type": "Context",
+    "named": false
+  },
+  {
     "type": "FUNC",
     "named": false
   },
@@ -1581,6 +1746,14 @@
     "named": false
   },
   {
+    "type": "OBJECT",
+    "named": false
+  },
+  {
+    "type": "Object",
+    "named": false
+  },
+  {
     "type": "WHILE",
     "named": false
   },
@@ -1600,6 +1773,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "context",
+    "named": false
   },
   {
     "type": "email",
@@ -1648,6 +1825,10 @@
   {
     "type": "number",
     "named": true
+  },
+  {
+    "type": "object",
+    "named": false
   },
   {
     "type": "pair",

@@ -378,7 +378,15 @@ module.exports = grammar({
       ),
 
     _complex_expression: ($) =>
-      choice($.paren, $.block, $.while, $.loop, $.function),
+      choice(
+        $.paren,
+        $.block,
+        $.while,
+        $.loop,
+        $.function,
+        $.context,
+        $.object,
+      ),
 
     block: ($) => seq("[", repeat($._expression), "]"),
     paren: ($) => seq("(", repeat($._simple_expression), ")"),
@@ -390,8 +398,24 @@ module.exports = grammar({
 
     function: ($) =>
       seq(
-        choice("func", "Func", "FUNC", "function", "Function", "FUNCTION"),
+        field("name", choice($.set_word, $.set_path)),
+        field(
+          "func",
+          choice("func", "Func", "FUNC", "function", "Function", "FUNCTION"),
+        ),
         $.block,
+        $.block,
+      ),
+    context: ($) =>
+      seq(
+        field("name", choice($.set_word, $.set_path)),
+        field("ctx", choice("context", "Context", "CONTEXT")),
+        $.block,
+      ),
+    object: ($) =>
+      seq(
+        field("name", choice($.set_word, $.set_path)),
+        field("obj", choice("object", "Object", "OBJECT")),
         $.block,
       ),
   },

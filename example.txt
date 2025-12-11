@@ -177,3 +177,12 @@ test: func [][]
 
 33%
 32.2%
+
+aa: context [
+ a b 12
+]
+
+cc: object [
+    a: 3
+    ss: "fjdklsj"
+]
