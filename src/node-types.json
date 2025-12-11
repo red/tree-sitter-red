@@ -1763,7 +1763,7 @@
       "required": true,
       "types": [
         {
-          "type": "word",
+          "type": "type_word",
           "named": true
         }
       ]
@@ -1788,10 +1788,6 @@
     "type": "word",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "!",
-    "named": false
   },
   {
     "type": "\"",
@@ -2012,6 +2008,10 @@
   },
   {
     "type": "tuple",
+    "named": true
+  },
+  {
+    "type": "type_word",
     "named": true
   },
   {
