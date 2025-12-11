@@ -47,25 +47,17 @@ module.exports = grammar({
 
     _literal: ($) =>
       choice(
+        $._any_string,
+        $._any_word,
+        $._any_path,
         $.hexa,
         $.escaped_value,
-        $.raw_string,
-        $.multiline_string,
-        $.word,
-        $.lit_word,
-        $.get_word,
-        $.set_word,
-        $.path,
-        $.lit_path,
-        $.get_path,
-        $.set_path,
         $.boolean,
         $.number,
         $.pair,
         $.tuple,
         $.char,
         $.file,
-        $.string,
         $.issue,
         $.binary,
         $.map,
@@ -282,6 +274,7 @@ module.exports = grammar({
         ),
         '"',
       ),
+
     escaped_char: (_) =>
       token(
         prec(
@@ -319,6 +312,11 @@ module.exports = grammar({
     get_word: ($) => seq(":", $.word),
     set_word: ($) => prec(1, seq($.word, ":")),
 
+    _type_word: ($) => prec(1, seq($.word, "!")),
+    _any_word: ($) => choice($.word, $.lit_word, $.get_word, $.set_word),
+    _any_path: ($) => choice($.path, $.lit_path, $.get_path, $.set_path),
+    _any_string: ($) => choice($.string, $.multiline_string, $.raw_string),
+
     _path_element: ($) =>
       choice(
         $.path,
@@ -344,23 +342,11 @@ module.exports = grammar({
     get_path: ($) => prec(1, seq(":", $.word, $._path_part)),
     set_path: ($) => prec(2, seq($.word, $._path_part, ":")),
 
-    _binary_base_2: ($) =>
-      seq("2#{", repeat(choice(/(?:[01]\s*){8}/, $.comment)), "}"),
+    _binary_base_2: ($) => seq("2#{", repeat(/(?:[01]\s*){8}/), "}"),
     _binary_base_16: ($) =>
-      seq(
-        optional("16"),
-        "#{",
-        repeat(choice(/[0-9a-fA-F]{2}/, $.comment)),
-        "}",
-      ),
+      seq(optional("16"), "#{", repeat(/[0-9a-fA-F]{2}/), "}"),
     _binary_base_64: ($) =>
-      seq(
-        "64#{",
-        repeat(choice(/[A-Za-z0-9\+\/]/, $.comment)),
-        optional("="),
-        optional("="),
-        "}",
-      ),
+      seq("64#{", repeat(/[A-Za-z0-9\+\/]/), optional("="), optional("="), "}"),
     binary: ($) =>
       choice($._binary_base_2, $._binary_base_16, $._binary_base_64),
 
@@ -396,6 +382,25 @@ module.exports = grammar({
     loop: ($) =>
       seq(choice("loop", "LOOP", "Loop"), $._simple_expression, $.block),
 
+    type_block: ($) => seq("[", repeat1($._type_word), "]"),
+    func_return: ($) => seq("return:", $.type_block, optional($._any_string)),
+    func_param: ($) =>
+      seq(choice($.word, $.lit_word, $.get_word), optional($.type_block)),
+    func_local: ($) =>
+      seq(
+        "/local",
+        repeat(choice(seq($.word, optional($.type_block)), $._any_string)),
+      ),
+    func_spec: ($) =>
+      seq(
+        "[",
+        optional(field("attribute", $.block)),
+        repeat(choice($.func_param, $.refinement, $._any_string)),
+        optional($.func_return),
+        optional($.func_local),
+        "]",
+      ),
+
     function: ($) =>
       seq(
         field("name", choice($.set_word, $.set_path)),
@@ -403,7 +408,7 @@ module.exports = grammar({
           "func",
           choice("func", "Func", "FUNC", "function", "Function", "FUNCTION"),
         ),
-        $.block,
+        $.func_spec,
         $.block,
       ),
     context: ($) =>

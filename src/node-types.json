@@ -2,17 +2,7 @@
   {
     "type": "binary",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "block",
@@ -275,6 +265,141 @@
     }
   },
   {
+    "type": "func_local",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "type_block",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_param",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "get_word",
+          "named": true
+        },
+        {
+          "type": "lit_word",
+          "named": true
+        },
+        {
+          "type": "type_block",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_return",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "type_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func_spec",
+    "named": true,
+    "fields": {
+      "attribute": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "func_local",
+          "named": true
+        },
+        {
+          "type": "func_param",
+          "named": true
+        },
+        {
+          "type": "func_return",
+          "named": true
+        },
+        {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
+          "type": "raw_string",
+          "named": true
+        },
+        {
+          "type": "refinement",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function",
     "named": true,
     "fields": {
@@ -329,6 +454,10 @@
       "types": [
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "func_spec",
           "named": true
         }
       ]
@@ -1626,6 +1755,21 @@
     "fields": {}
   },
   {
+    "type": "type_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "while",
     "named": true,
     "fields": {},
@@ -1644,6 +1788,10 @@
     "type": "word",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "!",
+    "named": false
   },
   {
     "type": "\"",
@@ -1691,6 +1839,10 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "/local",
     "named": false
   },
   {
@@ -1841,6 +1993,10 @@
   {
     "type": "ref",
     "named": true
+  },
+  {
+    "type": "return:",
+    "named": false
   },
   {
     "type": "string_content",
