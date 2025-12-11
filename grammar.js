@@ -50,7 +50,6 @@ module.exports = grammar({
         $._any_string,
         $._any_word,
         $._any_path,
-        $.keywords,
         $.hexa,
         $.escaped_value,
         $.boolean,
@@ -308,7 +307,7 @@ module.exports = grammar({
 
     _word: (_) =>
       /[^\p{White_Space}\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\p{White_Space}\/\\,\[\]\(\)\{\}"#%\$@:;]*/u,
-    word: ($) => choice($._word, /\/+/),
+    word: ($) => choice($._word, /\/+/, $.keywords),
     lit_word: ($) => seq("'", $.word),
     get_word: ($) => seq(":", $.word),
     set_word: ($) => prec(1, seq($.word, ":")),

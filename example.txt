@@ -186,3 +186,15 @@ cc: object [
     a: 3
     ss: "fjdklsj"
 ]
+
+routine: func ["Defines a function with a given Red spec and Red/System body" spec [block!] body [block!]][
+	cause-error 'internal 'routines []
+]
+
+also: func [
+	"Returns the first value, but also evaluates the second"
+	value1 [any-type!]
+	value2 [any-type!]
+][
+	:value1
+]

@@ -73,10 +73,6 @@
           "named": true
         },
         {
-          "type": "keywords",
-          "named": true
-        },
-        {
           "type": "lit_path",
           "named": true
         },
@@ -629,10 +625,6 @@
             "named": true
           },
           {
-            "type": "keywords",
-            "named": true
-          },
-          {
             "type": "lit_path",
             "named": true
           },
@@ -760,10 +752,6 @@
           },
           {
             "type": "issue",
-            "named": true
-          },
-          {
-            "type": "keywords",
             "named": true
           },
           {
@@ -1002,10 +990,6 @@
           "named": true
         },
         {
-          "type": "keywords",
-          "named": true
-        },
-        {
           "type": "lit_path",
           "named": true
         },
@@ -1134,10 +1118,6 @@
         },
         {
           "type": "issue",
-          "named": true
-        },
-        {
-          "type": "keywords",
           "named": true
         },
         {
@@ -1321,10 +1301,6 @@
         },
         {
           "type": "issue",
-          "named": true
-        },
-        {
-          "type": "keywords",
           "named": true
         },
         {
@@ -1665,10 +1641,6 @@
           "named": true
         },
         {
-          "type": "keywords",
-          "named": true
-        },
-        {
           "type": "lit_path",
           "named": true
         },
@@ -1820,7 +1792,17 @@
   {
     "type": "word",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "keywords",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "\"",
