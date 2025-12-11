@@ -73,6 +73,10 @@
           "named": true
         },
         {
+          "type": "keywords",
+          "named": true
+        },
+        {
           "type": "lit_path",
           "named": true
         },
@@ -625,6 +629,10 @@
             "named": true
           },
           {
+            "type": "keywords",
+            "named": true
+          },
+          {
             "type": "lit_path",
             "named": true
           },
@@ -755,6 +763,10 @@
             "named": true
           },
           {
+            "type": "keywords",
+            "named": true
+          },
+          {
             "type": "lit_path",
             "named": true
           },
@@ -833,6 +845,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "keywords",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "lit_path",
@@ -985,6 +1002,10 @@
           "named": true
         },
         {
+          "type": "keywords",
+          "named": true
+        },
+        {
           "type": "lit_path",
           "named": true
         },
@@ -1113,6 +1134,10 @@
         },
         {
           "type": "issue",
+          "named": true
+        },
+        {
+          "type": "keywords",
           "named": true
         },
         {
@@ -1296,6 +1321,10 @@
         },
         {
           "type": "issue",
+          "named": true
+        },
+        {
+          "type": "keywords",
           "named": true
         },
         {
@@ -1636,6 +1665,10 @@
           "named": true
         },
         {
+          "type": "keywords",
+          "named": true
+        },
+        {
           "type": "lit_path",
           "named": true
         },
@@ -1862,7 +1895,23 @@
     "named": false
   },
   {
+    "type": "AS",
+    "named": false
+  },
+  {
+    "type": "BS",
+    "named": false
+  },
+  {
     "type": "CONTEXT",
+    "named": false
+  },
+  {
+    "type": "CR",
+    "named": false
+  },
+  {
+    "type": "CRLF",
     "named": false
   },
   {
@@ -1886,6 +1935,10 @@
     "named": false
   },
   {
+    "type": "LF",
+    "named": false
+  },
+  {
     "type": "LOOP",
     "named": false
   },
@@ -1898,7 +1951,23 @@
     "named": false
   },
   {
+    "type": "OFF",
+    "named": false
+  },
+  {
+    "type": "ON",
+    "named": false
+  },
+  {
     "type": "Object",
+    "named": false
+  },
+  {
+    "type": "SP",
+    "named": false
+  },
+  {
+    "type": "Usage",
     "named": false
   },
   {
@@ -1918,12 +1987,609 @@
     "named": false
   },
   {
+    "type": "about",
+    "named": false
+  },
+  {
+    "type": "abs",
+    "named": false
+  },
+  {
+    "type": "absolute",
+    "named": false
+  },
+  {
+    "type": "access-os",
+    "named": false
+  },
+  {
+    "type": "action?",
+    "named": false
+  },
+  {
+    "type": "add",
+    "named": false
+  },
+  {
+    "type": "ajoin",
+    "named": false
+  },
+  {
+    "type": "alert",
+    "named": false
+  },
+  {
+    "type": "alias",
+    "named": false
+  },
+  {
+    "type": "all",
+    "named": false
+  },
+  {
+    "type": "also",
+    "named": false
+  },
+  {
+    "type": "alter",
+    "named": false
+  },
+  {
+    "type": "and~",
+    "named": false
+  },
+  {
+    "type": "any",
+    "named": false
+  },
+  {
+    "type": "any-block?",
+    "named": false
+  },
+  {
+    "type": "any-function?",
+    "named": false
+  },
+  {
+    "type": "any-object?",
+    "named": false
+  },
+  {
+    "type": "any-path?",
+    "named": false
+  },
+  {
+    "type": "any-series?",
+    "named": false
+  },
+  {
+    "type": "any-string?",
+    "named": false
+  },
+  {
+    "type": "any-type?",
+    "named": false
+  },
+  {
+    "type": "any-word?",
+    "named": false
+  },
+  {
+    "type": "append",
+    "named": false
+  },
+  {
+    "type": "apply",
+    "named": false
+  },
+  {
+    "type": "arccosine",
+    "named": false
+  },
+  {
+    "type": "arcsine",
+    "named": false
+  },
+  {
+    "type": "arctangent",
+    "named": false
+  },
+  {
+    "type": "array",
+    "named": false
+  },
+  {
+    "type": "as",
+    "named": false
+  },
+  {
+    "type": "as-binary",
+    "named": false
+  },
+  {
+    "type": "as-pair",
+    "named": false
+  },
+  {
+    "type": "as-string",
+    "named": false
+  },
+  {
+    "type": "ascii?",
+    "named": false
+  },
+  {
+    "type": "ask",
+    "named": false
+  },
+  {
+    "type": "assert",
+    "named": false
+  },
+  {
+    "type": "at",
+    "named": false
+  },
+  {
+    "type": "attempt",
+    "named": false
+  },
+  {
+    "type": "back",
+    "named": false
+  },
+  {
+    "type": "backslash",
+    "named": false
+  },
+  {
+    "type": "backspace",
+    "named": false
+  },
+  {
+    "type": "bb",
+    "named": false
+  },
+  {
+    "type": "binary?",
+    "named": false
+  },
+  {
+    "type": "bind",
+    "named": false
+  },
+  {
+    "type": "bind?",
+    "named": false
+  },
+  {
+    "type": "bitset?",
+    "named": false
+  },
+  {
+    "type": "block?",
+    "named": false
+  },
+  {
+    "type": "body-of",
+    "named": false
+  },
+  {
+    "type": "bound?",
+    "named": false
+  },
+  {
+    "type": "break",
+    "named": false
+  },
+  {
+    "type": "brightness?",
+    "named": false
+  },
+  {
+    "type": "browse",
+    "named": false
+  },
+  {
+    "type": "bs",
+    "named": false
+  },
+  {
+    "type": "build-attach-body",
+    "named": false
+  },
+  {
+    "type": "build-markup",
+    "named": false
+  },
+  {
+    "type": "build-tag",
+    "named": false
+  },
+  {
+    "type": "call",
+    "named": false
+  },
+  {
+    "type": "caret-to-offset",
+    "named": false
+  },
+  {
+    "type": "case",
+    "named": false
+  },
+  {
+    "type": "catch",
+    "named": false
+  },
+  {
+    "type": "cause-error",
+    "named": false
+  },
+  {
+    "type": "cd",
+    "named": false
+  },
+  {
+    "type": "center-face",
+    "named": false
+  },
+  {
+    "type": "change",
+    "named": false
+  },
+  {
+    "type": "change-dir",
+    "named": false
+  },
+  {
+    "type": "char?",
+    "named": false
+  },
+  {
+    "type": "charset",
+    "named": false
+  },
+  {
+    "type": "checksum",
+    "named": false
+  },
+  {
+    "type": "choose",
+    "named": false
+  },
+  {
+    "type": "clean-path",
+    "named": false
+  },
+  {
+    "type": "clear",
+    "named": false
+  },
+  {
+    "type": "clear-face",
+    "named": false
+  },
+  {
+    "type": "clear-fields",
+    "named": false
+  },
+  {
+    "type": "close",
+    "named": false
+  },
+  {
+    "type": "closure",
+    "named": false
+  },
+  {
+    "type": "closure?",
+    "named": false
+  },
+  {
+    "type": "collect",
+    "named": false
+  },
+  {
+    "type": "collect-words",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": false,
+    "extra": true
+  },
+  {
     "type": "comment",
     "named": true,
     "extra": true
   },
   {
+    "type": "complement",
+    "named": false
+  },
+  {
+    "type": "component?",
+    "named": false
+  },
+  {
+    "type": "compose",
+    "named": false
+  },
+  {
+    "type": "compress",
+    "named": false
+  },
+  {
+    "type": "confine",
+    "named": false
+  },
+  {
+    "type": "confirm",
+    "named": false
+  },
+  {
+    "type": "connected?",
+    "named": false
+  },
+  {
+    "type": "construct",
+    "named": false
+  },
+  {
     "type": "context",
+    "named": false
+  },
+  {
+    "type": "continue",
+    "named": false
+  },
+  {
+    "type": "copy",
+    "named": false
+  },
+  {
+    "type": "copy*",
+    "named": false
+  },
+  {
+    "type": "cosine",
+    "named": false
+  },
+  {
+    "type": "cp",
+    "named": false
+  },
+  {
+    "type": "cr",
+    "named": false
+  },
+  {
+    "type": "create-link",
+    "named": false
+  },
+  {
+    "type": "crlf",
+    "named": false
+  },
+  {
+    "type": "crypt-strength?",
+    "named": false
+  },
+  {
+    "type": "cvs-date",
+    "named": false
+  },
+  {
+    "type": "cvs-version",
+    "named": false
+  },
+  {
+    "type": "datatype?",
+    "named": false
+  },
+  {
+    "type": "date?",
+    "named": false
+  },
+  {
+    "type": "dbug",
+    "named": false
+  },
+  {
+    "type": "debase",
+    "named": false
+  },
+  {
+    "type": "decimal?",
+    "named": false
+  },
+  {
+    "type": "declare",
+    "named": false
+  },
+  {
+    "type": "decloak",
+    "named": false
+  },
+  {
+    "type": "decode-cgi",
+    "named": false
+  },
+  {
+    "type": "decode-url",
+    "named": false
+  },
+  {
+    "type": "decompress",
+    "named": false
+  },
+  {
+    "type": "default",
+    "named": false
+  },
+  {
+    "type": "deflag-face",
+    "named": false
+  },
+  {
+    "type": "dehex",
+    "named": false
+  },
+  {
+    "type": "delete",
+    "named": false
+  },
+  {
+    "type": "delete-dir",
+    "named": false
+  },
+  {
+    "type": "deline",
+    "named": false
+  },
+  {
+    "type": "delta-time",
+    "named": false
+  },
+  {
+    "type": "desktop",
+    "named": false
+  },
+  {
+    "type": "detab",
+    "named": false
+  },
+  {
+    "type": "dh-compute-key",
+    "named": false
+  },
+  {
+    "type": "dh-generate-key",
+    "named": false
+  },
+  {
+    "type": "dh-make-key",
+    "named": false
+  },
+  {
+    "type": "difference",
+    "named": false
+  },
+  {
+    "type": "dir?",
+    "named": false
+  },
+  {
+    "type": "dirize",
+    "named": false
+  },
+  {
+    "type": "disarm",
+    "named": false
+  },
+  {
+    "type": "dispatch",
+    "named": false
+  },
+  {
+    "type": "divide",
+    "named": false
+  },
+  {
+    "type": "do",
+    "named": false
+  },
+  {
+    "type": "do-boot",
+    "named": false
+  },
+  {
+    "type": "do-browser",
+    "named": false
+  },
+  {
+    "type": "do-events",
+    "named": false
+  },
+  {
+    "type": "do-face",
+    "named": false
+  },
+  {
+    "type": "do-face-alt",
+    "named": false
+  },
+  {
+    "type": "do-thru",
+    "named": false
+  },
+  {
+    "type": "does",
+    "named": false
+  },
+  {
+    "type": "dot",
+    "named": false
+  },
+  {
+    "type": "draw",
+    "named": false
+  },
+  {
+    "type": "dsa-generate-key",
+    "named": false
+  },
+  {
+    "type": "dsa-make-key",
+    "named": false
+  },
+  {
+    "type": "dsa-make-signature",
+    "named": false
+  },
+  {
+    "type": "dsa-verify-signature",
+    "named": false
+  },
+  {
+    "type": "dt",
+    "named": false
+  },
+  {
+    "type": "dump-face",
+    "named": false
+  },
+  {
+    "type": "dump-obj",
+    "named": false
+  },
+  {
+    "type": "dump-pane",
+    "named": false
+  },
+  {
+    "type": "echo",
+    "named": false
+  },
+  {
+    "type": "edge-size?",
+    "named": false
+  },
+  {
+    "type": "editor",
+    "named": false
+  },
+  {
+    "type": "eighth",
+    "named": false
+  },
+  {
+    "type": "either",
+    "named": false
+  },
+  {
+    "type": "else",
     "named": false
   },
   {
@@ -1931,11 +2597,91 @@
     "named": true
   },
   {
+    "type": "email?",
+    "named": false
+  },
+  {
+    "type": "emailer",
+    "named": false
+  },
+  {
+    "type": "empty?",
+    "named": false
+  },
+  {
+    "type": "enbase",
+    "named": false
+  },
+  {
+    "type": "encloak",
+    "named": false
+  },
+  {
+    "type": "enline",
+    "named": false
+  },
+  {
+    "type": "entab",
+    "named": false
+  },
+  {
+    "type": "equal?",
+    "named": false
+  },
+  {
+    "type": "error?",
+    "named": false
+  },
+  {
+    "type": "escape",
+    "named": false
+  },
+  {
     "type": "escaped_char",
     "named": true
   },
   {
+    "type": "even?",
+    "named": false
+  },
+  {
+    "type": "event?",
+    "named": false
+  },
+  {
+    "type": "exclude",
+    "named": false
+  },
+  {
+    "type": "exists-thru?",
+    "named": false
+  },
+  {
+    "type": "exists?",
+    "named": false
+  },
+  {
+    "type": "exit",
+    "named": false
+  },
+  {
+    "type": "exp",
+    "named": false
+  },
+  {
+    "type": "extract",
+    "named": false
+  },
+  {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "fifth",
+    "named": false
+  },
+  {
+    "type": "file?",
     "named": false
   },
   {
@@ -1943,7 +2689,95 @@
     "named": true
   },
   {
+    "type": "find",
+    "named": false
+  },
+  {
+    "type": "find-key-face",
+    "named": false
+  },
+  {
+    "type": "find-window",
+    "named": false
+  },
+  {
+    "type": "first",
+    "named": false
+  },
+  {
+    "type": "first+",
+    "named": false
+  },
+  {
+    "type": "flag-face",
+    "named": false
+  },
+  {
+    "type": "flag-face?",
+    "named": false
+  },
+  {
+    "type": "flash",
+    "named": false
+  },
+  {
+    "type": "focus",
+    "named": false
+  },
+  {
+    "type": "foo",
+    "named": false
+  },
+  {
+    "type": "foo10",
+    "named": false
+  },
+  {
+    "type": "foo9",
+    "named": false
+  },
+  {
+    "type": "for",
+    "named": false
+  },
+  {
+    "type": "forall",
+    "named": false
+  },
+  {
+    "type": "foreach",
+    "named": false
+  },
+  {
+    "type": "forever",
+    "named": false
+  },
+  {
+    "type": "form",
+    "named": false
+  },
+  {
+    "type": "forskip",
+    "named": false
+  },
+  {
+    "type": "found?",
+    "named": false
+  },
+  {
+    "type": "fourth",
+    "named": false
+  },
+  {
+    "type": "free",
+    "named": false
+  },
+  {
     "type": "func",
+    "named": false
+  },
+  {
+    "type": "funct",
     "named": false
   },
   {
@@ -1951,15 +2785,371 @@
     "named": false
   },
   {
+    "type": "function?",
+    "named": false
+  },
+  {
+    "type": "get",
+    "named": false
+  },
+  {
+    "type": "get-env",
+    "named": false
+  },
+  {
+    "type": "get-face",
+    "named": false
+  },
+  {
+    "type": "get-modes",
+    "named": false
+  },
+  {
+    "type": "get-net-info",
+    "named": false
+  },
+  {
+    "type": "get-path?",
+    "named": false
+  },
+  {
+    "type": "get-style",
+    "named": false
+  },
+  {
+    "type": "get-word?",
+    "named": false
+  },
+  {
+    "type": "greater-or-equal?",
+    "named": false
+  },
+  {
+    "type": "greater?",
+    "named": false
+  },
+  {
+    "type": "halt",
+    "named": false
+  },
+  {
+    "type": "has",
+    "named": false
+  },
+  {
+    "type": "hash?",
+    "named": false
+  },
+  {
+    "type": "head",
+    "named": false
+  },
+  {
+    "type": "head?",
+    "named": false
+  },
+  {
+    "type": "help",
+    "named": false
+  },
+  {
     "type": "hexa",
     "named": true
+  },
+  {
+    "type": "hide",
+    "named": false
+  },
+  {
+    "type": "hide-popup",
+    "named": false
+  },
+  {
+    "type": "hilight-all",
+    "named": false
+  },
+  {
+    "type": "hilight-text",
+    "named": false
+  },
+  {
+    "type": "hsv-to-rgb",
+    "named": false
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "image?",
+    "named": false
+  },
+  {
+    "type": "import-email",
+    "named": false
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
+    "type": "in-dir",
+    "named": false
+  },
+  {
+    "type": "in-window?",
+    "named": false
+  },
+  {
+    "type": "index?",
+    "named": false
+  },
+  {
+    "type": "info?",
+    "named": false
+  },
+  {
+    "type": "inform",
+    "named": false
+  },
+  {
+    "type": "input",
+    "named": false
+  },
+  {
+    "type": "input?",
+    "named": false
+  },
+  {
+    "type": "insert",
+    "named": false
+  },
+  {
+    "type": "insert-event-func",
+    "named": false
+  },
+  {
+    "type": "inside?",
+    "named": false
+  },
+  {
+    "type": "install",
+    "named": false
+  },
+  {
+    "type": "integer?",
+    "named": false
+  },
+  {
+    "type": "intersect",
+    "named": false
+  },
+  {
+    "type": "invalid-utf?",
+    "named": false
   },
   {
     "type": "issue",
     "named": true
   },
   {
+    "type": "issue?",
+    "named": false
+  },
+  {
+    "type": "join",
+    "named": false
+  },
+  {
+    "type": "last",
+    "named": false
+  },
+  {
+    "type": "last?",
+    "named": false
+  },
+  {
+    "type": "latin1?",
+    "named": false
+  },
+  {
+    "type": "launch",
+    "named": false
+  },
+  {
+    "type": "launch-thru",
+    "named": false
+  },
+  {
+    "type": "layout",
+    "named": false
+  },
+  {
+    "type": "length?",
+    "named": false
+  },
+  {
+    "type": "lesser-or-equal?",
+    "named": false
+  },
+  {
+    "type": "lesser?",
+    "named": false
+  },
+  {
+    "type": "lf",
+    "named": false
+  },
+  {
+    "type": "library?",
+    "named": false
+  },
+  {
+    "type": "license",
+    "named": false
+  },
+  {
+    "type": "link-app?",
+    "named": false
+  },
+  {
+    "type": "link-relative-path",
+    "named": false
+  },
+  {
+    "type": "link?",
+    "named": false
+  },
+  {
+    "type": "list-dir",
+    "named": false
+  },
+  {
+    "type": "list-env",
+    "named": false
+  },
+  {
+    "type": "list?",
+    "named": false
+  },
+  {
+    "type": "lit-path?",
+    "named": false
+  },
+  {
+    "type": "lit-word?",
+    "named": false
+  },
+  {
+    "type": "load",
+    "named": false
+  },
+  {
+    "type": "load-image",
+    "named": false
+  },
+  {
+    "type": "load-stock",
+    "named": false
+  },
+  {
+    "type": "load-stock-block",
+    "named": false
+  },
+  {
+    "type": "load-thru",
+    "named": false
+  },
+  {
+    "type": "local-request-file",
+    "named": false
+  },
+  {
+    "type": "log-10",
+    "named": false
+  },
+  {
+    "type": "log-2",
+    "named": false
+  },
+  {
+    "type": "log-e",
+    "named": false
+  },
+  {
+    "type": "logic?",
+    "named": false
+  },
+  {
     "type": "loop",
+    "named": false
+  },
+  {
+    "type": "lowercase",
+    "named": false
+  },
+  {
+    "type": "ls",
+    "named": false
+  },
+  {
+    "type": "make",
+    "named": false
+  },
+  {
+    "type": "make-dir",
+    "named": false
+  },
+  {
+    "type": "make-face",
+    "named": false
+  },
+  {
+    "type": "map-each",
+    "named": false
+  },
+  {
+    "type": "map?",
+    "named": false
+  },
+  {
+    "type": "max",
+    "named": false
+  },
+  {
+    "type": "maximum",
+    "named": false
+  },
+  {
+    "type": "maximum-of",
+    "named": false
+  },
+  {
+    "type": "min",
+    "named": false
+  },
+  {
+    "type": "minimum",
+    "named": false
+  },
+  {
+    "type": "minimum-of",
+    "named": false
+  },
+  {
+    "type": "mod",
+    "named": false
+  },
+  {
+    "type": "modified?",
+    "named": false
+  },
+  {
+    "type": "modulo",
+    "named": false
+  },
+  {
+    "type": "mold",
     "named": false
   },
   {
@@ -1967,15 +3157,155 @@
     "named": true
   },
   {
+    "type": "money?",
+    "named": false
+  },
+  {
+    "type": "more",
+    "named": false
+  },
+  {
+    "type": "move",
+    "named": false
+  },
+  {
     "type": "multiline_string",
     "named": true
+  },
+  {
+    "type": "multiply",
+    "named": false
+  },
+  {
+    "type": "native",
+    "named": false
+  },
+  {
+    "type": "native?",
+    "named": false
+  },
+  {
+    "type": "negate",
+    "named": false
+  },
+  {
+    "type": "negative?",
+    "named": false
+  },
+  {
+    "type": "net-error",
+    "named": false
+  },
+  {
+    "type": "new-line",
+    "named": false
+  },
+  {
+    "type": "new-line?",
+    "named": false
+  },
+  {
+    "type": "newline",
+    "named": false
+  },
+  {
+    "type": "newpage",
+    "named": false
+  },
+  {
+    "type": "next",
+    "named": false
+  },
+  {
+    "type": "ninth",
+    "named": false
+  },
+  {
+    "type": "no",
+    "named": false
+  },
+  {
+    "type": "none?",
+    "named": false
+  },
+  {
+    "type": "not",
+    "named": false
+  },
+  {
+    "type": "not-equal?",
+    "named": false
+  },
+  {
+    "type": "notify",
+    "named": false
+  },
+  {
+    "type": "now",
+    "named": false
+  },
+  {
+    "type": "null",
+    "named": false
   },
   {
     "type": "number",
     "named": true
   },
   {
+    "type": "number?",
+    "named": false
+  },
+  {
     "type": "object",
+    "named": false
+  },
+  {
+    "type": "object?",
+    "named": false
+  },
+  {
+    "type": "odd?",
+    "named": false
+  },
+  {
+    "type": "off",
+    "named": false
+  },
+  {
+    "type": "offset-to-caret",
+    "named": false
+  },
+  {
+    "type": "offset?",
+    "named": false
+  },
+  {
+    "type": "on",
+    "named": false
+  },
+  {
+    "type": "op?",
+    "named": false
+  },
+  {
+    "type": "open",
+    "named": false
+  },
+  {
+    "type": "open-events",
+    "named": false
+  },
+  {
+    "type": "or~",
+    "named": false
+  },
+  {
+    "type": "outside?",
+    "named": false
+  },
+  {
+    "type": "overlap?",
     "named": false
   },
   {
@@ -1983,15 +3313,495 @@
     "named": true
   },
   {
+    "type": "pair?",
+    "named": false
+  },
+  {
+    "type": "paren?",
+    "named": false
+  },
+  {
+    "type": "parse",
+    "named": false
+  },
+  {
+    "type": "parse-email-addrs",
+    "named": false
+  },
+  {
+    "type": "parse-header",
+    "named": false
+  },
+  {
+    "type": "parse-header-date",
+    "named": false
+  },
+  {
+    "type": "parse-xml",
+    "named": false
+  },
+  {
+    "type": "path",
+    "named": false
+  },
+  {
+    "type": "path-thru",
+    "named": false
+  },
+  {
+    "type": "path?",
+    "named": false
+  },
+  {
+    "type": "pick",
+    "named": false
+  },
+  {
+    "type": "poke",
+    "named": false
+  },
+  {
+    "type": "port?",
+    "named": false
+  },
+  {
+    "type": "positive?",
+    "named": false
+  },
+  {
+    "type": "power",
+    "named": false
+  },
+  {
+    "type": "prin",
+    "named": false
+  },
+  {
+    "type": "print",
+    "named": false
+  },
+  {
+    "type": "probe",
+    "named": false
+  },
+  {
+    "type": "protect",
+    "named": false
+  },
+  {
+    "type": "protect-system",
+    "named": false
+  },
+  {
+    "type": "pwd",
+    "named": false
+  },
+  {
+    "type": "q",
+    "named": false
+  },
+  {
+    "type": "query",
+    "named": false
+  },
+  {
+    "type": "quit",
+    "named": false
+  },
+  {
+    "type": "quit-return",
+    "named": false
+  },
+  {
+    "type": "quote",
+    "named": false
+  },
+  {
+    "type": "random",
+    "named": false
+  },
+  {
     "type": "raw_string",
     "named": true
+  },
+  {
+    "type": "read",
+    "named": false
+  },
+  {
+    "type": "read-cgi",
+    "named": false
+  },
+  {
+    "type": "read-io",
+    "named": false
+  },
+  {
+    "type": "read-net",
+    "named": false
+  },
+  {
+    "type": "read-thru",
+    "named": false
+  },
+  {
+    "type": "recycle",
+    "named": false
+  },
+  {
+    "type": "reduce",
+    "named": false
   },
   {
     "type": "ref",
     "named": true
   },
   {
+    "type": "refinement?",
+    "named": false
+  },
+  {
+    "type": "reflect",
+    "named": false
+  },
+  {
+    "type": "reform",
+    "named": false
+  },
+  {
+    "type": "rejoin",
+    "named": false
+  },
+  {
+    "type": "remainder",
+    "named": false
+  },
+  {
+    "type": "remold",
+    "named": false
+  },
+  {
+    "type": "remove",
+    "named": false
+  },
+  {
+    "type": "remove-each",
+    "named": false
+  },
+  {
+    "type": "remove-event-func",
+    "named": false
+  },
+  {
+    "type": "rename",
+    "named": false
+  },
+  {
+    "type": "repeat",
+    "named": false
+  },
+  {
+    "type": "repend",
+    "named": false
+  },
+  {
+    "type": "replace",
+    "named": false
+  },
+  {
+    "type": "request",
+    "named": false
+  },
+  {
+    "type": "request-color",
+    "named": false
+  },
+  {
+    "type": "request-date",
+    "named": false
+  },
+  {
+    "type": "request-dir",
+    "named": false
+  },
+  {
+    "type": "request-download",
+    "named": false
+  },
+  {
+    "type": "request-file",
+    "named": false
+  },
+  {
+    "type": "request-list",
+    "named": false
+  },
+  {
+    "type": "request-pass",
+    "named": false
+  },
+  {
+    "type": "request-text",
+    "named": false
+  },
+  {
+    "type": "resend",
+    "named": false
+  },
+  {
+    "type": "reset-face",
+    "named": false
+  },
+  {
+    "type": "resize-face",
+    "named": false
+  },
+  {
+    "type": "resolve",
+    "named": false
+  },
+  {
+    "type": "return",
+    "named": false
+  },
+  {
     "type": "return:",
+    "named": false
+  },
+  {
+    "type": "reverse",
+    "named": false
+  },
+  {
+    "type": "rgb-to-hsv",
+    "named": false
+  },
+  {
+    "type": "rm",
+    "named": false
+  },
+  {
+    "type": "round",
+    "named": false
+  },
+  {
+    "type": "routine",
+    "named": false
+  },
+  {
+    "type": "routine?",
+    "named": false
+  },
+  {
+    "type": "rsa-encrypt",
+    "named": false
+  },
+  {
+    "type": "rsa-generate-key",
+    "named": false
+  },
+  {
+    "type": "rsa-make-key",
+    "named": false
+  },
+  {
+    "type": "run",
+    "named": false
+  },
+  {
+    "type": "same?",
+    "named": false
+  },
+  {
+    "type": "save",
+    "named": false
+  },
+  {
+    "type": "save-user",
+    "named": false
+  },
+  {
+    "type": "scalar?",
+    "named": false
+  },
+  {
+    "type": "screen-offset?",
+    "named": false
+  },
+  {
+    "type": "script?",
+    "named": false
+  },
+  {
+    "type": "scroll-drag",
+    "named": false
+  },
+  {
+    "type": "scroll-face",
+    "named": false
+  },
+  {
+    "type": "scroll-para",
+    "named": false
+  },
+  {
+    "type": "second",
+    "named": false
+  },
+  {
+    "type": "secure",
+    "named": false
+  },
+  {
+    "type": "select",
+    "named": false
+  },
+  {
+    "type": "send",
+    "named": false
+  },
+  {
+    "type": "series?",
+    "named": false
+  },
+  {
+    "type": "set",
+    "named": false
+  },
+  {
+    "type": "set-env",
+    "named": false
+  },
+  {
+    "type": "set-face",
+    "named": false
+  },
+  {
+    "type": "set-font",
+    "named": false
+  },
+  {
+    "type": "set-modes",
+    "named": false
+  },
+  {
+    "type": "set-net",
+    "named": false
+  },
+  {
+    "type": "set-para",
+    "named": false
+  },
+  {
+    "type": "set-path?",
+    "named": false
+  },
+  {
+    "type": "set-style",
+    "named": false
+  },
+  {
+    "type": "set-user-name",
+    "named": false
+  },
+  {
+    "type": "set-word?",
+    "named": false
+  },
+  {
+    "type": "seventh",
+    "named": false
+  },
+  {
+    "type": "shift",
+    "named": false
+  },
+  {
+    "type": "show",
+    "named": false
+  },
+  {
+    "type": "show-popup",
+    "named": false
+  },
+  {
+    "type": "sign?",
+    "named": false
+  },
+  {
+    "type": "sine",
+    "named": false
+  },
+  {
+    "type": "sixth",
+    "named": false
+  },
+  {
+    "type": "size-text",
+    "named": false
+  },
+  {
+    "type": "size?",
+    "named": false
+  },
+  {
+    "type": "skip",
+    "named": false
+  },
+  {
+    "type": "slash",
+    "named": false
+  },
+  {
+    "type": "sort",
+    "named": false
+  },
+  {
+    "type": "source",
+    "named": false
+  },
+  {
+    "type": "sp",
+    "named": false
+  },
+  {
+    "type": "space",
+    "named": false
+  },
+  {
+    "type": "span?",
+    "named": false
+  },
+  {
+    "type": "spec-of",
+    "named": false
+  },
+  {
+    "type": "speed?",
+    "named": false
+  },
+  {
+    "type": "split-path",
+    "named": false
+  },
+  {
+    "type": "square-root",
+    "named": false
+  },
+  {
+    "type": "stats",
+    "named": false
+  },
+  {
+    "type": "strict-equal?",
+    "named": false
+  },
+  {
+    "type": "strict-not-equal?",
+    "named": false
+  },
+  {
+    "type": "string?",
     "named": false
   },
   {
@@ -1999,11 +3809,295 @@
     "named": true
   },
   {
+    "type": "struct?",
+    "named": false
+  },
+  {
+    "type": "stylize",
+    "named": false
+  },
+  {
+    "type": "subtract",
+    "named": false
+  },
+  {
+    "type": "suffix?",
+    "named": false
+  },
+  {
+    "type": "swap",
+    "named": false
+  },
+  {
+    "type": "switch",
+    "named": false
+  },
+  {
+    "type": "tab",
+    "named": false
+  },
+  {
     "type": "tag",
     "named": true
   },
   {
+    "type": "tag?",
+    "named": false
+  },
+  {
+    "type": "tail",
+    "named": false
+  },
+  {
+    "type": "tail?",
+    "named": false
+  },
+  {
+    "type": "take",
+    "named": false
+  },
+  {
+    "type": "tangent",
+    "named": false
+  },
+  {
+    "type": "tenth",
+    "named": false
+  },
+  {
+    "type": "textinfo",
+    "named": false
+  },
+  {
+    "type": "third",
+    "named": false
+  },
+  {
+    "type": "throw",
+    "named": false
+  },
+  {
+    "type": "throw-error",
+    "named": false
+  },
+  {
+    "type": "throw-on-error",
+    "named": false
+  },
+  {
+    "type": "time?",
+    "named": false
+  },
+  {
+    "type": "title-of",
+    "named": false
+  },
+  {
+    "type": "to",
+    "named": false
+  },
+  {
+    "type": "to-binary",
+    "named": false
+  },
+  {
+    "type": "to-bitset",
+    "named": false
+  },
+  {
+    "type": "to-block",
+    "named": false
+  },
+  {
+    "type": "to-char",
+    "named": false
+  },
+  {
+    "type": "to-closure",
+    "named": false
+  },
+  {
+    "type": "to-datatype",
+    "named": false
+  },
+  {
+    "type": "to-date",
+    "named": false
+  },
+  {
+    "type": "to-decimal",
+    "named": false
+  },
+  {
+    "type": "to-email",
+    "named": false
+  },
+  {
+    "type": "to-error",
+    "named": false
+  },
+  {
+    "type": "to-file",
+    "named": false
+  },
+  {
+    "type": "to-function",
+    "named": false
+  },
+  {
+    "type": "to-get-path",
+    "named": false
+  },
+  {
+    "type": "to-get-word",
+    "named": false
+  },
+  {
+    "type": "to-hash",
+    "named": false
+  },
+  {
+    "type": "to-hex",
+    "named": false
+  },
+  {
+    "type": "to-idate",
+    "named": false
+  },
+  {
+    "type": "to-image",
+    "named": false
+  },
+  {
+    "type": "to-integer",
+    "named": false
+  },
+  {
+    "type": "to-issue",
+    "named": false
+  },
+  {
+    "type": "to-itime",
+    "named": false
+  },
+  {
+    "type": "to-library",
+    "named": false
+  },
+  {
+    "type": "to-list",
+    "named": false
+  },
+  {
+    "type": "to-lit-path",
+    "named": false
+  },
+  {
+    "type": "to-lit-word",
+    "named": false
+  },
+  {
+    "type": "to-local-file",
+    "named": false
+  },
+  {
+    "type": "to-logic",
+    "named": false
+  },
+  {
+    "type": "to-map",
+    "named": false
+  },
+  {
+    "type": "to-money",
+    "named": false
+  },
+  {
+    "type": "to-none",
+    "named": false
+  },
+  {
+    "type": "to-pair",
+    "named": false
+  },
+  {
+    "type": "to-paren",
+    "named": false
+  },
+  {
+    "type": "to-path",
+    "named": false
+  },
+  {
+    "type": "to-port",
+    "named": false
+  },
+  {
+    "type": "to-rebol-file",
+    "named": false
+  },
+  {
+    "type": "to-refinement",
+    "named": false
+  },
+  {
+    "type": "to-relative-file",
+    "named": false
+  },
+  {
+    "type": "to-set-path",
+    "named": false
+  },
+  {
+    "type": "to-set-word",
+    "named": false
+  },
+  {
+    "type": "to-string",
+    "named": false
+  },
+  {
+    "type": "to-tag",
+    "named": false
+  },
+  {
+    "type": "to-time",
+    "named": false
+  },
+  {
+    "type": "to-tuple",
+    "named": false
+  },
+  {
+    "type": "to-typeset",
+    "named": false
+  },
+  {
+    "type": "to-url",
+    "named": false
+  },
+  {
+    "type": "to-word",
+    "named": false
+  },
+  {
+    "type": "trace",
+    "named": false
+  },
+  {
+    "type": "trim",
+    "named": false
+  },
+  {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "true?",
+    "named": false
+  },
+  {
+    "type": "try",
     "named": false
   },
   {
@@ -2011,11 +4105,183 @@
     "named": true
   },
   {
+    "type": "tuple?",
+    "named": false
+  },
+  {
+    "type": "type?",
+    "named": false
+  },
+  {
     "type": "type_word",
     "named": true
   },
   {
+    "type": "types-of",
+    "named": false
+  },
+  {
+    "type": "typeset?",
+    "named": false
+  },
+  {
+    "type": "unbind",
+    "named": false
+  },
+  {
+    "type": "undirize",
+    "named": false
+  },
+  {
+    "type": "unfocus",
+    "named": false
+  },
+  {
+    "type": "uninstall",
+    "named": false
+  },
+  {
+    "type": "union",
+    "named": false
+  },
+  {
+    "type": "unique",
+    "named": false
+  },
+  {
+    "type": "unless",
+    "named": false
+  },
+  {
+    "type": "unlight-text",
+    "named": false
+  },
+  {
+    "type": "unprotect",
+    "named": false
+  },
+  {
+    "type": "unset",
+    "named": false
+  },
+  {
+    "type": "unset?",
+    "named": false
+  },
+  {
+    "type": "until",
+    "named": false
+  },
+  {
+    "type": "unview",
+    "named": false
+  },
+  {
+    "type": "update",
+    "named": false
+  },
+  {
+    "type": "upgrade",
+    "named": false
+  },
+  {
+    "type": "uppercase",
+    "named": false
+  },
+  {
+    "type": "url?",
+    "named": false
+  },
+  {
+    "type": "use",
+    "named": false
+  },
+  {
+    "type": "utf?",
+    "named": false
+  },
+  {
+    "type": "value?",
+    "named": false
+  },
+  {
+    "type": "values-of",
+    "named": false
+  },
+  {
+    "type": "vbug",
+    "named": false
+  },
+  {
+    "type": "view",
+    "named": false
+  },
+  {
+    "type": "viewed?",
+    "named": false
+  },
+  {
+    "type": "viewtop",
+    "named": false
+  },
+  {
+    "type": "wait",
+    "named": false
+  },
+  {
+    "type": "what",
+    "named": false
+  },
+  {
+    "type": "what-dir",
+    "named": false
+  },
+  {
     "type": "while",
+    "named": false
+  },
+  {
+    "type": "win-offset?",
+    "named": false
+  },
+  {
+    "type": "with",
+    "named": false
+  },
+  {
+    "type": "within?",
+    "named": false
+  },
+  {
+    "type": "word?",
+    "named": false
+  },
+  {
+    "type": "words-of",
+    "named": false
+  },
+  {
+    "type": "write",
+    "named": false
+  },
+  {
+    "type": "write-io",
+    "named": false
+  },
+  {
+    "type": "write-user",
+    "named": false
+  },
+  {
+    "type": "xor~",
+    "named": false
+  },
+  {
+    "type": "yes",
+    "named": false
+  },
+  {
+    "type": "zero?",
     "named": false
   },
   {

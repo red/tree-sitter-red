@@ -116,6 +116,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "keywords"
+        },
+        {
+          "type": "SYMBOL",
           "name": "hexa"
         },
         {
@@ -4373,14 +4377,6 @@
         },
         {
           "type": "STRING",
-          "value": "context"
-        },
-        {
-          "type": "STRING",
-          "value": "object"
-        },
-        {
-          "type": "STRING",
           "value": "cvs-date"
         },
         {
@@ -5589,10 +5585,6 @@
         },
         {
           "type": "STRING",
-          "value": "loop"
-        },
-        {
-          "type": "STRING",
           "value": "lowercase"
         },
         {
@@ -5858,10 +5850,6 @@
         {
           "type": "STRING",
           "value": "with"
-        },
-        {
-          "type": "STRING",
-          "value": "while"
         },
         {
           "type": "STRING",
@@ -6438,14 +6426,6 @@
         {
           "type": "STRING",
           "value": "off"
-        },
-        {
-          "type": "STRING",
-          "value": "func"
-        },
-        {
-          "type": "STRING",
-          "value": "function"
         },
         {
           "type": "STRING",
