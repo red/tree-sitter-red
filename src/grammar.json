@@ -3286,7 +3286,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "keywords"
+          "name": "_builtin"
         }
       ]
     },
@@ -4084,8 +4084,71 @@
           }
         },
         {
+          "type": "FIELD",
+          "name": "func",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "func"
+              },
+              {
+                "type": "STRING",
+                "value": "Func"
+              },
+              {
+                "type": "STRING",
+                "value": "FUNC"
+              },
+              {
+                "type": "STRING",
+                "value": "function"
+              },
+              {
+                "type": "STRING",
+                "value": "Function"
+              },
+              {
+                "type": "STRING",
+                "value": "FUNCTION"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "func_spec"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block"
+        }
+      ]
+    },
+    "routine": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "set_word"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "set_path"
+              }
+            ]
+          }
+        },
+        {
           "type": "STRING",
-          "value": "func"
+          "value": "routine"
         },
         {
           "type": "SYMBOL",
@@ -4191,7 +4254,7 @@
         }
       ]
     },
-    "keywords": {
+    "_builtin": {
       "type": "CHOICE",
       "members": [
         {

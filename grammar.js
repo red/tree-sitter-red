@@ -307,7 +307,7 @@ module.exports = grammar({
 
     _word: (_) =>
       /[^\p{White_Space}\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\p{White_Space}\/\\,\[\]\(\)\{\}"#%\$@:;]*/u,
-    word: ($) => choice($._word, /\/+/, $.keywords),
+    word: ($) => choice($._word, /\/+/, $._builtin),
     lit_word: ($) => seq("'", $.word),
     get_word: ($) => seq(":", $.word),
     set_word: ($) =>
@@ -409,7 +409,17 @@ module.exports = grammar({
     function: ($) =>
       seq(
         field("name", choice($.set_word, $.set_path)),
-        "func",
+        field(
+          "func",
+          choice("func", "Func", "FUNC", "function", "Function", "FUNCTION"),
+        ),
+        $.func_spec,
+        $.block,
+      ),
+    routine: ($) =>
+      seq(
+        field("name", choice($.set_word, $.set_path)),
+        "routine",
         $.func_spec,
         $.block,
       ),
@@ -426,7 +436,7 @@ module.exports = grammar({
         $.block,
       ),
 
-    keywords: (_) =>
+    _builtin: (_) =>
       choice(
         "about",
         "ajoin",

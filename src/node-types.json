@@ -403,6 +403,36 @@
     "type": "function",
     "named": true,
     "fields": {
+      "func": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "FUNC",
+            "named": false
+          },
+          {
+            "type": "FUNCTION",
+            "named": false
+          },
+          {
+            "type": "Func",
+            "named": false
+          },
+          {
+            "type": "Function",
+            "named": false
+          },
+          {
+            "type": "func",
+            "named": false
+          },
+          {
+            "type": "function",
+            "named": false
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -803,11 +833,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "keywords",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "lit_path",
@@ -1752,17 +1777,7 @@
   {
     "type": "word",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "keywords",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "\"",
@@ -1858,6 +1873,22 @@
   },
   {
     "type": "Context",
+    "named": false
+  },
+  {
+    "type": "FUNC",
+    "named": false
+  },
+  {
+    "type": "FUNCTION",
+    "named": false
+  },
+  {
+    "type": "Func",
+    "named": false
+  },
+  {
+    "type": "Function",
     "named": false
   },
   {
@@ -2222,12 +2253,12 @@
   },
   {
     "type": "comment",
-    "named": true,
+    "named": false,
     "extra": true
   },
   {
     "type": "comment",
-    "named": false,
+    "named": true,
     "extra": true
   },
   {
@@ -2704,6 +2735,10 @@
   },
   {
     "type": "funct",
+    "named": false
+  },
+  {
+    "type": "function",
     "named": false
   },
   {

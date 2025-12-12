@@ -188,6 +188,7 @@ cc: object [
 ]
 
 routine: func ["Defines a function with a given Red spec and Red/System body" spec [block!] body [block!]][
+    make block! 32
 	cause-error 'internal 'routines []
 ]
 
