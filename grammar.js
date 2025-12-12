@@ -64,6 +64,7 @@ module.exports = grammar({
         $.refinement,
         $.tag,
         $.ref,
+        $.url,
         $.email,
         $.point,
         $.money,
@@ -310,14 +311,17 @@ module.exports = grammar({
     word: ($) => choice($._word, /\/+/, $._builtin),
     lit_word: ($) => seq("'", $.word),
     get_word: ($) => seq(":", $.word),
-    set_word: ($) =>
+    _set_word: (_) =>
       choice(
         /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;!][^\s\/\\,\[\]\(\)\{\}"#%\$@:;!]*:/,
         /\/+:/,
       ),
+    set_word: ($) => $._set_word,
 
-    type_word: ($) =>
+    type_word: (_) =>
       /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;!][^\s\/\\,\[\]\(\)\{\}"#%\$@:;!]*!/,
+    url: ($) => seq($._set_word, token.immediate(/[^\s\\\[\]\(\)\{\}";]+/)),
+
     _any_word: ($) => choice($.word, $.lit_word, $.get_word, $.set_word),
     _any_path: ($) => choice($.path, $.lit_path, $.get_path, $.set_path),
     _any_string: ($) => choice($.string, $.multiline_string, $.raw_string),
@@ -381,7 +385,7 @@ module.exports = grammar({
       ),
 
     block: ($) => seq("[", repeat($._expression), "]"),
-    paren: ($) => seq("(", repeat($._simple_expression), ")"),
+    paren: ($) => seq("(", repeat($._expression), ")"),
 
     while: ($) => seq(choice("while", "While", "WHILE"), $.block, $.block),
 

@@ -161,6 +161,10 @@
           "named": true
         },
         {
+          "type": "url",
+          "named": true
+        },
+        {
           "type": "while",
           "named": true
         },
@@ -701,6 +705,10 @@
             "named": true
           },
           {
+            "type": "url",
+            "named": true
+          },
+          {
             "type": "word",
             "named": true
           }
@@ -828,6 +836,10 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "url",
             "named": true
           },
           {
@@ -1061,6 +1073,10 @@
           "named": true
         },
         {
+          "type": "url",
+          "named": true
+        },
+        {
           "type": "word",
           "named": true
         }
@@ -1192,6 +1208,10 @@
           "named": true
         },
         {
+          "type": "url",
+          "named": true
+        },
+        {
           "type": "word",
           "named": true
         }
@@ -1259,11 +1279,19 @@
           "named": true
         },
         {
+          "type": "block",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
         {
           "type": "char",
+          "named": true
+        },
+        {
+          "type": "context",
           "named": true
         },
         {
@@ -1280,6 +1308,10 @@
         },
         {
           "type": "file",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1311,6 +1343,10 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
           "type": "map",
           "named": true
         },
@@ -1327,7 +1363,15 @@
           "named": true
         },
         {
+          "type": "object",
+          "named": true
+        },
+        {
           "type": "pair",
+          "named": true
+        },
+        {
+          "type": "paren",
           "named": true
         },
         {
@@ -1348,6 +1392,10 @@
         },
         {
           "type": "refinement",
+          "named": true
+        },
+        {
+          "type": "routine",
           "named": true
         },
         {
@@ -1372,6 +1420,14 @@
         },
         {
           "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "url",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         },
         {
@@ -1752,6 +1808,10 @@
           "named": true
         },
         {
+          "type": "url",
+          "named": true
+        },
+        {
           "type": "while",
           "named": true
         },
@@ -1800,6 +1860,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "url",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "while",

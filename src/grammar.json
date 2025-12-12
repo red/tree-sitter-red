@@ -172,6 +172,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "url"
+        },
+        {
+          "type": "SYMBOL",
           "name": "email"
         },
         {
@@ -3316,7 +3320,7 @@
         }
       ]
     },
-    "set_word": {
+    "_set_word": {
       "type": "CHOICE",
       "members": [
         {
@@ -3329,9 +3333,29 @@
         }
       ]
     },
+    "set_word": {
+      "type": "SYMBOL",
+      "name": "_set_word"
+    },
     "type_word": {
       "type": "PATTERN",
       "value": "[^\\s\\d'\\/\\\\,\\[\\]\\(\\)\\{\\}\"#%\\$@:;!][^\\s\\/\\\\,\\[\\]\\(\\)\\{\\}\"#%\\$@:;!]*!"
+    },
+    "url": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_set_word"
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "PATTERN",
+            "value": "[^\\s\\\\\\[\\]\\(\\)\\{\\}\";]+"
+          }
+        }
+      ]
     },
     "_any_word": {
       "type": "CHOICE",
@@ -3804,7 +3828,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_simple_expression"
+            "name": "_expression"
           }
         },
         {
