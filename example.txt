@@ -192,7 +192,7 @@ routine: func ["Defines a function with a given Red spec and Red/System body" sp
 	cause-error 'internal 'routines []
 ]
 
-also: func [
+also: routine [
 	"Returns the first value, but also evaluates the second"
 	value1 [any-type!]
 	value2 [any-type!]

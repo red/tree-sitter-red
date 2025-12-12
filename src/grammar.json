@@ -3761,6 +3761,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "routine"
+        },
+        {
+          "type": "SYMBOL",
           "name": "context"
         },
         {
@@ -5736,10 +5740,6 @@
         {
           "type": "STRING",
           "value": "run"
-        },
-        {
-          "type": "STRING",
-          "value": "routine"
         },
         {
           "type": "STRING",

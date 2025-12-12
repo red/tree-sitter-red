@@ -133,6 +133,10 @@
           "named": true
         },
         {
+          "type": "routine",
+          "named": true
+        },
+        {
           "type": "set_path",
           "named": true
         },
@@ -1473,6 +1477,40 @@
     "fields": {}
   },
   {
+    "type": "routine",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "func_spec",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "set_path",
     "named": true,
     "fields": {},
@@ -1683,6 +1721,10 @@
         },
         {
           "type": "refinement",
+          "named": true
+        },
+        {
+          "type": "routine",
           "named": true
         },
         {
@@ -2253,12 +2295,12 @@
   },
   {
     "type": "comment",
-    "named": false,
+    "named": true,
     "extra": true
   },
   {
     "type": "comment",
-    "named": true,
+    "named": false,
     "extra": true
   },
   {
