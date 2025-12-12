@@ -289,7 +289,7 @@ module.exports = grammar({
               "{",
               "}",
               '"',
-              /[a-fA-F]/,
+              /[a-z@-_]/,
               "(null)",
               "(back)",
               "(tab)",

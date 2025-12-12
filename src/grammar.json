@@ -3211,7 +3211,7 @@
                 },
                 {
                   "type": "PATTERN",
-                  "value": "[a-fA-F]"
+                  "value": "[a-z@-_]"
                 },
                 {
                   "type": "STRING",
