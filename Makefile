@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-red
 HOMEPAGE_URL := https://github.com/qtxie/tree-sitter-red
-VERSION := 0.1.0
+VERSION := 0.1.1
 
 # repository
 SRC_DIR := src

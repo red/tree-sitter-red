@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-red",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tree-sitter grammar for the Red programming language",
   "repository": "https://github.com/qtxie/tree-sitter-red",
   "license": "Apache-2.0",
