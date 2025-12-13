@@ -1,16 +1,2 @@
-[
-  (block)
-  (loop)
-] @indent.begin
-
-[
- ")"
- "}"
- "]"
-] @indent.end
-
-[
- ")"
- "}"
- "]"
-] @indent.branch
+(_ "[" "]" @end) @indent
+(_ "(" ")" @end) @indent

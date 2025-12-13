@@ -212,7 +212,7 @@ equal? "blahblah2" append "blah" "blah^2"
 			--assert '* = system/words/quote *
 		]
  {5641§OPEN§LOAD-CSV returns error instead of throwing it§status.duplicate§2025-08-19T13:00:07Z}
-	compiler: make-profilable context [
+	compiler: context [
 		job:		 	 none							;-- shortcut for job object
 		pc:			 	 none							;-- source code input cursor
 		script:		 	 none							;-- source script file name
@@ -264,3 +264,6 @@ equal? "blahblah2" append "blah" "blah^2"
 		bit-set!: 	  [byte! integer! logic!]			;-- reserved for internal use only
 		any-float!:	  [float! float32! float64!]		;-- reserved for internal use only
 		]
+
+1.#inf
+1.#iNf

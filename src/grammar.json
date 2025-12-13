@@ -4082,28 +4082,45 @@
             }
           },
           {
-            "type": "FIELD",
-            "name": "func",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "PATTERN",
-                  "value": "func",
-                  "flags": "i"
-                },
-                {
-                  "type": "PATTERN",
-                  "value": "function",
-                  "flags": "i"
-                },
-                {
-                  "type": "PATTERN",
-                  "value": "routine",
-                  "flags": "i"
-                }
-              ]
-            }
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "func"
+              },
+              {
+                "type": "STRING",
+                "value": "Func"
+              },
+              {
+                "type": "STRING",
+                "value": "FUNC"
+              },
+              {
+                "type": "STRING",
+                "value": "function"
+              },
+              {
+                "type": "STRING",
+                "value": "Function"
+              },
+              {
+                "type": "STRING",
+                "value": "FUNCTION"
+              },
+              {
+                "type": "STRING",
+                "value": "routine"
+              },
+              {
+                "type": "STRING",
+                "value": "ROUTINE"
+              },
+              {
+                "type": "STRING",
+                "value": "Routine"
+              }
+            ]
           },
           {
             "type": "CHOICE",
@@ -4141,23 +4158,33 @@
           }
         },
         {
-          "type": "FIELD",
-          "name": "ctx",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "context",
-                "flags": "i"
-              },
-              {
-                "type": "PATTERN",
-                "value": "object",
-                "flags": "i"
-              }
-            ]
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "context"
+            },
+            {
+              "type": "STRING",
+              "value": "Context"
+            },
+            {
+              "type": "STRING",
+              "value": "CONTEXT"
+            },
+            {
+              "type": "STRING",
+              "value": "object"
+            },
+            {
+              "type": "STRING",
+              "value": "Object"
+            },
+            {
+              "type": "STRING",
+              "value": "OBJECT"
+            }
+          ]
         }
       ]
     }

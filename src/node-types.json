@@ -1187,6 +1187,46 @@
     "named": false
   },
   {
+    "type": "CONTEXT",
+    "named": false
+  },
+  {
+    "type": "Context",
+    "named": false
+  },
+  {
+    "type": "FUNC",
+    "named": false
+  },
+  {
+    "type": "FUNCTION",
+    "named": false
+  },
+  {
+    "type": "Func",
+    "named": false
+  },
+  {
+    "type": "Function",
+    "named": false
+  },
+  {
+    "type": "OBJECT",
+    "named": false
+  },
+  {
+    "type": "Object",
+    "named": false
+  },
+  {
+    "type": "ROUTINE",
+    "named": false
+  },
+  {
+    "type": "Routine",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -1199,6 +1239,10 @@
     "named": true
   },
   {
+    "type": "context",
+    "named": false
+  },
+  {
     "type": "email",
     "named": true
   },
@@ -1208,6 +1252,14 @@
   },
   {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "func",
+    "named": false
+  },
+  {
+    "type": "function",
     "named": false
   },
   {
@@ -1235,6 +1287,10 @@
     "named": true
   },
   {
+    "type": "object",
+    "named": false
+  },
+  {
     "type": "pair",
     "named": true
   },
@@ -1248,6 +1304,10 @@
   },
   {
     "type": "return:",
+    "named": false
+  },
+  {
+    "type": "routine",
     "named": false
   },
   {
