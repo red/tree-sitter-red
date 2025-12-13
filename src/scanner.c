@@ -105,11 +105,11 @@ static bool trace_valid_symbols(const bool *valid_symbols) {
 #endif
 
 /// Scan the raw string: /(%+)\{.*?\}\1/
-static bool scan_raw_string(struct Scanner *scanner, TSLexer *lexer) {
+static bool scan_raw_string(TSLexer *lexer, int start) {
   skip_spaces(lexer);
 
   // Step 1: count leading %
-  int left = 0;
+  int left = start;
   while (lexer->lookahead == '%') {
     advance(lexer);
     left++;
@@ -152,7 +152,7 @@ static bool scan_raw_string(struct Scanner *scanner, TSLexer *lexer) {
   return false;
 }
 
-static bool scan_multiline_string(struct Scanner *scanner, TSLexer *lexer) {
+static bool scan_multiline_string(TSLexer *lexer) {
   skip_spaces(lexer);
 
   if (lexer->lookahead != '{')
@@ -187,7 +187,6 @@ static bool scan_multiline_string(struct Scanner *scanner, TSLexer *lexer) {
       case '^':
       case '{':
       case '}':
-        advance(lexer);
         break;
       default:
         continue;
@@ -206,8 +205,10 @@ static bool scan_infix_op(TSLexer *lexer) {
 
   skip_spaces(lexer);
 
+  bool is_percent = false;
   bool find = true;
   int32_t c = lexer->lookahead;
+
   switch (c) {
   case '=':
     advance(lexer);
@@ -231,18 +232,37 @@ static bool scan_infix_op(TSLexer *lexer) {
         advance(lexer);
     }
     break;
-  case '+':
-  case '-':
-  case '*':
   case '/':
     advance(lexer);
+    c = lexer->lookahead;
+    if (c == '/') {
+      advance(lexer);
+    }
+    break;
+  case '+':
+    advance(lexer);
+    break;
+  case '-':
+    advance(lexer);
+    break;
+  case '*':
+    advance(lexer);
+    break;
+  case '%':
+    advance(lexer);
+    is_percent = true;
     break;
   default:
     find = false;
   }
   if (find) {
-    if (!iswspace(lexer->lookahead))
+    if (!iswspace(lexer->lookahead)) {
+      if (is_percent) {
+        // check if it's a raw string
+        return scan_raw_string(lexer, 1);
+      }
       return false;
+    }
     lexer->mark_end(lexer);
     lexer->result_symbol = INFIX_OP;
     return true;
@@ -252,8 +272,6 @@ static bool scan_infix_op(TSLexer *lexer) {
 
 bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
                                         const bool *valid_symbols) {
-  struct Scanner *scanner = (struct Scanner *)payload;
-
   trace("==========\n");
   tracef("lookahead: %d\n", lexer->lookahead);
   trace_valid_symbols(valid_symbols);
@@ -265,6 +283,9 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
   if (valid_symbols[ERROR_SENTINEL]) {
     return false;
   }
+
+  if (valid_symbols[INFIX_OP] && scan_infix_op(lexer))
+    return true;
 
   if (valid_symbols[RED_HEXA]) {
     skip_spaces(lexer);
@@ -278,17 +299,14 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
       advance(lexer);
       lexer->mark_end(lexer);
       lexer->result_symbol = RED_HEXA;
-      trace("find hexa !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
       return true;
     }
   }
 
-  if (valid_symbols[INFIX_OP] && scan_infix_op(lexer))
+  if (valid_symbols[RAW_STRING] && scan_raw_string(lexer, 0))
     return true;
 
-  if (valid_symbols[RAW_STRING] && scan_raw_string(scanner, lexer))
-    return true;
-  if (valid_symbols[RAW_STRING] && scan_multiline_string(scanner, lexer))
+  if (valid_symbols[MULTILINE_STRING] && scan_multiline_string(lexer))
     return true;
 
   return false;

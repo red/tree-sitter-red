@@ -195,9 +195,72 @@ routine: func ["Defines a function with a given Red spec and Red/System body" sp
 also: routine [
 	"Returns the first value, but also evaluates the second"
 	value1 [any-type!]
-	value2 [any-type!]
+	value2 /aaa
 ][
 	:value1
 ]
 
-http://red-lang.org
+10/5/-1970
+[/ #a // #a /// #a hello #a + #a - #a]
+obj4: object blk
+loop length? o/a [--assert any [p = 123 p = 789]]
+(1e30,0)
+equal? "blahblah2" append "blah" "blah^2"
+		do [											;-- no compiler support :(
+			f3585: func [/opt 'arg][arg]
+			--assert ('* = f3585/opt *)
+			--assert '* = system/words/quote *
+		]
+ {5641§OPEN§LOAD-CSV returns error instead of throwing it§status.duplicate§2025-08-19T13:00:07Z}
+	compiler: make-profilable context [
+		job:		 	 none							;-- shortcut for job object
+		pc:			 	 none							;-- source code input cursor
+		script:		 	 none							;-- source script file name
+		none-type:	 	 [none]						;-- marker for "no value returned"
+		last-type:	 	 none-type						;-- type of last value from an expression
+		locals: 	 	 none							;-- currently compiled function specification block
+		definitions:  	 make block! 100
+		enumerations: 	 make hash! 10
+		expr-call-stack: make block! 10					;-- simple stack of nested calls for a given expression
+		loop-stack:		 make block! 1					;-- keep track of in-loop state
+		locals-init: 	 make block! 20					;-- currently compiler function locals variable init list
+		subroutines:	 make block! 20					;-- subroutines definitions: [name [offset ret-type] ...]
+		in-subroutine?:	 no								;-- YES|subroutine name: current code is in a subroutine
+		func-name:	 	 none							;-- currently compiled function name
+		func-locals-sz:	 none							;-- currently compiled function locals size on stack
+		user-code?:		 no
+		block-level: 	 0								;-- nesting level of input source block
+		catch-level:	 0								;-- nesting level of CATCH body block
+		verbose:  	 	 0								;-- logs verbosity level
+
+		imports: 	   	 make block! 10					;-- list of imported functions
+		exports: 	   	 make block! 10					;-- list of exported symbols
+		natives:	   	 make hash!  40					;-- list of functions to compile [name [specs] [body]...]
+		ns-path:		 none							;-- namespaces access path
+		ns-stack:		 none							;-- namespaces resolution stack
+		ns-list:		 make hash!  8					;-- namespaces definition list [name [word type...]...]
+		sym-ctx-table:	 make hash!  100				;-- reverse lookup table for contexts
+		globals:  	   	 make hash!  40					;-- list of globally defined symbols from scripts
+		aliased-types: 	 make hash!  10					;-- list of aliased type definitions
+		keywords-list:	 make block! 20
+
+		resolve-alias?:  yes							;-- YES: instruct the type resolution function to reduce aliases
+		decoration:		 slash							;-- decoration separator for namespaces
+		shift-right-sym: to word! ">>>"					;-- workaround REBOL LOAD limitation
+		less-or-equal:	 to word! "<="					;-- workaround REBOL LOAD limitation
+		greater-than:	 to word! ">"					;-- workaround REBOL LOAD limitation
+
+		debug-lines: reduce [							;-- runtime source line/file information storage
+			'records make block!  1000					;-- [address line file] records
+			'files	 make hash!   20					;-- filenames table
+		]
+
+		pos:		none								;-- validation rules cursor for error reporting
+		return-def: to-set-word 'return					;-- return: keyword
+		fail:		[end skip]							;-- fail rule
+		rule: value: v: none							;-- global parsing rules helpers
+
+		number!: 	  [byte! integer!]					;-- reserved for internal use only
+		bit-set!: 	  [byte! integer! logic!]			;-- reserved for internal use only
+		any-float!:	  [float! float32! float64!]		;-- reserved for internal use only
+		]
