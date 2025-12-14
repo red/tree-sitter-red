@@ -1,4 +1,4 @@
-Red []
+Red
 #include %abc.red
 "Hello Red"
 "你好，世界!"
@@ -268,7 +268,24 @@ equal? "blahblah2" append "blah" "blah^2"
 
 1.#inf
 1.#iNf
-
+	theme: #[
+		foreground	[0.0.0]
+		background	[252.252.252]
+		selected	[128.128.128.128]			;-- selected text background color
+		string!		[120.120.61]
+		integer!	[255.0.0]
+		float!		[255.0.0]
+		pair!		[255.0.0]
+		percent!	[255.128.128]
+		datatype!	[0.222.0]
+		lit-word!	[0.0.255 bold]
+		set-word!	[0.0.255]
+		tuple!		[0.0.0]
+		url!		[0.0.255 underline]
+		comment!	[128.128.128]
+	]
 ctx1/ctx2/3/foo: func [a][
     a * 2 + 1 / 100h
 ]
+--assert type+id? throw return do [try [exit]]
+%cache/

@@ -269,153 +269,6 @@
     }
   },
   {
-    "type": "func_local",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "multiline_string",
-          "named": true
-        },
-        {
-          "type": "raw_string",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "type_block",
-          "named": true
-        },
-        {
-          "type": "word",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "func_param",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "get_word",
-          "named": true
-        },
-        {
-          "type": "lit_word",
-          "named": true
-        },
-        {
-          "type": "type_block",
-          "named": true
-        },
-        {
-          "type": "word",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "func_return",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "multiline_string",
-          "named": true
-        },
-        {
-          "type": "raw_string",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "type_block",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "func_spec",
-    "named": true,
-    "fields": {
-      "attribute": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "block",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "func_local",
-          "named": true
-        },
-        {
-          "type": "func_param",
-          "named": true
-        },
-        {
-          "type": "func_return",
-          "named": true
-        },
-        {
-          "type": "multiline_string",
-          "named": true
-        },
-        {
-          "type": "raw_string",
-          "named": true
-        },
-        {
-          "type": "refinement",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "function",
     "named": true,
     "fields": {
@@ -487,16 +340,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "func_spec",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1169,30 +1012,6 @@
     "fields": {}
   },
   {
-    "type": "type_block",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "type_word",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "type_word",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "url",
     "named": true,
     "fields": {}
@@ -1244,10 +1063,6 @@
   },
   {
     "type": "/",
-    "named": false
-  },
-  {
-    "type": "/local",
     "named": false
   },
   {
@@ -1397,10 +1212,6 @@
   {
     "type": "ref",
     "named": true
-  },
-  {
-    "type": "return:",
-    "named": false
   },
   {
     "type": "routine",

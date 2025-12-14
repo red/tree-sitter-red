@@ -7,12 +7,6 @@
 ((word) @type
     (#match? @type "^.*!$"))
 
-(type_block (type_word) @type)
-(type_block (type_word) @type.builtin
- (#match? @type.builtin
-     "(?i)^(datatype!|unset!|none!|logic!|block!|paren!|string!|file!|url!|char!|integer!|float!|word!|set\\-word!|lit\\-word!|get\\-word!|refinement!|issue!|native!|action!|op!|function!|path!|lit\\-path!|set\\-path!|get\\-path!|routine!|bitset!|object!|typeset!|error!|vector!|hash!|pair!|percent!|tuple!|map!|binary!|time!|tag!|email!|handle!|date!|port!|money!|ref!|point2D!|point3D!|IPv6!|image!|event!|closure!|slice!)$"
-))
-
 ;; Keywords
 ((word) @keyword
     (#match? @keyword
@@ -43,7 +37,7 @@
 [
   (escaped_char)
   (escaped_value)
-]@string.escape
+] @string.escape
 
 [
   (number)
@@ -74,8 +68,6 @@
 (function
     name: (_) @function.definition
     func: _ @keyword)
-(func_local "/local" @emphasis)
-(func_return "return:" @emphasis)
 
 ;; Contexts & Objects
 (context

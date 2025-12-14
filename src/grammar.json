@@ -3703,23 +3703,17 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "#["
+          "type": "TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "#["
+          }
         },
         {
           "type": "REPEAT",
           "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_literal"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_literal"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "_literal"
           }
         },
         {
@@ -3821,354 +3815,84 @@
         }
       ]
     },
-    "_some_comments": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "SYMBOL",
-        "name": "comment"
-      }
-    },
-    "type_word": {
-      "type": "SYMBOL",
-      "name": "_word"
-    },
-    "type_block": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "["
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type_word"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "type_word"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "comment"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "]"
-        }
-      ]
-    },
-    "func_return": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "return:"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_some_comments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type_block"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_some_comments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_any_string"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "func_param": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "word"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "lit_word"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "get_word"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "type_block"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "func_local": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "/local"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "word"
-                  },
-                  {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "type_block"
-                      },
-                      {
-                        "type": "BLANK"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_any_string"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "comment"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "func_spec": {
-      "type": "PREC",
-      "value": 2,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "["
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "attribute",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "block"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "func_param"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "refinement"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_any_string"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "comment"
-                }
-              ]
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "func_return"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "func_local"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "STRING",
-            "value": "]"
-          }
-        ]
-      }
-    },
     "function": {
-      "type": "PREC_RIGHT",
-      "value": 2,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "name",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "set_word"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "set_path"
-                }
-              ]
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "func",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "func"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Func"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FUNC"
-                },
-                {
-                  "type": "STRING",
-                  "value": "function"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Function"
-                },
-                {
-                  "type": "STRING",
-                  "value": "FUNCTION"
-                },
-                {
-                  "type": "STRING",
-                  "value": "routine"
-                },
-                {
-                  "type": "STRING",
-                  "value": "ROUTINE"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Routine"
-                },
-                {
-                  "type": "STRING",
-                  "value": "does"
-                },
-                {
-                  "type": "STRING",
-                  "value": "Does"
-                },
-                {
-                  "type": "STRING",
-                  "value": "DOES"
-                }
-              ]
-            }
-          },
-          {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
             "type": "CHOICE",
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "func_spec"
+                "name": "set_word"
               },
               {
-                "type": "BLANK"
+                "type": "SYMBOL",
+                "name": "set_path"
               }
             ]
           }
-        ]
-      }
+        },
+        {
+          "type": "FIELD",
+          "name": "func",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "func"
+              },
+              {
+                "type": "STRING",
+                "value": "Func"
+              },
+              {
+                "type": "STRING",
+                "value": "FUNC"
+              },
+              {
+                "type": "STRING",
+                "value": "function"
+              },
+              {
+                "type": "STRING",
+                "value": "Function"
+              },
+              {
+                "type": "STRING",
+                "value": "FUNCTION"
+              },
+              {
+                "type": "STRING",
+                "value": "routine"
+              },
+              {
+                "type": "STRING",
+                "value": "ROUTINE"
+              },
+              {
+                "type": "STRING",
+                "value": "Routine"
+              },
+              {
+                "type": "STRING",
+                "value": "does"
+              },
+              {
+                "type": "STRING",
+                "value": "Does"
+              },
+              {
+                "type": "STRING",
+                "value": "DOES"
+              }
+            ]
+          }
+        }
+      ]
     },
     "context": {
       "type": "SEQ",

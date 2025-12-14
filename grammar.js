@@ -358,7 +358,7 @@ module.exports = grammar({
     binary: ($) =>
       choice($._binary_base_2, $._binary_base_16, $._binary_base_64),
 
-    map: ($) => seq("#[", repeat(seq($._literal, $._literal)), "]"),
+    map: ($) => seq(token("#["), repeat($._literal), "]"),
     tag: (_) =>
       token(
         prec(
@@ -376,64 +376,25 @@ module.exports = grammar({
     block: ($) => seq("[", repeat($._expression), "]"),
     paren: ($) => seq("(", repeat($._expression), ")"),
 
-    _some_comments: ($) => repeat1($.comment),
-
-    type_word: ($) => $._word,
-    type_block: ($) =>
-      seq("[", $.type_word, repeat(choice($.type_word, $.comment)), "]"),
-    func_return: ($) =>
-      seq(
-        "return:",
-        optional($._some_comments),
-        $.type_block,
-        optional($._some_comments),
-        optional($._any_string),
-      ),
-    func_param: ($) =>
-      seq(choice($.word, $.lit_word, $.get_word), optional($.type_block)),
-    func_local: ($) =>
-      seq(
-        "/local",
-        repeat(
-          choice(seq($.word, optional($.type_block)), $._any_string, $.comment),
-        ),
-      ),
-    func_spec: ($) =>
-      prec(
-        2,
-        seq(
-          "[",
-          optional(field("attribute", $.block)),
-          repeat(choice($.func_param, $.refinement, $._any_string, $.comment)),
-          optional($.func_return),
-          optional($.func_local),
-          "]",
-        ),
-      ),
-
     function: ($) =>
-      prec.right(
-        2,
-        seq(
-          field("name", choice($.set_word, $.set_path)),
-          field(
+      seq(
+        field("name", choice($.set_word, $.set_path)),
+        field(
+          "func",
+          choice(
             "func",
-            choice(
-              "func",
-              "Func",
-              "FUNC",
-              "function",
-              "Function",
-              "FUNCTION",
-              "routine",
-              "ROUTINE",
-              "Routine",
-              "does",
-              "Does",
-              "DOES",
-            ),
+            "Func",
+            "FUNC",
+            "function",
+            "Function",
+            "FUNCTION",
+            "routine",
+            "ROUTINE",
+            "Routine",
+            "does",
+            "Does",
+            "DOES",
           ),
-          optional($.func_spec),
         ),
       ),
 

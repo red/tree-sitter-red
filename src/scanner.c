@@ -104,8 +104,12 @@ static bool trace_valid_symbols(const bool *valid_symbols) {
 #define trace_valid_symbols(...)
 #endif
 
+#define S_OK 0
+#define S_RETURN 1
+#define S_CONTINUE 2
+
 /// Scan the raw string: /(%+)\{.*?\}\1/
-static bool scan_raw_string(TSLexer *lexer, int start) {
+static int scan_raw_string(TSLexer *lexer, int start) {
   skip_spaces(lexer);
 
   // Step 1: count leading %
@@ -115,11 +119,11 @@ static bool scan_raw_string(TSLexer *lexer, int start) {
     left++;
   }
   if (left == 0)
-    return false;
+    return S_CONTINUE;
 
   // Step 2: require opening brace
   if (lexer->lookahead != '{')
-    return false;
+    return S_RETURN;
   advance(lexer);
 
   for (int delimiter_index = -1;;) {
@@ -128,14 +132,14 @@ static bool scan_raw_string(TSLexer *lexer, int start) {
     if (lexer->eof(lexer)) {
       lexer->mark_end(lexer);
       lexer->result_symbol = RAW_STRING;
-      return true;
+      return S_OK;
     }
 
     if (delimiter_index >= 0) {
       if (delimiter_index == left) {
         lexer->mark_end(lexer);
         lexer->result_symbol = RAW_STRING;
-        return true;
+        return S_OK;
       } else {
         if (lexer->lookahead == '%') {
           delimiter_index += 1;
@@ -149,7 +153,7 @@ static bool scan_raw_string(TSLexer *lexer, int start) {
     }
     advance(lexer);
   }
-  return false;
+  return S_RETURN;
 }
 
 static bool scan_multiline_string(TSLexer *lexer) {
@@ -199,9 +203,9 @@ static bool scan_multiline_string(TSLexer *lexer) {
   return false;
 }
 
-static bool scan_infix_op(TSLexer *lexer) {
+static int scan_infix_op(TSLexer *lexer) {
   if (!iswspace(lexer->lookahead))
-    return false;
+    return S_CONTINUE;
 
   skip_spaces(lexer);
 
@@ -261,13 +265,13 @@ static bool scan_infix_op(TSLexer *lexer) {
         // check if it's a raw string
         return scan_raw_string(lexer, 1);
       }
-      return false;
+      return S_RETURN;
     }
     lexer->mark_end(lexer);
     lexer->result_symbol = INFIX_OP;
-    return true;
+    return S_OK;
   }
-  return false;
+  return S_CONTINUE;
 }
 
 bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
@@ -284,8 +288,16 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
     return false;
   }
 
-  if (valid_symbols[INFIX_OP] && scan_infix_op(lexer))
-    return true;
+  if (valid_symbols[INFIX_OP]) {
+    switch (scan_infix_op(lexer)) {
+    case S_OK:
+      return true;
+    case S_RETURN:
+      return false;
+    default:
+      break;
+    }
+  }
 
   if (valid_symbols[RED_HEXA]) {
     skip_spaces(lexer);
@@ -301,10 +313,20 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
       lexer->result_symbol = RED_HEXA;
       return true;
     }
+    if (count > 0)
+      return false;
   }
 
-  if (valid_symbols[RAW_STRING] && scan_raw_string(lexer, 0))
-    return true;
+  if (valid_symbols[RAW_STRING]) {
+    switch (scan_raw_string(lexer, 0)) {
+    case S_OK:
+      return true;
+    case S_RETURN:
+      return false;
+    default:
+      break;
+    }
+  }
 
   if (valid_symbols[MULTILINE_STRING] && scan_multiline_string(lexer))
     return true;
