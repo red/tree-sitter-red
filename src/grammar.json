@@ -4099,45 +4099,61 @@
             }
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "func"
-              },
-              {
-                "type": "STRING",
-                "value": "Func"
-              },
-              {
-                "type": "STRING",
-                "value": "FUNC"
-              },
-              {
-                "type": "STRING",
-                "value": "function"
-              },
-              {
-                "type": "STRING",
-                "value": "Function"
-              },
-              {
-                "type": "STRING",
-                "value": "FUNCTION"
-              },
-              {
-                "type": "STRING",
-                "value": "routine"
-              },
-              {
-                "type": "STRING",
-                "value": "ROUTINE"
-              },
-              {
-                "type": "STRING",
-                "value": "Routine"
-              }
-            ]
+            "type": "FIELD",
+            "name": "func",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "func"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Func"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FUNC"
+                },
+                {
+                  "type": "STRING",
+                  "value": "function"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Function"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FUNCTION"
+                },
+                {
+                  "type": "STRING",
+                  "value": "routine"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ROUTINE"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Routine"
+                },
+                {
+                  "type": "STRING",
+                  "value": "does"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Does"
+                },
+                {
+                  "type": "STRING",
+                  "value": "DOES"
+                }
+              ]
+            }
           },
           {
             "type": "CHOICE",
@@ -4175,33 +4191,37 @@
           }
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "context"
-            },
-            {
-              "type": "STRING",
-              "value": "Context"
-            },
-            {
-              "type": "STRING",
-              "value": "CONTEXT"
-            },
-            {
-              "type": "STRING",
-              "value": "object"
-            },
-            {
-              "type": "STRING",
-              "value": "Object"
-            },
-            {
-              "type": "STRING",
-              "value": "OBJECT"
-            }
-          ]
+          "type": "FIELD",
+          "name": "ctx",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "context"
+              },
+              {
+                "type": "STRING",
+                "value": "Context"
+              },
+              {
+                "type": "STRING",
+                "value": "CONTEXT"
+              },
+              {
+                "type": "STRING",
+                "value": "object"
+              },
+              {
+                "type": "STRING",
+                "value": "Object"
+              },
+              {
+                "type": "STRING",
+                "value": "OBJECT"
+              }
+            ]
+          }
         }
       ]
     }

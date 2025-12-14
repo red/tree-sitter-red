@@ -416,16 +416,22 @@ module.exports = grammar({
         2,
         seq(
           field("name", choice($.set_word, $.set_path)),
-          choice(
+          field(
             "func",
-            "Func",
-            "FUNC",
-            "function",
-            "Function",
-            "FUNCTION",
-            "routine",
-            "ROUTINE",
-            "Routine",
+            choice(
+              "func",
+              "Func",
+              "FUNC",
+              "function",
+              "Function",
+              "FUNCTION",
+              "routine",
+              "ROUTINE",
+              "Routine",
+              "does",
+              "Does",
+              "DOES",
+            ),
           ),
           optional($.func_spec),
         ),
@@ -434,7 +440,10 @@ module.exports = grammar({
     context: ($) =>
       seq(
         field("name", choice($.set_word, $.set_path)),
-        choice("context", "Context", "CONTEXT", "object", "Object", "OBJECT"),
+        field(
+          "ctx",
+          choice("context", "Context", "CONTEXT", "object", "Object", "OBJECT"),
+        ),
       ),
   },
 });

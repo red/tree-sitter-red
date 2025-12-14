@@ -2,11 +2,11 @@
 
 (function
     name: (_) @name
-    _ @context
+    func: _ @context
 ) @item
 
 ; Contexts
 (context
     name: (_) @name
-    _ @context
+    ctx: _ @context
 ) @item

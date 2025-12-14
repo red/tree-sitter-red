@@ -197,6 +197,36 @@
     "type": "context",
     "named": true,
     "fields": {
+      "ctx": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "CONTEXT",
+            "named": false
+          },
+          {
+            "type": "Context",
+            "named": false
+          },
+          {
+            "type": "OBJECT",
+            "named": false
+          },
+          {
+            "type": "Object",
+            "named": false
+          },
+          {
+            "type": "context",
+            "named": false
+          },
+          {
+            "type": "object",
+            "named": false
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -389,6 +419,60 @@
     "type": "function",
     "named": true,
     "fields": {
+      "func": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "DOES",
+            "named": false
+          },
+          {
+            "type": "Does",
+            "named": false
+          },
+          {
+            "type": "FUNC",
+            "named": false
+          },
+          {
+            "type": "FUNCTION",
+            "named": false
+          },
+          {
+            "type": "Func",
+            "named": false
+          },
+          {
+            "type": "Function",
+            "named": false
+          },
+          {
+            "type": "ROUTINE",
+            "named": false
+          },
+          {
+            "type": "Routine",
+            "named": false
+          },
+          {
+            "type": "does",
+            "named": false
+          },
+          {
+            "type": "func",
+            "named": false
+          },
+          {
+            "type": "function",
+            "named": false
+          },
+          {
+            "type": "routine",
+            "named": false
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -1195,6 +1279,14 @@
     "named": false
   },
   {
+    "type": "DOES",
+    "named": false
+  },
+  {
+    "type": "Does",
+    "named": false
+  },
+  {
     "type": "FUNC",
     "named": false
   },
@@ -1240,6 +1332,10 @@
   },
   {
     "type": "context",
+    "named": false
+  },
+  {
+    "type": "does",
     "named": false
   },
   {
