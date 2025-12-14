@@ -55,10 +55,14 @@
 (issue) @preproc
 (tag) @tag
 (set_word) @variable
-(set_path) @variable
 (url) @link_uri
 (email) @link_text
 (ref) @label
+
+
+
+(path (word) @none) @none
+(set_path (path (word) @variable)) @variable
 
 ;; Comments
 
@@ -67,7 +71,11 @@
 ;; Functions
 (function
     name: (_) @function.definition
-    func: _ @keyword)
+    func: _ @keyword
+    spec: (block (((set_word) @emphasis
+        (#eq? @emphasis "return:"))
+    ((refinement) @emphasis
+        (#eq? @emphasis "/local")))))
 
 ;; Contexts & Objects
 (context

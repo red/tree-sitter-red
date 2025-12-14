@@ -337,7 +337,7 @@ module.exports = grammar({
     path: ($) => prec(2, seq($._path_start, repeat($._path), $._path_element)),
     lit_path: ($) => prec(2, seq("'", $.path)),
     get_path: ($) => prec(2, seq(":", $.path)),
-    set_path: ($) => prec(3, seq($.path, ":")),
+    set_path: ($) => prec(3, seq($.path, token.immediate(":"))),
 
     _binary_base_2: ($) =>
       seq("2#{", repeat(choice(/(?:[01]\s*){8}/, $.comment)), "}"),
@@ -371,31 +371,38 @@ module.exports = grammar({
         ),
       ),
 
-    _complex_expression: ($) => choice($.function, $.context),
+    _complex_expression: ($) => choice($.function, $.does, $.context),
 
     block: ($) => seq("[", repeat($._expression), "]"),
     paren: ($) => seq("(", repeat($._expression), ")"),
 
     function: ($) =>
+      prec.right(
+        2,
+        seq(
+          field("name", choice($.set_word, $.set_path)),
+          field(
+            "func",
+            choice(
+              "func",
+              "Func",
+              "FUNC",
+              "function",
+              "Function",
+              "FUNCTION",
+              "routine",
+              "ROUTINE",
+              "Routine",
+            ),
+          ),
+          field("spec", optional($.block)),
+        ),
+      ),
+
+    does: ($) =>
       seq(
         field("name", choice($.set_word, $.set_path)),
-        field(
-          "func",
-          choice(
-            "func",
-            "Func",
-            "FUNC",
-            "function",
-            "Function",
-            "FUNCTION",
-            "routine",
-            "ROUTINE",
-            "Routine",
-            "does",
-            "Does",
-            "DOES",
-          ),
-        ),
+        field("key", choice("does", "Does", "DOES")),
       ),
 
     context: ($) =>

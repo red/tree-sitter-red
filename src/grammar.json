@@ -3556,8 +3556,11 @@
             "name": "path"
           },
           {
-            "type": "STRING",
-            "value": ":"
+            "type": "IMMEDIATE_TOKEN",
+            "content": {
+              "type": "STRING",
+              "value": ":"
+            }
           }
         ]
       }
@@ -3771,6 +3774,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "does"
+        },
+        {
+          "type": "SYMBOL",
           "name": "context"
         }
       ]
@@ -3816,6 +3823,93 @@
       ]
     },
     "function": {
+      "type": "PREC_RIGHT",
+      "value": 2,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "name",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "set_word"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "set_path"
+                }
+              ]
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "func",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "func"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Func"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FUNC"
+                },
+                {
+                  "type": "STRING",
+                  "value": "function"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Function"
+                },
+                {
+                  "type": "STRING",
+                  "value": "FUNCTION"
+                },
+                {
+                  "type": "STRING",
+                  "value": "routine"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ROUTINE"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Routine"
+                }
+              ]
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "spec",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "block"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "does": {
       "type": "SEQ",
       "members": [
         {
@@ -3837,46 +3931,10 @@
         },
         {
           "type": "FIELD",
-          "name": "func",
+          "name": "key",
           "content": {
             "type": "CHOICE",
             "members": [
-              {
-                "type": "STRING",
-                "value": "func"
-              },
-              {
-                "type": "STRING",
-                "value": "Func"
-              },
-              {
-                "type": "STRING",
-                "value": "FUNC"
-              },
-              {
-                "type": "STRING",
-                "value": "function"
-              },
-              {
-                "type": "STRING",
-                "value": "Function"
-              },
-              {
-                "type": "STRING",
-                "value": "FUNCTION"
-              },
-              {
-                "type": "STRING",
-                "value": "routine"
-              },
-              {
-                "type": "STRING",
-                "value": "ROUTINE"
-              },
-              {
-                "type": "STRING",
-                "value": "Routine"
-              },
               {
                 "type": "STRING",
                 "value": "does"

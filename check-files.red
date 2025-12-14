@@ -35,14 +35,13 @@ run-tree-sitter: func [files [block!] /local output path cmd][
     ]
 ]
 
-; Entry point: use script arg as root folder if provided, else current directory
 root: either not empty? system/script/args [
     dirize to-red-file system/script/args
 ][
     print "Missing folder: red.exe ./check-files.red folder"
     halt
 ]
-?? root
+
 print rejoin ["Starting in: " to-local-file root]
 files: collect-red-files root
 print rejoin ["Found " mold length? files " file(s)."]

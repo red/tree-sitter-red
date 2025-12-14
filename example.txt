@@ -289,3 +289,6 @@ ctx1/ctx2/3/foo: func [a][
 ]
 --assert type+id? throw return do [try [exit]]
 %cache/
+reduce/into :value tail series
+
+a: func :value []

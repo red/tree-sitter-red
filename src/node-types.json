@@ -51,6 +51,10 @@
           "named": true
         },
         {
+          "type": "does",
+          "named": true
+        },
+        {
           "type": "email",
           "named": true
         },
@@ -249,6 +253,44 @@
     "fields": {}
   },
   {
+    "type": "does",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "DOES",
+            "named": false
+          },
+          {
+            "type": "Does",
+            "named": false
+          },
+          {
+            "type": "does",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "escaped_value",
     "named": true,
     "fields": {}
@@ -277,14 +319,6 @@
         "required": true,
         "types": [
           {
-            "type": "DOES",
-            "named": false
-          },
-          {
-            "type": "Does",
-            "named": false
-          },
-          {
             "type": "FUNC",
             "named": false
           },
@@ -306,10 +340,6 @@
           },
           {
             "type": "Routine",
-            "named": false
-          },
-          {
-            "type": "does",
             "named": false
           },
           {
@@ -336,6 +366,16 @@
           },
           {
             "type": "set_word",
+            "named": true
+          }
+        ]
+      },
+      "spec": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
             "named": true
           }
         ]
@@ -587,6 +627,10 @@
         },
         {
           "type": "date",
+          "named": true
+        },
+        {
+          "type": "does",
           "named": true
         },
         {
@@ -862,6 +906,10 @@
         },
         {
           "type": "date",
+          "named": true
+        },
+        {
+          "type": "does",
           "named": true
         },
         {
