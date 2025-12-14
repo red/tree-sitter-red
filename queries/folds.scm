@@ -1,4 +1,3 @@
 [
   (block)
-  (function)
 ] @fold

@@ -25,6 +25,7 @@
 [
   "(" ")"
   "[" "]"
+  "{" "}"
 ] @punctuation.bracket
 
 ;; Literals

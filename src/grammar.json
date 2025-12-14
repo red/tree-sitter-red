@@ -3161,21 +3161,18 @@
         }
       ]
     },
-    "multiline_string": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "{"
-          },
-          {
-            "type": "STRING",
-            "value": "}"
-          }
-        ]
-      }
+    "_empty_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
     },
     "escaped_char": {
       "type": "TOKEN",
@@ -3388,6 +3385,10 @@
         {
           "type": "SYMBOL",
           "name": "multiline_string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_empty_string"
         },
         {
           "type": "SYMBOL",

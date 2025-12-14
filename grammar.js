@@ -267,7 +267,7 @@ module.exports = grammar({
         '"',
       ),
 
-    multiline_string: (_) => token(seq("{", "}")),
+    _empty_string: (_) => seq("{", "}"),
 
     escaped_char: (_) =>
       token(
@@ -309,7 +309,8 @@ module.exports = grammar({
 
     _any_word: ($) => choice($.word, $.lit_word, $.get_word, $.set_word),
     _any_path: ($) => choice($.path, $.lit_path, $.get_path, $.set_path),
-    _any_string: ($) => choice($.string, $.multiline_string, $.raw_string),
+    _any_string: ($) =>
+      choice($.string, $.multiline_string, $._empty_string, $.raw_string),
 
     _path_element: ($) =>
       choice(
