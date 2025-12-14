@@ -29,3 +29,57 @@ String
     (escaped_char)
     (string_content))
 )
+
+===============================================================================
+Function
+===============================================================================
+
+foo: func [
+    a [integer!]
+    return: [integer!]
+	/local
+		obj [red-object!]
+		s	[series!]
+]
+
+ctx1/ctx2/3/foo: func [a][
+    a * 2 + 1 / 100h
+]
+--------------------------------------------------------------------------------
+(source_file
+  (function
+    (set_word)
+    (func_spec
+        (func_param
+          (word)
+          (type_block
+            (type_word)))
+        (func_return
+            (type_block
+            (type_word)))
+        (func_local
+            (word)
+            (type_block
+            (type_word))
+            (word)
+            (type_block
+            (type_word)))))
+
+  (function
+    (set_path
+      (path
+        (word)
+        (number)
+        (word)))
+    (func_spec
+      (func_param
+        (word))))
+  (block
+    (word)
+    (infix_op)
+    (number)
+    (infix_op)
+    (number)
+    (infix_op)
+    (hexa))
+)

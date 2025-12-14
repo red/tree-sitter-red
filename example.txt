@@ -1,3 +1,4 @@
+Red []
 #include %abc.red
 "Hello Red"
 "你好，世界!"
@@ -267,3 +268,7 @@ equal? "blahblah2" append "blah" "blah^2"
 
 1.#inf
 1.#iNf
+
+ctx1/ctx2/3/foo: func [a][
+    a * 2 + 1 / 100h
+]

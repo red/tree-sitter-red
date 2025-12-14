@@ -267,6 +267,8 @@ module.exports = grammar({
         '"',
       ),
 
+    multiline_string: (_) => token(seq("{", "}")),
+
     escaped_char: (_) =>
       token(
         prec(
@@ -397,7 +399,7 @@ module.exports = grammar({
       ),
     func_spec: ($) =>
       prec(
-        1,
+        2,
         seq(
           "[",
           optional(field("attribute", $.block)),
@@ -409,8 +411,8 @@ module.exports = grammar({
       ),
 
     function: ($) =>
-      prec.left(
-        1,
+      prec.right(
+        2,
         seq(
           field("name", choice($.set_word, $.set_path)),
           choice(
