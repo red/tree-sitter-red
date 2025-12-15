@@ -73,6 +73,11 @@
 (comment) @comment
 
 ;; Functions
+
+(function
+    name: (set_word) @function.definition
+    func: _ @keyword)
+
 (function
     name: (set_word) @function.definition
     func: _ @keyword
@@ -86,7 +91,11 @@
         (#eq? @emphasis "/local"))?)
 
 (does
-    name: (_) @function.definition
+    name: (set_word) @function.definition
+    key: _ @keyword)
+
+(does
+    name: (set_path (path (word) @function.definition) @function.definition) @function.definition
     key: _ @keyword)
 
 ;; Contexts & Objects
