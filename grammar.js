@@ -101,7 +101,10 @@ module.exports = grammar({
     },
 
     point: ($) =>
-      seq("(", $.number, ",", $.number, optional(seq(",", $.number)), ")"),
+      prec(
+        1,
+        seq("(", $.number, ",", $.number, optional(seq(",", $.number)), ")"),
+      ),
 
     money: (_) =>
       token(
@@ -247,7 +250,12 @@ module.exports = grammar({
     },
 
     char: ($) =>
-      seq('#"', choice($.escaped_char, token.immediate(/[^"\^]/)), '"'),
+      seq(
+        "#",
+        token.immediate('"'),
+        choice($.escaped_char, token.immediate(/[^"\^]/)),
+        '"',
+      ),
 
     ref: (_) => /@[^\s\[\]\(\)\{\}@#$;,'"=<>^]*/,
     issue: (_) => /#[^\s\[\]\(\)\{\}@;"<>:]+/,
@@ -295,7 +303,8 @@ module.exports = grammar({
         ),
       ),
 
-    escaped_value: (_) => seq("#(", /[A-Za-z\-!]{3,20}/, ")"),
+    escaped_value: (_) =>
+      seq("#", token.immediate("("), /[A-Za-z\-!]{3,20}/, ")"),
 
     _word: (_) =>
       /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*/,
@@ -342,16 +351,23 @@ module.exports = grammar({
     set_path: ($) => prec(3, seq($.path, token.immediate(":"))),
 
     _binary_base_2: ($) =>
-      seq("2#{", repeat(choice(/(?:[01]\s*){8}/, $.comment)), "}"),
+      seq(
+        "2#",
+        token.immediate("{"),
+        repeat(choice(/(?:[01]\s*){8}/, $.comment)),
+        "}",
+      ),
     _binary_base_16: ($) =>
       seq(
-        choice("#{", "16#{"),
+        choice("#", "16#"),
+        token.immediate("{"),
         repeat(choice(/[0-9a-fA-F]{2}/, $.comment)),
         "}",
       ),
     _binary_base_64: ($) =>
       seq(
-        "64#{",
+        "64#",
+        token.immediate("{"),
         repeat(choice(/[A-Za-z0-9\+\/]/, $.comment)),
         optional("="),
         optional("="),
@@ -360,7 +376,7 @@ module.exports = grammar({
     binary: ($) =>
       choice($._binary_base_2, $._binary_base_16, $._binary_base_64),
 
-    map: ($) => seq(token("#["), repeat($._literal), "]"),
+    map: ($) => seq("#", token.immediate("["), repeat($._literal), "]"),
     tag: (_) =>
       token(
         prec(

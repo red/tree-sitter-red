@@ -62,10 +62,10 @@
 (get_word (word) @variable) @variable
 (lit_word (word) @constant) @constant
 
-(path (word) @none) @none
-(set_path (path (word) @variable)) @variable
-(get_path (path (word) @variable)) @variable
-(lit_path (path (word) @constant)) @constant
+(path (word) @none)
+(set_path (path (word) @variable) @variable) @variable
+(get_path (path (word) @variable) @variable) @variable
+(lit_path (path (word) @constant) @constant) @constant
 
 ;; Comments
 

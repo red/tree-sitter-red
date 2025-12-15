@@ -1074,19 +1074,7 @@
     "named": false
   },
   {
-    "type": "#\"",
-    "named": false
-  },
-  {
-    "type": "#(",
-    "named": false
-  },
-  {
-    "type": "#[",
-    "named": false
-  },
-  {
-    "type": "#{",
+    "type": "#",
     "named": false
   },
   {
@@ -1114,15 +1102,15 @@
     "named": false
   },
   {
-    "type": "16#{",
+    "type": "16#",
     "named": false
   },
   {
-    "type": "2#{",
+    "type": "2#",
     "named": false
   },
   {
-    "type": "64#{",
+    "type": "64#",
     "named": false
   },
   {

@@ -502,50 +502,54 @@
       }
     },
     "point": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "SYMBOL",
-          "name": "number"
-        },
-        {
-          "type": "STRING",
-          "value": ","
-        },
-        {
-          "type": "SYMBOL",
-          "name": "number"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": ","
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "number"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "SYMBOL",
+            "name": "number"
+          },
+          {
+            "type": "STRING",
+            "value": ","
+          },
+          {
+            "type": "SYMBOL",
+            "name": "number"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "number"
+                  }
+                ]
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          }
+        ]
+      }
     },
     "money": {
       "type": "TOKEN",
@@ -3033,7 +3037,14 @@
       "members": [
         {
           "type": "STRING",
-          "value": "#\""
+          "value": "#"
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "\""
+          }
         },
         {
           "type": "CHOICE",
@@ -3246,7 +3257,14 @@
       "members": [
         {
           "type": "STRING",
-          "value": "#("
+          "value": "#"
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "("
+          }
         },
         {
           "type": "PATTERN",
@@ -3585,7 +3603,14 @@
       "members": [
         {
           "type": "STRING",
-          "value": "2#{"
+          "value": "2#"
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "{"
+          }
         },
         {
           "type": "REPEAT",
@@ -3617,13 +3642,20 @@
           "members": [
             {
               "type": "STRING",
-              "value": "#{"
+              "value": "#"
             },
             {
               "type": "STRING",
-              "value": "16#{"
+              "value": "16#"
             }
           ]
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "{"
+          }
         },
         {
           "type": "REPEAT",
@@ -3652,7 +3684,14 @@
       "members": [
         {
           "type": "STRING",
-          "value": "64#{"
+          "value": "64#"
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "{"
+          }
         },
         {
           "type": "REPEAT",
@@ -3721,10 +3760,14 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "TOKEN",
+          "type": "STRING",
+          "value": "#"
+        },
+        {
+          "type": "IMMEDIATE_TOKEN",
           "content": {
             "type": "STRING",
-            "value": "#["
+            "value": "["
           }
         },
         {
