@@ -15,7 +15,7 @@ module.exports = grammar({
     $.infix_op,
     $.hexa,
     $.raw_string,
-    $.multiline_string,
+    $._multiline_string,
     $.error_sentinel,
   ],
   word: ($) => $._word,
@@ -288,7 +288,7 @@ module.exports = grammar({
 
     string: ($) => choice('""', seq('"', $._string_seq, '"')),
 
-    _empty_string: (_) => seq("{", "}"),
+    multiline_string: ($) => seq("{", $._multiline_string, "}"),
 
     escaped_char: (_) =>
       token(
@@ -330,8 +330,7 @@ module.exports = grammar({
 
     _any_word: ($) => choice($.lit_word, $.get_word, $.set_word, $.word),
     _any_path: ($) => choice($.lit_path, $.get_path, $.set_path, $.path),
-    _any_string: ($) =>
-      choice($.string, $.multiline_string, $._empty_string, $.raw_string),
+    _any_string: ($) => choice($.string, $.multiline_string, $.raw_string),
 
     _path_element: ($) =>
       choice(

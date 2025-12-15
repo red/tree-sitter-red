@@ -157,12 +157,6 @@ static int scan_raw_string(TSLexer *lexer, int start) {
 }
 
 static bool scan_multiline_string(TSLexer *lexer) {
-  skip_spaces(lexer);
-
-  if (lexer->lookahead != '{')
-    return false;
-  advance(lexer);
-
   for (int cnt = 1;;) {
     // If we hit EOF, consider the content to terminate there.
     // This forms an incomplete raw_string, and models the code well.
@@ -179,7 +173,6 @@ static bool scan_multiline_string(TSLexer *lexer) {
     case '}':
       cnt--;
       if (cnt == 0) {
-        advance(lexer);
         lexer->mark_end(lexer);
         lexer->result_symbol = MULTILINE_STRING;
         return true;

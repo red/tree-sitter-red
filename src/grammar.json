@@ -3219,12 +3219,16 @@
         }
       ]
     },
-    "_empty_string": {
+    "multiline_string": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
           "value": "{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_multiline_string"
         },
         {
           "type": "STRING",
@@ -3469,10 +3473,6 @@
         {
           "type": "SYMBOL",
           "name": "multiline_string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_empty_string"
         },
         {
           "type": "SYMBOL",
@@ -4166,7 +4166,7 @@
     },
     {
       "type": "SYMBOL",
-      "name": "multiline_string"
+      "name": "_multiline_string"
     },
     {
       "type": "SYMBOL",

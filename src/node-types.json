@@ -598,6 +598,11 @@
     }
   },
   {
+    "type": "multiline_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "paren",
     "named": true,
     "fields": {},
@@ -1235,10 +1240,6 @@
   },
   {
     "type": "money",
-    "named": true
-  },
-  {
-    "type": "multiline_string",
     "named": true
   },
   {
