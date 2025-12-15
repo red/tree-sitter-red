@@ -260,8 +260,8 @@ static int scan_infix_op(TSLexer *lexer) {
     find = false;
   }
   if (find) {
-    if (!iswspace(lexer->lookahead)) {
-      if (is_percent) {
+    if (!iswspace(lexer->lookahead) || lexer->eof(lexer)) {
+      if (is_percent && !lexer->eof(lexer)) {
         // check if it's a raw string
         return scan_raw_string(lexer, 1);
       }
@@ -309,10 +309,17 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
     }
     if (count >= 2 && lexer->lookahead == 'h') {
       advance(lexer);
-      lexer->mark_end(lexer);
-      lexer->result_symbol = RED_HEXA;
-      return true;
+      int32_t c = lexer->lookahead;
+      // check valid tail chars
+      if (iswspace(c) || c == ']' || c == '[' || c == '{' || c == '"' ||
+          c == '(' || c == ')' || c == '<' || c == '/' || lexer->eof(lexer)) {
+        lexer->mark_end(lexer);
+        lexer->result_symbol = RED_HEXA;
+        return true;
+      }
+      return false;
     }
+
     if (count > 0)
       return false;
   }

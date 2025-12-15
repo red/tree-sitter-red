@@ -36,7 +36,7 @@ module.exports = grammar({
         $._any_word,
         prec(3, $._any_path),
         $.hexa,
-        $.escaped_value,
+        $.construction,
         $.boolean,
         $.number,
         $.pair,
@@ -152,9 +152,11 @@ module.exports = grammar({
         1,
         token(
           seq(
-            /\d+:\d+/,
+            /[\+\-]?\d+:\d+/,
             optional(
-              choice(decimal_number, seq(/:\d+/, optional(decimal_number))),
+              token.immediate(
+                choice(decimal_number, seq(/:\d+/, optional(decimal_number))),
+              ),
             ),
           ),
         ),
@@ -259,25 +261,32 @@ module.exports = grammar({
 
     ref: (_) => /@[^\s\[\]\(\)\{\}@#$;,'"=<>^]*/,
     issue: (_) => /#[^\s\[\]\(\)\{\}@;"<>:]+/,
-    refinement: (_) => seq("/", /[^\s\/\\,\[\]\(\)\{\}"#%\$@:;<>]+/),
+    refinement: (_) =>
+      seq("/", token.immediate(/[^\s\/\\,\[\]\(\)\{\}"#%\$@:;<>]+/)),
     email: (_) => {
       const char = /[^\s\[\]\(\)\{\}@;:<"]/;
-      return token(seq(repeat1(char), "@", repeat(char)));
+      return token(seq(repeat1(char), token.immediate("@"), repeat(char)));
     },
 
-    file: ($) => choice(seq("%", $.string), /%[^\s\[\]\(\)\{\}@:;"\n]+/),
-
-    string: ($) =>
-      seq(
-        '"',
-        repeat(
-          choice(
-            alias(token.immediate(prec(1, /[^\^"\n]+/)), $.string_content),
-            $.escaped_char,
-          ),
+    file: ($) =>
+      prec(
+        1,
+        choice(
+          '%""',
+          seq("%", token.immediate('"'), $._string_seq, '"'),
+          /%[^\s\[\]\(\)\{\}@:;"\n]+/,
         ),
-        '"',
       ),
+
+    _string_seq: ($) =>
+      repeat1(
+        choice(
+          alias(token.immediate(prec(1, /[^\^"\n]+/)), $.string_content),
+          $.escaped_char,
+        ),
+      ),
+
+    string: ($) => choice('""', seq('"', $._string_seq, '"')),
 
     _empty_string: (_) => seq("{", "}"),
 
@@ -303,16 +312,17 @@ module.exports = grammar({
         ),
       ),
 
-    escaped_value: (_) =>
+    construction: (_) =>
       seq("#", token.immediate("("), /[A-Za-z\-!]{3,20}/, ")"),
 
     _word: (_) =>
       /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*/,
-    word: ($) => choice($._word, "/", /\/+/),
+
+    _set_word: ($) => seq($._word, token.immediate(":")),
+
+    word: ($) => choice($._word, "/", /\/+/, "%"),
     lit_word: ($) => seq("'", $.word),
     get_word: ($) => seq(":", $.word),
-    _set_word: (_) =>
-      /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*:/,
 
     set_word: ($) => prec(1, choice($._set_word, /\/+:/)),
 
@@ -343,8 +353,7 @@ module.exports = grammar({
         $.paren,
       ),
     _path: ($) => prec(3, seq($._path_element, token.immediate(prec(2, "/")))),
-    _path_start: (_) =>
-      /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*\//,
+    _path_start: ($) => prec(4, seq($._word, token.immediate(prec(2, "/")))),
     path: ($) => prec(2, seq($._path_start, repeat($._path), $._path_element)),
     lit_path: ($) => prec(2, seq("'", $.path)),
     get_path: ($) => prec(2, seq(":", $.path)),

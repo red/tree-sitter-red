@@ -43,6 +43,10 @@
           "named": true
         },
         {
+          "type": "construction",
+          "named": true
+        },
+        {
           "type": "context",
           "named": true
         },
@@ -56,10 +60,6 @@
         },
         {
           "type": "email",
-          "named": true
-        },
-        {
-          "type": "escaped_value",
           "named": true
         },
         {
@@ -198,6 +198,11 @@
     }
   },
   {
+    "type": "construction",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "context",
     "named": true,
     "fields": {
@@ -291,20 +296,19 @@
     }
   },
   {
-    "type": "escaped_value",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "file",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "string",
+          "type": "escaped_char",
+          "named": true
+        },
+        {
+          "type": "string_content",
           "named": true
         }
       ]
@@ -471,15 +475,15 @@
           "named": true
         },
         {
+          "type": "construction",
+          "named": true
+        },
+        {
           "type": "date",
           "named": true
         },
         {
           "type": "email",
-          "named": true
-        },
-        {
-          "type": "escaped_value",
           "named": true
         },
         {
@@ -622,6 +626,10 @@
           "named": true
         },
         {
+          "type": "construction",
+          "named": true
+        },
+        {
           "type": "context",
           "named": true
         },
@@ -635,10 +643,6 @@
         },
         {
           "type": "email",
-          "named": true
-        },
-        {
-          "type": "escaped_value",
           "named": true
         },
         {
@@ -901,6 +905,10 @@
           "named": true
         },
         {
+          "type": "construction",
+          "named": true
+        },
+        {
           "type": "context",
           "named": true
         },
@@ -914,10 +922,6 @@
         },
         {
           "type": "email",
-          "named": true
-        },
-        {
-          "type": "escaped_value",
           "named": true
         },
         {
@@ -1074,11 +1078,19 @@
     "named": false
   },
   {
+    "type": "\"\"",
+    "named": false
+  },
+  {
     "type": "#",
     "named": false
   },
   {
     "type": "%",
+    "named": false
+  },
+  {
+    "type": "%\"\"",
     "named": false
   },
   {

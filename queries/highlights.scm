@@ -78,6 +78,10 @@
     spec: (block (refinement) @emphasis
         (#eq? @emphasis "/local")))
 
+(does
+    name: (_) @function.definition
+    key: _ @keyword)
+
 ;; Contexts & Objects
 (context
     name: (_) @constructor
