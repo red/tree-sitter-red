@@ -292,3 +292,5 @@ ctx1/ctx2/3/foo: func [a][
 reduce/into :value tail series
 
 a: func :value []
+
+32x33

@@ -59,10 +59,13 @@
 (email) @link_text
 (ref) @label
 
-
+(get_word (word) @variable) @variable
+(lit_word (word) @constant) @constant
 
 (path (word) @none) @none
 (set_path (path (word) @variable)) @variable
+(get_path (path (word) @variable)) @variable
+(lit_path (path (word) @constant)) @constant
 
 ;; Comments
 
@@ -72,10 +75,8 @@
 (function
     name: (_) @function.definition
     func: _ @keyword
-    spec: (block (((set_word) @emphasis
-        (#eq? @emphasis "return:"))
-    ((refinement) @emphasis
-        (#eq? @emphasis "/local")))))
+    spec: (block (refinement) @emphasis
+        (#eq? @emphasis "/local")))
 
 ;; Contexts & Objects
 (context

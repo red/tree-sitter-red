@@ -78,9 +78,13 @@ module.exports = grammar({
             decimalDigits,
             optional(seq(".", decimalDigits)),
             optional(seq(/[eE]/, seq(optional(sign), repeat1(decimal)))),
-            optional("%"),
+            optional(token.immediate("%")),
           ),
-          seq(optional(sign), choice(/1.#inf/i, /1.#nan/i), optional("%")),
+          seq(
+            optional(sign),
+            choice(/1.#inf/i, /1.#nan/i),
+            optional(token.immediate("%")),
+          ),
         ),
       );
     },
@@ -294,21 +298,19 @@ module.exports = grammar({
     escaped_value: (_) => seq("#(", /[A-Za-z\-!]{3,20}/, ")"),
 
     _word: (_) =>
-      /[^\p{White_Space}\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\p{White_Space}\/\\,\[\]\(\)\{\}"#%\$@:;]*/u,
+      /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*/,
     word: ($) => choice($._word, "/", /\/+/),
     lit_word: ($) => seq("'", $.word),
     get_word: ($) => seq(":", $.word),
     _set_word: (_) =>
-      choice(
-        /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*:/,
-        /\/+:/,
-      ),
-    set_word: ($) => $._set_word,
+      /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*:/,
+
+    set_word: ($) => prec(1, choice($._set_word, /\/+:/)),
 
     url: ($) => seq($._set_word, token.immediate(/[^\s\\\[\]\(\)\{\}";]+/)),
 
-    _any_word: ($) => choice($.word, $.lit_word, $.get_word, $.set_word),
-    _any_path: ($) => choice($.path, $.lit_path, $.get_path, $.set_path),
+    _any_word: ($) => choice($.lit_word, $.get_word, $.set_word, $.word),
+    _any_path: ($) => choice($.lit_path, $.get_path, $.set_path, $.path),
     _any_string: ($) =>
       choice($.string, $.multiline_string, $._empty_string, $.raw_string),
 
@@ -331,9 +333,9 @@ module.exports = grammar({
         $.ref,
         $.paren,
       ),
-    _path: ($) => prec(3, seq($._path_element, "/")),
+    _path: ($) => prec(3, seq($._path_element, token.immediate(prec(2, "/")))),
     _path_start: (_) =>
-      /[^\p{White_Space}\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\p{White_Space}\/\\,\[\]\(\)\{\}"#%\$@:;]*\//u,
+      /[^\s\d'\/\\,\[\]\(\)\{\}"#%\$@:;][^\s\/\\,\[\]\(\)\{\}"#%\$@:;]*\//,
     path: ($) => prec(2, seq($._path_start, repeat($._path), $._path_element)),
     lit_path: ($) => prec(2, seq("'", $.path)),
     get_path: ($) => prec(2, seq(":", $.path)),
