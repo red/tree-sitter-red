@@ -274,6 +274,10 @@ static int scan_infix_op(TSLexer *lexer) {
   return S_CONTINUE;
 }
 
+static bool is_hex_upper(char c) {
+  return (c >= '0' && c <= '9') || (c >= 'A' && c <= 'F');
+}
+
 bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
                                         const bool *valid_symbols) {
   trace("==========\n");
@@ -303,7 +307,7 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
     skip_spaces(lexer);
     int count = 0;
     // 2 - 8 characters
-    while (iswxdigit(lexer->lookahead) && count < 8) {
+    while (is_hex_upper(lexer->lookahead) && count < 8) {
       advance(lexer);
       count++;
     }
@@ -312,7 +316,7 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
       int32_t c = lexer->lookahead;
       // check valid tail chars
       if (iswspace(c) || c == ']' || c == '[' || c == '{' || c == '"' ||
-          c == '(' || c == ')' || c == '<' || c == '/' || lexer->eof(lexer)) {
+          c == '(' || c == ')' || c == '<' || lexer->eof(lexer)) {
         lexer->mark_end(lexer);
         lexer->result_symbol = RED_HEXA;
         return true;
