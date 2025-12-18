@@ -293,4 +293,5 @@ reduce/into :value tail series
 
 a: func :value []
 
-32x33
+fda
+12:32:32abc

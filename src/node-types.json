@@ -87,6 +87,10 @@
           "named": true
         },
         {
+          "type": "invalid_token",
+          "named": true
+        },
+        {
           "type": "issue",
           "named": true
         },
@@ -206,7 +210,17 @@
     "type": "context",
     "named": true,
     "fields": {
-      "ctx": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "key": {
         "multiple": false,
         "required": true,
         "types": [
@@ -261,6 +275,16 @@
     "type": "does",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
       "key": {
         "multiple": false,
         "required": true,
@@ -318,7 +342,17 @@
     "type": "function",
     "named": true,
     "fields": {
-      "func": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "key": {
         "multiple": false,
         "required": true,
         "types": [
@@ -381,6 +415,22 @@
           {
             "type": "block",
             "named": true
+          },
+          {
+            "type": "get_path",
+            "named": true
+          },
+          {
+            "type": "get_word",
+            "named": true
+          },
+          {
+            "type": "path",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
           }
         ]
       }
@@ -411,6 +461,41 @@
       "types": [
         {
           "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "invalid_token",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "date",
+          "named": true
+        },
+        {
+          "type": "money",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "pair",
+          "named": true
+        },
+        {
+          "type": "time",
+          "named": true
+        },
+        {
+          "type": "tuple",
           "named": true
         }
       ]
@@ -504,6 +589,10 @@
         },
         {
           "type": "infix_op",
+          "named": true
+        },
+        {
+          "type": "invalid_token",
           "named": true
         },
         {
@@ -672,6 +761,10 @@
         },
         {
           "type": "infix_op",
+          "named": true
+        },
+        {
+          "type": "invalid_token",
           "named": true
         },
         {
@@ -954,6 +1047,10 @@
           "named": true
         },
         {
+          "type": "invalid_token",
+          "named": true
+        },
+        {
           "type": "issue",
           "named": true
         },
@@ -1215,10 +1312,6 @@
     "named": true
   },
   {
-    "type": "false",
-    "named": false
-  },
-  {
     "type": "func",
     "named": false
   },
@@ -1273,10 +1366,6 @@
   {
     "type": "tag",
     "named": true
-  },
-  {
-    "type": "true",
-    "named": false
   },
   {
     "type": "tuple",

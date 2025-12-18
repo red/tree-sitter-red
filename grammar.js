@@ -10,7 +10,7 @@
 module.exports = grammar({
   name: "red",
 
-  extras: ($) => [/\s/],
+  extras: (_) => [/\s/],
   externals: ($) => [
     $.infix_op,
     $.hexa,
@@ -19,6 +19,23 @@ module.exports = grammar({
     $.error_sentinel,
   ],
   word: ($) => $._word,
+
+  inline: ($) => [
+    $._expression,
+    $._complex_expression,
+    $._literal,
+    $._any_string,
+    $._any_path,
+    $._any_word,
+    $._func_spec,
+    $._set_word,
+    $._path,
+    $._path_start,
+    $._string_seq,
+    $._binary_base_16,
+    $._binary_base_2,
+    $._binary_base_64,
+  ],
 
   rules: {
     /* General rules */
@@ -59,9 +76,18 @@ module.exports = grammar({
         $.block,
         $.infix_op,
         $.comment,
+        $.invalid_token,
       ),
 
-    boolean: (_) => choice("true", "false"),
+    boolean: (_) =>
+      choice(
+        iword("true"),
+        iword("false"),
+        iword("yes"),
+        iword("no"),
+        iword("on"),
+        iword("off"),
+      ),
 
     number: (_) => {
       const separator = "'";
@@ -85,6 +111,7 @@ module.exports = grammar({
             choice(/1.#inf/i, /1.#nan/i),
             optional(token.immediate("%")),
           ),
+          seq(".", token.immediate(repeat1(decimal))),
         ),
       );
     },
@@ -402,13 +429,14 @@ module.exports = grammar({
     block: ($) => seq("[", repeat($._expression), "]"),
     paren: ($) => seq("(", repeat($._expression), ")"),
 
+    _func_spec: ($) => choice($.get_word, $.word, $.get_path, $.path, $.block),
     function: ($) =>
       prec.right(
         2,
         seq(
           field("name", choice($.set_word, $.set_path)),
           field(
-            "func",
+            "key",
             choice(
               "func",
               "Func",
@@ -421,23 +449,63 @@ module.exports = grammar({
               "Routine",
             ),
           ),
-          field("spec", optional($.block)),
+          choice(
+            optional(field("spec", $._func_spec)),
+            seq(field("spec", $._func_spec), optional(field("body", $.block))),
+          ),
         ),
       ),
 
     does: ($) =>
-      seq(
-        field("name", choice($.set_word, $.set_path)),
-        field("key", choice("does", "Does", "DOES")),
+      prec.right(
+        2,
+        seq(
+          field("name", choice($.set_word, $.set_path)),
+          field("key", choice("does", "Does", "DOES")),
+          optional(field("body", $.block)),
+        ),
       ),
 
     context: ($) =>
-      seq(
-        field("name", choice($.set_word, $.set_path)),
-        field(
-          "ctx",
-          choice("context", "Context", "CONTEXT", "object", "Object", "OBJECT"),
+      prec.right(
+        2,
+        seq(
+          field("name", choice($.set_word, $.set_path)),
+          field(
+            "key",
+            choice(
+              "context",
+              "Context",
+              "CONTEXT",
+              "object",
+              "Object",
+              "OBJECT",
+            ),
+          ),
+          optional(field("body", $.block)),
+        ),
+      ),
+
+    invalid_token: ($) =>
+      prec(
+        -1,
+        seq(
+          choice($.number, $.tuple, $.date, $.time, $.pair, $.money),
+          token.immediate(/[^\s\[\]\(\)\{;:",xX<\/]+/),
         ),
       ),
   },
 });
+
+// Helper function to create a case-insensitive regex for a word
+function caseInsensitive(word) {
+  return word
+    .split("") // Split the word into an array of characters
+    .map((letter) => `[${letter}${letter.toUpperCase()}]`) // Create a character set for each letter, e.g., '[aA]'
+    .join(""); // Join them back into a single regex string
+}
+
+function iword(word) {
+  // Use 'token(prec(1, ...))' to give the keyword precedence over identifiers
+  return token(prec(1, new RegExp(caseInsensitive(word))));
+}

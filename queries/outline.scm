@@ -2,7 +2,7 @@
 
 (function
     name: (_) @name
-    func: _ @context
+    key: _ @context
 ) @item
 
 (does
@@ -13,5 +13,5 @@
 ; Contexts
 (context
     name: (_) @name
-    ctx: _ @context
+    key: _ @context
 ) @item
