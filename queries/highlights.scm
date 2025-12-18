@@ -107,5 +107,5 @@
 
 ;; Errors
 
-(invalid_token) @error
+(invalid_token _ @error) @error
 (ERROR) @error
