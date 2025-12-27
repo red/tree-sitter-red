@@ -41,6 +41,7 @@ enum TokenType {
   RED_HEXA,
   RAW_STRING,
   MULTILINE_STRING,
+  IPV6_ADDRESS,
   ERROR_SENTINEL,
 };
 
@@ -50,6 +51,7 @@ static const char *const symbol_names[] = {
     [RED_HEXA] = "$.hexa",
     [RAW_STRING] = "$.raw_string",
     [MULTILINE_STRING] = "$.multiline_string",
+    [IPV6_ADDRESS] = "$.ipv6_address",
 };
 #endif
 
@@ -271,6 +273,133 @@ static bool is_hex_upper(char c) {
   return (c >= '0' && c <= '9') || (c >= 'A' && c <= 'F');
 }
 
+static inline bool is_hex(int32_t c) {
+  return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') ||
+         (c >= 'A' && c <= 'F');
+}
+
+static inline bool is_digit(int32_t c) { return c >= '0' && c <= '9'; }
+
+static bool scan_remaining_ipv4_octets(TSLexer *lexer) {
+  for (int i = 0; i < 3; i++) {
+    if (lexer->lookahead != '.')
+      return false;
+    lexer->advance(lexer, false); // consume '.'
+
+    int value = 0;
+    int digits = 0;
+
+    if (!is_digit(lexer->lookahead))
+      return false;
+
+    while (is_digit(lexer->lookahead)) {
+      value = value * 10 + (lexer->lookahead - '0');
+      digits++;
+      if (digits > 3 || value > 255)
+        return false;
+      lexer->advance(lexer, false);
+    }
+  }
+  return true;
+}
+
+int scan_ipv6(TSLexer *lexer, int start) {
+  int groups = 0;
+  bool seen_double_colon = false;
+
+  int32_t c = lexer->lookahead;
+  if (start == 0) {
+    if (!(is_hex(c) || c == ':'))
+      return S_CONTINUE;
+
+    // start with "::"
+    if (c == ':') {
+      lexer->advance(lexer, false);
+      if (lexer->lookahead != ':')
+        return S_RETURN;
+      lexer->advance(lexer, false);
+      seen_double_colon = true;
+    }
+  }
+
+  while (true) {
+    int hex_count = 0;
+    bool decimal_only = true;
+    int decimal_value = 0;
+    int decimal_digits = 0;
+
+    while (is_hex(lexer->lookahead)) {
+      int32_t ch = lexer->lookahead;
+
+      if (!is_digit(ch)) {
+        decimal_only = false;
+      } else if (decimal_only) {
+        decimal_value = decimal_value * 10 + (ch - '0');
+        decimal_digits++;
+        if (decimal_digits > 3 || decimal_value > 255) {
+          decimal_only = false;
+        }
+      }
+
+      lexer->advance(lexer, false);
+      hex_count++;
+    }
+
+    if (start > 0) {
+      hex_count = start;
+      start = 0;
+    }
+    if (hex_count == 0)
+      break;
+    if (hex_count > 4)
+      return S_RETURN;
+
+    groups++;
+
+    if (lexer->lookahead == '.') {
+      if (!decimal_only || decimal_digits == 0) {
+        return S_RETURN;
+      }
+
+      if (!scan_remaining_ipv4_octets(lexer)) {
+        return S_RETURN;
+      }
+
+      groups += 1;
+      break;
+    }
+
+    if (lexer->lookahead != ':')
+      break;
+
+    lexer->advance(lexer, false);
+
+    if (lexer->lookahead == ':') {
+      if (seen_double_colon)
+        return S_RETURN;
+      seen_double_colon = true;
+      lexer->advance(lexer, false);
+      continue;
+    }
+
+    if (!is_hex(lexer->lookahead)) {
+      return S_RETURN;
+    }
+  }
+
+  if (seen_double_colon) {
+    if (groups > 7)
+      return S_RETURN;
+  } else {
+    if (groups != 8)
+      return S_RETURN;
+  }
+
+  lexer->mark_end(lexer);
+  lexer->result_symbol = IPV6_ADDRESS;
+  return S_OK;
+}
+
 bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
                                         const bool *valid_symbols) {
   trace("==========\n");
@@ -317,8 +446,24 @@ bool tree_sitter_external_scanner(scan)(void *payload, TSLexer *lexer,
       return false;
     }
 
-    if (count > 0)
+    if (count > 0) {
+      if (lexer->lookahead == ':' && count <= 4) {
+        return S_OK == scan_ipv6(lexer, count);
+      }
       return false;
+    }
+  }
+
+  if (valid_symbols[IPV6_ADDRESS]) {
+    skip_spaces(lexer);
+    switch (scan_ipv6(lexer, 0)) {
+    case S_OK:
+      return true;
+    case S_RETURN:
+      return false;
+    default:
+      break;
+    }
   }
 
   if (valid_symbols[RAW_STRING]) {

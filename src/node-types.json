@@ -91,6 +91,10 @@
           "named": true
         },
         {
+          "type": "ipv6_address",
+          "named": true
+        },
+        {
           "type": "issue",
           "named": true
         },
@@ -373,6 +377,14 @@
             "named": false
           },
           {
+            "type": "HAS",
+            "named": false
+          },
+          {
+            "type": "Has",
+            "named": false
+          },
+          {
             "type": "ROUTINE",
             "named": false
           },
@@ -386,6 +398,10 @@
           },
           {
             "type": "function",
+            "named": false
+          },
+          {
+            "type": "has",
             "named": false
           },
           {
@@ -596,6 +612,10 @@
           "named": true
         },
         {
+          "type": "ipv6_address",
+          "named": true
+        },
+        {
           "type": "issue",
           "named": true
         },
@@ -765,6 +785,10 @@
         },
         {
           "type": "invalid_token",
+          "named": true
+        },
+        {
+          "type": "ipv6_address",
           "named": true
         },
         {
@@ -1051,6 +1075,10 @@
           "named": true
         },
         {
+          "type": "ipv6_address",
+          "named": true
+        },
+        {
           "type": "issue",
           "named": true
         },
@@ -1268,6 +1296,14 @@
     "named": false
   },
   {
+    "type": "HAS",
+    "named": false
+  },
+  {
+    "type": "Has",
+    "named": false
+  },
+  {
     "type": "OBJECT",
     "named": false
   },
@@ -1320,11 +1356,19 @@
     "named": false
   },
   {
+    "type": "has",
+    "named": false
+  },
+  {
     "type": "hexa",
     "named": true
   },
   {
     "type": "infix_op",
+    "named": true
+  },
+  {
+    "type": "ipv6_address",
     "named": true
   },
   {

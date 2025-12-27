@@ -60,6 +60,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "ipv6_address"
+        },
+        {
+          "type": "SYMBOL",
           "name": "hexa"
         },
         {
@@ -4127,6 +4131,18 @@
                 {
                   "type": "STRING",
                   "value": "Routine"
+                },
+                {
+                  "type": "STRING",
+                  "value": "has"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Has"
+                },
+                {
+                  "type": "STRING",
+                  "value": "HAS"
                 }
               ]
             }
@@ -4392,6 +4408,10 @@
     {
       "type": "SYMBOL",
       "name": "_multiline_string"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "ipv6_address"
     },
     {
       "type": "SYMBOL",

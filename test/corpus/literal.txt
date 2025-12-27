@@ -29,3 +29,100 @@ String
     (escaped_char)
     (string_content))
 )
+
+====================
+Full 8 groups
+====================
+2001:db8:1:2:3:4:5:6
+--------------------
+
+(source_file
+  (ipv6_address))
+
+====================
+All zero compressed
+====================
+::
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+Single compressed
+====================
+2001::1
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+Middle compressed
+====================
+2001:db8:1:2::8
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+Trailing compressed
+====================
+2001:db8:1:2:3:4::
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+Leading compressed
+====================
+::1
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+IPv4 tail basic
+====================
+2001:db8:1:2:3:4:192.168.0.1
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+IPv4 tail with compression
+====================
+2001:db8::192.168.0.1
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+IPv4 tail fully compressed
+====================
+::192.168.0.1
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+IPv4 tail with ffff
+====================
+::ffff:192.168.0.1
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+IPv4 tail max
+====================
+::255.255.255.255
+--------------------
+(source_file
+  (ipv6_address))
+
+====================
+IPv4 tail min
+====================
+::0.0.0.0
+--------------------
+(source_file
+  (ipv6_address))
