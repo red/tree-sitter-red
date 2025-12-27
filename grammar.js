@@ -53,7 +53,7 @@ module.exports = grammar({
         $._any_string,
         $._any_word,
         prec(3, $._any_path),
-        $.ipv6_address,
+        $.ipv6,
         $.hexa,
         $.construction,
         $.boolean,
@@ -174,6 +174,10 @@ module.exports = grammar({
         ),
       );
     },
+
+    ipv6: ($) => seq($.ipv6_address, optional($.zone_index), optional($.cidr)),
+    zone_index: (_) => token.immediate(prec(1, /%[A-Za-z0-9_.-]+/)),
+    cidr: (_) => token.immediate(/\/[0-9]{1,3}/),
 
     time: (_) => {
       const decimal_number = token(seq(".", /\d{1,9}/));
@@ -355,7 +359,18 @@ module.exports = grammar({
 
     set_word: ($) => prec(1, choice($._set_word, /\/+:/)),
 
-    url: ($) => seq($._set_word, token.immediate(/[^\s\\\[\]\(\)\{\}";]+/)),
+    url: ($) =>
+      seq(
+        $._set_word,
+        choice(
+          token.immediate(/[^\s\\\[\]\(\)\{\}";]+/),
+          seq(
+            token.immediate("//["),
+            $.ipv6_address,
+            token.immediate(/\][^\s\\\[\]\(\)\{\}";]*/),
+          ),
+        ),
+      ),
 
     _any_word: ($) => choice($.lit_word, $.get_word, $.set_word, $.word),
     _any_path: ($) => choice($.lit_path, $.get_path, $.set_path, $.path),

@@ -91,7 +91,7 @@
           "named": true
         },
         {
-          "type": "ipv6_address",
+          "type": "ipv6",
           "named": true
         },
         {
@@ -518,6 +518,29 @@
     }
   },
   {
+    "type": "ipv6",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "cidr",
+          "named": true
+        },
+        {
+          "type": "ipv6_address",
+          "named": true
+        },
+        {
+          "type": "zone_index",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "lit_path",
     "named": true,
     "fields": {},
@@ -612,7 +635,7 @@
           "named": true
         },
         {
-          "type": "ipv6_address",
+          "type": "ipv6",
           "named": true
         },
         {
@@ -788,7 +811,7 @@
           "named": true
         },
         {
-          "type": "ipv6_address",
+          "type": "ipv6",
           "named": true
         },
         {
@@ -1075,7 +1098,7 @@
           "named": true
         },
         {
-          "type": "ipv6_address",
+          "type": "ipv6",
           "named": true
         },
         {
@@ -1196,7 +1219,17 @@
   {
     "type": "url",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "ipv6_address",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "word",
@@ -1241,6 +1274,10 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "//[",
     "named": false
   },
   {
@@ -1328,6 +1365,10 @@
     "named": false
   },
   {
+    "type": "cidr",
+    "named": true
+  },
+  {
     "type": "comment",
     "named": true
   },
@@ -1413,6 +1454,10 @@
   },
   {
     "type": "tuple",
+    "named": true
+  },
+  {
+    "type": "zone_index",
     "named": true
   },
   {

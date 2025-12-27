@@ -48,6 +48,8 @@
   (date)
   (time)
   (tuple)
+  (ipv6)
+  (ipv6_address)
 ] @number
 
 (binary) @constant
