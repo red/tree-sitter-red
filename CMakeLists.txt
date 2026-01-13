@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)
 project(tree-sitter-red
         VERSION "0.1.1"
         DESCRIPTION "A tree-sitter grammar for the Red programming language"
-        HOMEPAGE_URL "https://github.com/qtxie/tree-sitter-red"
+        HOMEPAGE_URL "https://github.com/red/tree-sitter-red"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

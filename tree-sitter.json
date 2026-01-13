@@ -6,9 +6,7 @@
       "camelcase": "Red",
       "title": "Red",
       "scope": "source.red",
-      "file-types": [
-        "red"
-      ],
+      "file-types": ["red"],
       "injection-regex": "^red$",
       "class-name": "TreeSitterRed"
     }
@@ -24,7 +22,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/qtxie/tree-sitter-red"
+      "repository": "https://github.com/red/tree-sitter-red"
     }
   },
   "bindings": {

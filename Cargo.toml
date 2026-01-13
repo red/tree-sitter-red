@@ -7,7 +7,7 @@ license = "Apache-2.0"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "red"]
 categories = ["parser-implementations", "parsing", "text-editors"]
-repository = "https://github.com/qtxie/tree-sitter-red"
+repository = "https://github.com/red/tree-sitter-red"
 edition = "2021"
 autoexamples = false
 

@@ -1,4 +1,4 @@
-module github.com/qtxie/tree-sitter-red
+module github.com/red/tree-sitter-red
 
 go 1.22
 

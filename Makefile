@@ -3,7 +3,7 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-red
-HOMEPAGE_URL := https://github.com/qtxie/tree-sitter-red
+HOMEPAGE_URL := https://github.com/red/tree-sitter-red
 VERSION := 0.1.1
 
 # repository
