@@ -441,7 +441,7 @@ module.exports = grammar({
         ),
       ),
 
-    _complex_expression: ($) => choice($.function, $.does, $.context),
+    _complex_expression: ($) => choice($.function, $.does, $.context, $.make),
 
     block: ($) => seq("[", repeat($._expression), "]"),
     paren: ($) => seq("(", repeat($._expression), ")"),
@@ -456,15 +456,15 @@ module.exports = grammar({
             "key",
             choice(
               "func",
+              "function",
+              "has",
+              "routine",
               "Func",
               "FUNC",
-              "function",
               "Function",
               "FUNCTION",
-              "routine",
               "ROUTINE",
               "Routine",
-              "has",
               "Has",
               "HAS",
             ),
@@ -495,15 +495,31 @@ module.exports = grammar({
             "key",
             choice(
               "context",
+              "object",
               "Context",
               "CONTEXT",
-              "object",
               "Object",
               "OBJECT",
             ),
           ),
           optional(field("body", $.block)),
         ),
+      ),
+
+      make: ($) =>
+        prec.right(
+          2,
+          seq(
+            field("name", choice($.set_word, $.set_path)),
+            field(
+              "key",
+              choice(
+                "make",
+                "Make",
+                "MAKE",
+              ),
+            ),
+          ),
       ),
 
     invalid_token: ($) =>

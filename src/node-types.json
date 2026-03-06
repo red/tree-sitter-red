@@ -107,6 +107,10 @@
           "named": true
         },
         {
+          "type": "make",
+          "named": true
+        },
+        {
           "type": "map",
           "named": true
         },
@@ -571,6 +575,44 @@
     }
   },
   {
+    "type": "make",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "MAKE",
+            "named": false
+          },
+          {
+            "type": "Make",
+            "named": false
+          },
+          {
+            "type": "make",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "set_path",
+            "named": true
+          },
+          {
+            "type": "set_word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "map",
     "named": true,
     "fields": {},
@@ -824,6 +866,10 @@
         },
         {
           "type": "lit_word",
+          "named": true
+        },
+        {
+          "type": "make",
           "named": true
         },
         {
@@ -1114,6 +1160,10 @@
           "named": true
         },
         {
+          "type": "make",
+          "named": true
+        },
+        {
           "type": "map",
           "named": true
         },
@@ -1341,6 +1391,14 @@
     "named": false
   },
   {
+    "type": "MAKE",
+    "named": false
+  },
+  {
+    "type": "Make",
+    "named": false
+  },
+  {
     "type": "OBJECT",
     "named": false
   },
@@ -1415,6 +1473,10 @@
   {
     "type": "issue",
     "named": true
+  },
+  {
+    "type": "make",
+    "named": false
   },
   {
     "type": "money",

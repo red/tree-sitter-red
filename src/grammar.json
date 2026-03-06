@@ -4078,6 +4078,10 @@
         {
           "type": "SYMBOL",
           "name": "context"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "make"
         }
       ]
     },
@@ -4181,15 +4185,23 @@
                 },
                 {
                   "type": "STRING",
+                  "value": "function"
+                },
+                {
+                  "type": "STRING",
+                  "value": "has"
+                },
+                {
+                  "type": "STRING",
+                  "value": "routine"
+                },
+                {
+                  "type": "STRING",
                   "value": "Func"
                 },
                 {
                   "type": "STRING",
                   "value": "FUNC"
-                },
-                {
-                  "type": "STRING",
-                  "value": "function"
                 },
                 {
                   "type": "STRING",
@@ -4201,19 +4213,11 @@
                 },
                 {
                   "type": "STRING",
-                  "value": "routine"
-                },
-                {
-                  "type": "STRING",
                   "value": "ROUTINE"
                 },
                 {
                   "type": "STRING",
                   "value": "Routine"
-                },
-                {
-                  "type": "STRING",
-                  "value": "has"
                 },
                 {
                   "type": "STRING",
@@ -4377,15 +4381,15 @@
                 },
                 {
                   "type": "STRING",
+                  "value": "object"
+                },
+                {
+                  "type": "STRING",
                   "value": "Context"
                 },
                 {
                   "type": "STRING",
                   "value": "CONTEXT"
-                },
-                {
-                  "type": "STRING",
-                  "value": "object"
                 },
                 {
                   "type": "STRING",
@@ -4413,6 +4417,53 @@
                 "type": "BLANK"
               }
             ]
+          }
+        ]
+      }
+    },
+    "make": {
+      "type": "PREC_RIGHT",
+      "value": 2,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "name",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "set_word"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "set_path"
+                }
+              ]
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "key",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "make"
+                },
+                {
+                  "type": "STRING",
+                  "value": "Make"
+                },
+                {
+                  "type": "STRING",
+                  "value": "MAKE"
+                }
+              ]
+            }
           }
         ]
       }
