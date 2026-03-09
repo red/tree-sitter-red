@@ -3737,7 +3737,7 @@
         ]
       }
     },
-    "_path_start": {
+    "path_start": {
       "type": "PREC",
       "value": 4,
       "content": {
@@ -3769,7 +3769,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "_path_start"
+            "name": "path_start"
           },
           {
             "type": "REPEAT",
@@ -4558,7 +4558,6 @@
     "_func_spec",
     "_set_word",
     "_path",
-    "_path_start",
     "_string_seq",
     "_binary_base_16",
     "_binary_base_2",

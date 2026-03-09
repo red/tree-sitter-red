@@ -1004,6 +1004,10 @@
           "named": true
         },
         {
+          "type": "path_start",
+          "named": true
+        },
+        {
           "type": "ref",
           "named": true
         },
@@ -1025,6 +1029,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "path_start",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "point",
