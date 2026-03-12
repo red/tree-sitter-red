@@ -10,7 +10,7 @@
 module.exports = grammar({
   name: "red",
 
-  extras: (_) => [/\s/],
+  extras: (_) => [/[ \t]/],
   externals: ($) => [
     $.infix_op,
     $.hexa,
@@ -38,14 +38,17 @@ module.exports = grammar({
   ],
 
   rules: {
+
     /* General rules */
     source_file: ($) => repeat($._expression),
 
     /* Comments */
     comment: (_) => token(seq(";", /.*/)),
 
+  	_newline: (_) => /\r?\n/,
+
     /* expressions */
-    _expression: ($) => choice($._complex_expression, $._literal),
+    _expression: ($) => choice($._complex_expression, $._literal, $._newline),
 
     _literal: ($) =>
       choice(
@@ -405,29 +408,33 @@ module.exports = grammar({
       seq(
         "2#",
         token.immediate("{"),
-        repeat(choice(/(?:[01]\s*){8}/, $.comment)),
+        repeat(choice(/(?:[01]\s*){8}/, $.comment, $._newline)),
         "}",
       ),
     _binary_base_16: ($) =>
       seq(
         choice("#", "16#"),
         token.immediate("{"),
-        repeat(choice(/[0-9a-fA-F]{2}/, $.comment)),
+        repeat(choice(/[0-9a-fA-F]{2}/, $.comment, $._newline)),
         "}",
       ),
     _binary_base_64: ($) =>
       seq(
         "64#",
         token.immediate("{"),
-        repeat(choice(/[A-Za-z0-9\+\/]/, $.comment)),
-        optional("="),
-        optional("="),
+        repeat(choice(/[A-Za-z0-9\+\/]/, $.comment, $._newline)),
+        optional(seq(
+          "=",
+          optional("="),
+          // if you want newlines after padding, handle them here
+          repeat($._newline)
+        )),
         "}",
       ),
     binary: ($) =>
       choice($._binary_base_2, $._binary_base_16, $._binary_base_64),
 
-    map: ($) => seq("#", token.immediate("["), repeat($._literal), "]"),
+    map: ($) => seq("#", token.immediate("["), repeat(choice($._literal, $._newline)), "]"),
     tag: (_) =>
       token(
         prec(
@@ -468,10 +475,7 @@ module.exports = grammar({
               "HAS",
             ),
           ),
-          choice(
-            optional(field("spec", $._func_spec)),
-            seq(field("spec", $._func_spec), optional(field("body", $.block))),
-          ),
+          optional(seq(field("spec", $._func_spec), optional(field("body", $.block)))),
         ),
       ),
 
